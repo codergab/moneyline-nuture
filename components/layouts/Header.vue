@@ -14,7 +14,7 @@
 						<b-nav-item to="/about-us">About Us</b-nav-item>
 						<b-nav-item to="/faq">FAQ</b-nav-item>
 						<b-nav-item to="/contact">Contact</b-nav-item>
-						<b-link to="/loan/calculate">
+						<b-link to="/loan/get-started">
 							<b-button variant="primary">Apply Now</b-button>
 						</b-link>
 						<b-button variant="secondary">Login</b-button>

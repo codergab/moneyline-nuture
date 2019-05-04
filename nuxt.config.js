@@ -28,7 +28,7 @@ export default {
       },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400'
+        href: 'https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,600'
       }
     ]
   },
@@ -37,7 +37,9 @@ export default {
    ** Customize the progress-bar color
    */
   loading: {
-    color: '#fff'
+    color: '#40A774',
+    throttle: 0,
+    delay: 3000
   },
 
   /*
@@ -48,7 +50,9 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [
+    '~/plugins/vue-range-slider'
+  ],
 
   /*
    ** Nuxt.js modules

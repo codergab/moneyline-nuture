@@ -27,7 +27,7 @@
 
 				<b-col sm="4">
 					<div class="feature-image">
-						<figure class="imghvr-fade">
+						<figure class="imghvr-zoom-out-up">
 							<!-- <img src="#"> -->
 							<b-img alt="friendlier" width="300" src="/features/feature1.png" fluid></b-img>
 							<figcaption>
@@ -43,7 +43,7 @@
 				</b-col>
 				<b-col sm="4">
 					<div class="feature-image">
-						<figure class="imghvr-fade">
+						<figure class="imghvr-zoom-out-up">
 							<!-- <img src="#"> -->
 							<b-img alt="friendlier" width="300" src="/features/feature2.png" fluid></b-img>
 							<figcaption>
@@ -59,7 +59,7 @@
 				</b-col>
 				<b-col sm="4">
 					<div class="feature-image">
-						<figure class="imghvr-fade">
+						<figure class="imghvr-zoom-out-up">
 							<!-- <img src="#"> -->
 							<b-img alt="friendlier" width="300" src="/features/feature3.png" fluid></b-img>
 							<figcaption>
