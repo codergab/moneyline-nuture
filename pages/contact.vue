@@ -17,13 +17,15 @@
 						<div class="col-md-6 col-sm-12 col-xs-12 col-lg-6">
 							<b-card>
 								<div class="contact-form">
-									<b-form @submit="contactUs">
+									<b-form @submit.prevent="contactUs">
 										<b-form-group id="input-group-2" label="Name:" label-for="name">
 											<b-form-input 
 											id="name" 
+											name="name" 
 											v-model="contact.name" 
-											:state="$v.contact.name.$dirty ? !$v.contact.name.$error : null"
+											v-validate="'required'"
 											></b-form-input>
+											<span class="error">{{ errors.first('name') }}</span>
 										</b-form-group>
 
 										<b-form-group
@@ -35,9 +37,10 @@
 											id="email"
 											type="email"
 											v-model="contact.email"
-											:state="$v.contact.email.$dirty ? !$v.contact.email.$error : null"
+											v-validate="'required|email'"
+											name="email"
 											></b-form-input>
-
+											<span class="error">{{ errors.first('email') }}</span>
 										</b-form-group>
 
 										<b-form-group
@@ -50,7 +53,10 @@
 												rows="3"
 												style="resize:none"
 												v-model="contact.company_description"
+												v-validate="'required'"
+												name="company description"
 												></b-form-textarea>
+												<span class="error">{{ errors.first('company description') }}</span>
 
 										</b-form-group>
 										<b-form-group
@@ -63,8 +69,10 @@
 												rows="6"
 												style="resize:none"
 												v-model="contact.message"
+												name="message"
+												v-validate="'required'"
 												></b-form-textarea>
-
+												<span class="error">{{ errors.first('message') }}</span>
 										</b-form-group>
 										<div class="text-center form-group">
 											Two + 4 = <input 
@@ -72,7 +80,13 @@
 											v-model="contact.question" 
 											class="form-input text-center" 
 											placeholder="enter sum in digit" 
-											type="text"/>
+											type="text"
+											v-validate="'required|numeric'"
+											name="question"
+											/>
+											<div class="form-group">
+												<span class="error">{{ errors.first('question') }}</span>
+											</div>
 										</div>
 										<div class="text-center form-group">
 											<b-button type="submit" variant="primary">SEND MESSAGE</b-button>
@@ -120,7 +134,7 @@
 import Header from "@/components/layouts/Header";
 import Footer from "@/components/layouts/Footer";
 import CallToAction from "@/components/layouts/CallToAction";
-import { required, minLength, between } from 'vuelidate/lib/validators'
+// import { required, minLength, between } from 'vuelidate/lib/validators'
 export default {
 	"name":"Contact",
 	data(){
@@ -135,34 +149,19 @@ export default {
 		}
 	},
 	methods:{
-		contactUs(){
-			alert(JSON.stringify(this.contact))
-		}
+		contactUs: function (e) {
+			this.$validator.validate().then(valid => {
+				if (valid) {
+				alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.contact))
+				}
+			})
+    	}	
 	},
 	components: {
 		Header,
 		Footer,
 		CallToAction
 	},
-	validations: {
-		contact:{
-			name: {
-				required
-			},
-			email: {
-				required
-			},
-			question: {
-				required
-			},
-			company_description: {
-				required
-			},
-			message: {
-				required
-			},
-		}
-  }
 };
 </script>
 
@@ -179,12 +178,17 @@ h5{
 	height:302px;
 	width:480px;
 }
+
 .gmap_canvas {
 	overflow:hidden;
 	background:none!important;
 	height:290px;
 	width:426px;
-	}
+}
+.error{
+	color: #bf0915;
+	font-size: 14px
+}
 .contact-section{
 	padding: 100px
 }
