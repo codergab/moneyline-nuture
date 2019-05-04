@@ -30,7 +30,7 @@ export default {
 			},
 			{
 				rel: 'stylesheet',
-				href: 'https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400'
+				href: 'https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,600'
 			}
 		]
 	},
