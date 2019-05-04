@@ -1,7 +1,11 @@
 <template>
-	<div class="bg-color">
-			<h1>Action Apply Now</h1>
-	</div>
+	<div class="applynow text-center">
+        Get a loan of up to <span class="orange">N10,000,000</span> with MoneyLine within 48 hours
+        <br>
+        <a href="#" class="terms"><span>*Terms and conditions apply</span></a>
+        <br>
+        <a href="#" class="btn btn-primary mt-2">APPLY NOW</a>
+    </div>
 </template>
 
 <script>
@@ -12,8 +16,19 @@ export default {
 
 
 <style scoped>
-.bg-color{
-	background-color: #025786 !important
-}
-
+    .orange {
+        color: orange;
+    }
+    .terms {
+        font-size: 9px;
+        color: #fff;
+    }
+    .terms:hover {
+        text-decoration: underline;
+    }
+    .applynow {
+        background: #013a59;
+        color: #fff;
+        padding: 30px;
+    }
 </style>
