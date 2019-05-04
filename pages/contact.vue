@@ -152,7 +152,9 @@ export default {
 		contactUs: function (e) {
 			this.$validator.validate().then(valid => {
 				if (valid) {
-				alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.contact))
+					alert('Contact message sent successful')
+				}else{
+					
 				}
 			})
     	}	
