@@ -19,20 +19,27 @@
 								<div class="contact-form">
 									<b-form @submit="contactUs">
 										<b-form-group id="input-group-2" label="Name:" label-for="name">
-											<b-form-input id="name" v-model="contact.name" required ></b-form-input>
+											<b-form-input 
+											id="name" 
+											v-model="contact.name" 
+											:state="$v.contact.name.$dirty ? !$v.contact.name.$error : null"
+											></b-form-input>
 										</b-form-group>
+
 										<b-form-group
 											id="email-group"
 											label="Email:"
-											label-for="email"
-										>
+											label-for="email">
+											
 											<b-form-input
 											id="email"
 											type="email"
 											v-model="contact.email"
-											required
+											:state="$v.contact.email.$dirty ? !$v.contact.email.$error : null"
 											></b-form-input>
+
 										</b-form-group>
+
 										<b-form-group
 											id="company-description-group"
 											label="Company Description:"
@@ -43,7 +50,6 @@
 												rows="3"
 												style="resize:none"
 												v-model="contact.company_description"
-												required
 												></b-form-textarea>
 
 										</b-form-group>
@@ -57,12 +63,16 @@
 												rows="6"
 												style="resize:none"
 												v-model="contact.message"
-												required
 												></b-form-textarea>
 
 										</b-form-group>
 										<div class="text-center form-group">
-											Two + 4 = <input id="question" v-model="contact.question" class="form-input text-center" placeholder="enter sum in digit" type="text" required/>
+											Two + 4 = <input 
+											id="question" 
+											v-model="contact.question" 
+											class="form-input text-center" 
+											placeholder="enter sum in digit" 
+											type="text"/>
 										</div>
 										<div class="text-center form-group">
 											<b-button type="submit" variant="primary">SEND MESSAGE</b-button>
@@ -110,6 +120,7 @@
 import Header from "@/components/layouts/Header";
 import Footer from "@/components/layouts/Footer";
 import CallToAction from "@/components/layouts/CallToAction";
+import { required, minLength, between } from 'vuelidate/lib/validators'
 export default {
 	"name":"Contact",
 	data(){
@@ -132,7 +143,26 @@ export default {
 		Header,
 		Footer,
 		CallToAction
-	}
+	},
+	validations: {
+		contact:{
+			name: {
+				required
+			},
+			email: {
+				required
+			},
+			question: {
+				required
+			},
+			company_description: {
+				required
+			},
+			message: {
+				required
+			},
+		}
+  }
 };
 </script>
 
