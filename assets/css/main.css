@@ -48,6 +48,29 @@ h6 {
 	border-color: #2a6f4d;
 }
 
+.btn-secondary {
+	color: #fff;
+	background-color: #025786 !important;
+	border-color: #025786 !important;
+}
+
+.btn-secondary:hover {
+	color: #fff;
+	background-color: #013a59 !important;
+	border-color: #013a59 !important;
+}
+
+.btn-secondary:not(:disabled):not(.disabled):active:focus {
+	-webkit-box-shadow: 0 0 0 0.2rem rgba(1, 58, 89, 0.5) !important;
+	box-shadow: 0 0 0 0.2rem rgba(1, 58, 89, 0.5) !important;
+}
+
+.btn-secondary:not(:disabled):not(.disabled):active {
+	color: #fff;
+	background-color: #013a59 !important;
+	border-color: #013a59 !important;
+}
+
 @media (min-width: 992px) {
 	.navbar-expand-lg .navbar-nav .nav-link {
 		padding-right: 1rem;
