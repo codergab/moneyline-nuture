@@ -1,6 +1,6 @@
 <template>
 	<b-navbar toggleable="lg" type="light" variant="light">
-		<div class="container">
+		<div class="container-fluid">
 			<b-navbar-brand href="#">
 				<img src="/logo.png" width="200" alt="Kitten">
 			</b-navbar-brand>
@@ -14,8 +14,8 @@
 						<b-nav-item href="#">About Us</b-nav-item>
 						<b-nav-item href="#">FAQ</b-nav-item>
 						<b-nav-item href="#">Contact</b-nav-item>
-						<b-button class="my-2 my-sm-0" variant="primary" size="sm">Register</b-button>&nbsp;
-						<b-button class="my-2 my-sm-0" variant size="sm">Login</b-button>
+						<b-button variant="primary">Apply Now</b-button>
+						<b-button variant="secondary">Login</b-button>
 					</b-navbar-nav>
 
 					<!-- <b-nav-item-dropdown text="Lang" right>
