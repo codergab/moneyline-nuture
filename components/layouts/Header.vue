@@ -10,10 +10,10 @@
 				<!-- Right aligned nav items -->
 				<b-navbar-nav class="ml-auto">
 					<b-navbar-nav>
-						<b-nav-item href="#">Home</b-nav-item>
-						<b-nav-item href="#">About Us</b-nav-item>
-						<b-nav-item href="#">FAQ</b-nav-item>
-						<b-nav-item href="#">Contact</b-nav-item>
+						<b-nav-item to="/">Home</b-nav-item>
+						<b-nav-item to="/about-us">About Us</b-nav-item>
+						<b-nav-item to="/faq">FAQ</b-nav-item>
+						<b-nav-item to="/contact">Contact</b-nav-item>
 						<b-button class="my-2 my-sm-0" variant="primary" size="sm">Register</b-button>&nbsp;
 						<b-button class="my-2 my-sm-0" variant size="sm">Login</b-button>
 					</b-navbar-nav>
