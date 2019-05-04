@@ -10,23 +10,35 @@
             </div>
             <CallToAction/>
         </div>
-        <div style="background: #fafafa;">
+        <div style="background: #fafafa;" class="pt-5">
             <div class="container about_content">
                 <div class="row">
                     <div class="col-md-8 mb-5 mx-auto">
                         <div class="row">
-                            <div class="col-md-12">
-                                
-                                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                <a class="nav-link active" id="v-pills-applying-tab" data-toggle="pill" href="#v-pills-applying" role="tab" aria-controls="v-pills-applying" aria-selected="true">Applying for a loan</a>
-                                <a class="nav-link" id="v-pills-rates-tab" data-toggle="pill" href="#v-pills-rates" role="tab" aria-controls="v-pills-rates" aria-selected="false">Loan Rates Enquiry</a>
-                                <a class="nav-link" id="v-pills-repayment-tab" data-toggle="pill" href="#v-pills-repayment" role="tab" aria-controls="v-pills-repayment" aria-selected="false">Enquiry on Loan Repayment/Existing Loan</a>
-                                </div>
-                                <div class="tab-content" id="v-pills-tabContent">
-                                <div class="tab-pane fade show active" id="v-pills-applying" role="tabpanel" aria-labelledby="v-pills-applying-tab">...</div>
-                                <div class="tab-pane fade" id="v-pills-rates" role="tabpanel" aria-labelledby="v-pills-rates-tab">...</div>
-                                <div class="tab-pane fade" id="v-pills-repayment" role="tabpanel" aria-labelledby="v-pills-repayment-tab">...</div>
-                                </div>
+                            <div class="col-md-12 faq">
+
+                                <b-tabs pills card vertical>
+                                <b-tab title="Applying for a loan" active>
+                                    <b-card-text>
+                                        <div role="tablist">
+                                            <template>
+                                                <div v-for="(item, i) in faqs" :key="i">
+                                                <b-card no-body  class="mb-1 accord">
+                                                <b-link block v-b-toggle="'a'+i" variant="info">{{ item.title }}</b-link>
+                                                <b-collapse :id="'a'+i" accordion="my-accordion" role="tabpanel">
+                                                    <b-card-text v-html="item.content"></b-card-text>
+                                                </b-collapse>
+                                                </b-card>
+                                                </div>
+                                            </template>
+                                        </div>
+                                    </b-card-text>
+                                </b-tab>
+                                <b-tab title="Loan Rates Enquiry">
+                                    <b-card-text>Tab Contents 2</b-card-text></b-tab>
+                                <b-tab title="Enquiry on Loan Repayment/Existing Loan">
+                                    <b-card-text>Tab Contents 3</b-card-text></b-tab>
+                                </b-tabs>
 
                             </div>
                         </div>
@@ -39,7 +51,7 @@
 
 	</div>
 </template>
-<style scoped>
+<style>
     .content {
         color: rgb(123, 121, 121);
     }
@@ -55,16 +67,53 @@
         text-transform: uppercase;
         font-weight: 300px;
     }
-    .about_content {
-        padding-top: 50px;
-        padding-right: 40px;
+    .accord {
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid rgba(0,0,0,0.125);
+        border-radius: 0px;
+        padding-bottom:15px;
     }
-    .about_content2 {
-        color: #fff;
+    div.tab-content {
+        margin-top: -27px;
+        /* border: 2px dashed #329F69;
+        border-spacing: 5px; */
         padding:20px;
     }
-    .about_content2 p{
-        font-size: 14px;
+    .faq {
+        padding-left: 0;
+        padding-top: 70px;
+        padding-bottom: 50px;
+        -webkit-box-shadow: 0px 0px 5px 1px rgba(219,219,219,1);
+        -moz-box-shadow: 0px 0px 5px 1px rgba(219,219,219,1);
+        box-shadow: 0px 0px 5px 1px rgba(219,219,219,1);
+    }
+    .faq p.card-text a {
+        color: rgb(36,96,136);
+        font-weight: 600;
+        margin-bottom: 1px solid #dbdbdb;
+    }
+    .faq ul.nav {
+        background: transparent !important;
+        width: 234px;
+        padding: 0;
+    }
+    .faq a.nav-link {
+        border-radius: 0px !important;
+        color: #000;
+    }
+    .faq ul.nav li.nav-item{
+        border-radius: 0px !important;
+        color: #000;
+        margin-top: 7px;
+        -webkit-box-shadow: 0px 0px 5px 1px rgba(219,219,219,1);
+        -moz-box-shadow: 0px 0px 5px 1px rgba(219,219,219,1);
+        box-shadow: 0px 0px 5px 1px rgba(219,219,219,1);
+    }
+    .faq .nav-pills .nav-link.active {
+        border-radius: 0px !important;
+        color: #fff;
+        background-color: #329F69;
     }
     .slidee {
         background-image: url('/Artboard–2.png');
@@ -88,6 +137,39 @@ export default {
 	components: {
         Header,
         CallToAction
-	}
+    },
+    data() {
+        return {
+            faqs: [
+                {
+                    title: 'How do I apply for a loan?',
+                    content:
+                    `
+                    <p>Please visit our website <a href="https://moneyline.ng" target="_blank">www.moneyline.ng</a> to apply or call 0907 844 0000</p>
+                    <ul>
+                        <li>Am I eligible to apply for a loan?
+                        <li>To qualify for a loan, you must be 25-59 years old
+                        <li>Be employed or have a verifiable source of income
+                        <li>Have a cheque book
+                        <li>Live and work in Lagos
+                        <li>Have an account with any commercial bank
+                    </ul>
+                    `
+                },
+                {
+                    title: 'What am I allowed to use a loan for?',
+                    content: 'You can use the funds from your personal loan for any purpose.'
+                },
+                {
+                    title: 'What is the minimum and maximum amount I am allowed to borrow, and for how long?',
+                    content: 'One month minimum and 3 months maximum loan repayment tenure'
+                },
+                {
+                    title: 'How long does it take for my loan to be processed and approved?',
+                    content: 'Within 24 -48 hours provided all documents are valid and presented on the application'
+                },
+            ]
+        }
+    }
 };
 </script>
