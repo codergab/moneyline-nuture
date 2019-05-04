@@ -1,6 +1,5 @@
 <template>
 	<div>
-		<Header/>
 		<div class="slider">
 			<div class="slidee">
 				<img src="/home-slide1.png" style="width: 100%; height: 90vh;  background-size: cover;">
@@ -195,16 +194,18 @@
 				</b-row>
 			</b-container>
 		</section>
-		<Footer/>
+		<CallToAction/>
 	</div>
 </template>
 <script>
 import Header from "@/components/layouts/Header";
 import Footer from "@/components/layouts/Footer";
+import CallToAction from "@/components/layouts/CallToAction";
 export default {
 	components: {
 		Header,
-		Footer
+		Footer,
+		CallToAction
 	}
 };
 </script>

@@ -28,6 +28,7 @@
 				</div>
 			</b-col>
 		</b-row>
+		<b-row></b-row>
 	</footer>
 </template>
 <script>

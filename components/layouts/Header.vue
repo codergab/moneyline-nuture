@@ -10,11 +10,13 @@
 				<!-- Right aligned nav items -->
 				<b-navbar-nav class="ml-auto">
 					<b-navbar-nav>
-						<b-nav-item href="#">Home</b-nav-item>
-						<b-nav-item href="#">About Us</b-nav-item>
-						<b-nav-item href="#">FAQ</b-nav-item>
-						<b-nav-item href="#">Contact</b-nav-item>
-						<b-button variant="primary">Apply Now</b-button>
+						<b-nav-item to="/">Home</b-nav-item>
+						<b-nav-item to="/about-us">About Us</b-nav-item>
+						<b-nav-item to="/faq">FAQ</b-nav-item>
+						<b-nav-item to="/contact">Contact</b-nav-item>
+						<b-link to="/loan/calculate">
+							<b-button variant="primary">Apply Now</b-button>
+						</b-link>
 						<b-button variant="secondary">Login</b-button>
 					</b-navbar-nav>
 

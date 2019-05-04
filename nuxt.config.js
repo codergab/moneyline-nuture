@@ -1,4 +1,4 @@
-import pkg from './package'
+import pkg from './package';
 
 export default {
   mode: 'spa',
@@ -22,13 +22,15 @@ export default {
       }
     ],
     link: [{
-      rel: 'icon',
-      type: 'image/x-icon',
-      href: '/icon.png'
-    }, {
-      rel: 'stylesheet',
-      'href': 'https://fonts.googleapis.com/css?family=Lato|Palanquin+Dark'
-    }]
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/icon.png'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400'
+      }
+    ]
   },
 
   /*
@@ -41,10 +43,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [
-    '~/assets/css/main.css',
-    // '~/assets/css/imagehover.css',
-  ],
+  css: ['~/assets/css/main.css'],
 
   /*
    ** Plugins to load before mounting the App
@@ -58,7 +57,7 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     // Doc: https://bootstrap-vue.js.org/docs/
-    'bootstrap-vue/nuxt',
+    'bootstrap-vue/nuxt'
   ],
   /*
    ** Axios module configuration
@@ -76,4 +75,4 @@ export default {
      */
     extend(config, ctx) {}
   }
-}
+};
