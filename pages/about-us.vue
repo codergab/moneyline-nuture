@@ -1,16 +1,15 @@
 <template>
 	<div class="content">
-		<Header/>
-            <div class="">
-                <div class="slidee">
-                    <div class="payoff">
-                        We listen to your <br>
-                        <span class="highlight">financial</span> needs when no<br>
-                        one else does
-                    </div>
+        <div class="">
+            <div class="slidee">
+                <div class="payoff">
+                    We listen to your <br>
+                    <span class="highlight">financial</span> needs when no<br>
+                    one else does
                 </div>
-                <CallToAction/>
             </div>
+            <CallToAction/>
+        </div>
         <div style="background: #fafafa;">
             <div class="container about_content">
                 <div class="row">
