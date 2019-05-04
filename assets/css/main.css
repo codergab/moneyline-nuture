@@ -12,6 +12,10 @@ h6 {
 	font-family: "Montserrat", sans-serif;
 }
 
+.text-link {
+  color: #025786 !important;
+}
+
 .btn {
 	border-radius: 0 !important;
 	margin: 0 0.5em;
