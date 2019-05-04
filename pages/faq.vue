@@ -1,25 +1,33 @@
 <template>
 	<div class="content">
-		<Header/>
-            <div class="">
-                <div class="slidee">
-                    <div class="payoff">
-                        <span class="highlight">Got questions?</span> <br>
-                        let us provide your <br>
-                        answers
-                    </div>
+        <div class="">
+            <div class="slidee">
+                <div class="payoff">
+                    <span class="highlight">Got questions?</span> <br>
+                    let us provide your <br>
+                    answers
                 </div>
-                <CallToAction/>
             </div>
+            <CallToAction/>
+        </div>
         <div style="background: #fafafa;">
             <div class="container about_content">
                 <div class="row">
                     <div class="col-md-8 mb-5 mx-auto">
                         <div class="row">
                             <div class="col-md-12">
-                                MoneyLine is a trading name of Chestnut Financial Services Limited. We offer a
-                                range of financial services including short term loans,Payday loans, Guarantor
-                                loans, Travel money, Pawn broking Services
+                                
+                                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                <a class="nav-link active" id="v-pills-applying-tab" data-toggle="pill" href="#v-pills-applying" role="tab" aria-controls="v-pills-applying" aria-selected="true">Applying for a loan</a>
+                                <a class="nav-link" id="v-pills-rates-tab" data-toggle="pill" href="#v-pills-rates" role="tab" aria-controls="v-pills-rates" aria-selected="false">Loan Rates Enquiry</a>
+                                <a class="nav-link" id="v-pills-repayment-tab" data-toggle="pill" href="#v-pills-repayment" role="tab" aria-controls="v-pills-repayment" aria-selected="false">Enquiry on Loan Repayment/Existing Loan</a>
+                                </div>
+                                <div class="tab-content" id="v-pills-tabContent">
+                                <div class="tab-pane fade show active" id="v-pills-applying" role="tabpanel" aria-labelledby="v-pills-applying-tab">...</div>
+                                <div class="tab-pane fade" id="v-pills-rates" role="tabpanel" aria-labelledby="v-pills-rates-tab">...</div>
+                                <div class="tab-pane fade" id="v-pills-repayment" role="tabpanel" aria-labelledby="v-pills-repayment-tab">...</div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
