@@ -27,7 +27,7 @@ export default {
       href: '/icon.png'
     }, {
       rel: 'stylesheet',
-      'href': 'https://fonts.googleapis.com/css?family=Lato|Roboto:400,700'
+      'href': 'https://fonts.googleapis.com/css?family=Lato|Palanquin+Dark'
     }]
   },
 

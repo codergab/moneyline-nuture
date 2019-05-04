@@ -1,8 +1,10 @@
 <template>
 	<div>
 		<Header/>
-		<div class="slidee">
-			<img src="/home-slide1.png" style="width: 100%;  background-size: cover;">
+		<div>
+			<b-jumbotron>
+				
+			</b-jumbotron>
 		</div>
 	</div>
 </template>
@@ -12,7 +14,7 @@ export default {
 	"name":"Contact",
 	data(){
 		return {
-			
+
 		}
 	},
 	components: {
