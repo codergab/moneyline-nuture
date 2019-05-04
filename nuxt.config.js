@@ -51,7 +51,8 @@ export default {
    ** Plugins to load before mounting the App
    */
   plugins: [
-    '~/plugins/vue-range-slider'
+    '~/plugins/vue-range-slider',
+    '~/plugins/vee-validate'
   ],
 
   /*

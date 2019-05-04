@@ -7,7 +7,7 @@
 			<span>*Terms and conditions apply</span>
 		</a>
 		<br>
-		<a href="#" class="btn btn-primary mt-2">APPLY NOW</a>
+		<b-link to="/loan/get-started" class="btn btn-primary mt-2">APPLY NOW</b-link>
 	</div>
 </template>
 
