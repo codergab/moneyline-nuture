@@ -1,0 +1,57 @@
+html,
+body {
+  font-family: "Lato", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", sans-serif;
+}
+
+.btn {
+  border-radius: 0 !important;
+  margin: 0 0.5em;
+}
+
+.btn-sm,
+.btn-group-sm > .btn {
+  padding: 0rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #40A774;
+  border-color: #40A774;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #2A6F4D;
+  border-color: #2A6F4D;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active:focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(42, 111, 77, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(42, 111, 77, 0.5);
+}
+
+.btn-primary:not(:disabled):not(.disabled):active {
+  color: #fff;
+  background-color: #2A6F4D;
+  border-color: #2A6F4D;
+}
+
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+/*# sourceMappingURL=main.css.map */
