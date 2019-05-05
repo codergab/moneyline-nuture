@@ -7,7 +7,7 @@
 			<span>*Terms and conditions apply</span>
 		</a>
 		<br>
-		<a href="#" class="btn btn-primary mt-2">APPLY NOW</a>
+		<a href="#" class="btn c_btn-primary mt-2">APPLY NOW <i style="color: #2E9460;" class="fa fa-arrow-right"></i></a>
 	</div>
 </template>
 
@@ -19,6 +19,20 @@ export default {
 
 
 <style scoped>
+.c_btn-primary {
+    background: #fff;
+    color: #013959;
+    font-weight: 300;
+    border-left: 10px solid #2E9460;
+    transition: all .5s ease-in-out;
+}
+
+.c_btn-primary i {
+    transition: all .5s ease;
+}
+.c_btn-primary:hover i{
+    margin-left: 20px;
+}
 .orange {
 	color: orange;
 }
