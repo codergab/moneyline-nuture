@@ -19,15 +19,15 @@
 
                                 <b-tabs pills card vertical>
                                 <template  v-for="(item, i) in faqs">
-                                <b-tab :title="item.title" :key="i" active>
+                                <b-tab :title="item.title" :key="i">
                                     <b-card-text>
                                         <div role="tablist">
                                             <template>
                                                 <div v-for="(item, j) in item.body" :key="j">
                                                 <b-card no-body  class="mb-1 accord">
-                                                <b-link block v-b-toggle="'a'+i+j" variant="info">{{ item.title }}</b-link>
+                                                <b-link block v-b-toggle="'a'+i+j" variant="info">{{ item.title }} <span class="pull-right" style="font-size:10px;"><i class="fa fa-chevron-down"></i></span></b-link>
                                                 <b-collapse :id="'a'+i+j" accordion="my-accordion" role="tabpanel">
-                                                    <b-card-text v-html="item.content"></b-card-text>
+                                                    <b-card-text class="mt-3" v-html="item.content"></b-card-text>
                                                 </b-collapse>
                                                 </b-card>
                                                 </div>
@@ -36,24 +36,6 @@
                                     </b-card-text>
                                 </b-tab>
                                 </template>
-                                <!-- <b-tab title="Application">
-                                    <b-card-text>
-                                        <div role="tablist">
-                                            <template>
-                                                <div v-for="(item, i) in faqs.application" :key="i">
-                                                <b-card no-body  class="mb-1 accord">
-                                                <b-link block v-b-toggle="'b'+i" variant="info">{{ item.title }}</b-link>
-                                                <b-collapse :id="'b'+i" accordion="my-accordion" role="tabpanel">
-                                                    <b-card-text v-html="item.content"></b-card-text>
-                                                </b-collapse>
-                                                </b-card>
-                                                </div>
-                                            </template>
-                                        </div>
-                                    </b-card-text>
-                                </b-tab>
-                                <b-tab title="Enquiry on Loan Repayment/Existing Loan">
-                                    <b-card-text>Tab Contents 3</b-card-text></b-tab> -->
                                 </b-tabs>
 
                             </div>

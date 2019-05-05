@@ -3,11 +3,9 @@
 		Get a loan of up to
 		<span class="orange">N10,000,000</span> with MoneyLine within 48 hours
 		<br>
-		<a href="#" class="terms">
-			<span>*Terms and conditions apply</span>
-		</a>
+		<nuxt-link to="/terms" class="terms">*Terms and conditions apply</nuxt-link>
 		<br>
-		<a href="#" class="btn c_btn-primary mt-2">APPLY NOW <i style="color: #2E9460;" class="fa fa-arrow-right"></i></a>
+		<nuxt-link class="btn c_btn-primary mt-2" to="/loan/calculate">APPLY NOW <i style="color: #2E9460;" class="fa fa-arrow-right"></i></nuxt-link>
 	</div>
 </template>
 
