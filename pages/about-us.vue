@@ -11,7 +11,7 @@
             <CallToAction/>
         </div>
         <div style="background: #fafafa;">
-            <div class="container about_content">
+            <div class="container about_content txt-sm-center">
                 <div class="row">
                     <div class="col-md-8 mx-auto">
                         <div class="row">
@@ -54,7 +54,7 @@
                     <div class="col-md-12 mb-4 mt-2">
                         <h4>CORE VALUES</h4>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-sm-12">
                         <img src="/4.gif" class="rounded-circle mb-4" width="80px">
                         <h6 class="title">Accessibility</h6>
                         <p>
@@ -65,7 +65,7 @@
                             of need.
                         </p>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-sm-12">
                         <img src="/6.gif" class="rounded-circle mb-4" width="80px">
                         <h6 class="title">Transparency</h6>
                         <p>
@@ -76,7 +76,7 @@
                         interacting with our services.
                         </p>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-sm-12">
                         <img src="/3.gif" class="rounded-circle mb-4" width="80px">
                         <h6 class="title">Entrepreneurship</h6>
                         <p>
@@ -100,7 +100,7 @@
 
                         </p>
                     </div> -->
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-sm-12">
                         <img src="/4.gif" class="rounded-circle mb-4" width="80px">
                         <h6 class="title">Excellence</h6>
                         <p>
@@ -161,6 +161,11 @@
     .highlight {
         font-weight: bold;
     }
+    /* @media only screen and (min-width: 10em) {
+        .txt-sm-center {
+            text-align: center;
+        }
+    } */
 </style>
 <script>
 import Header from "@/components/layouts/Header";
