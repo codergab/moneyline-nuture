@@ -14,11 +14,14 @@
 						<b-nav-item to="/about-us">About Us</b-nav-item>
 						<b-nav-item to="/faq">FAQ</b-nav-item>
 						<b-nav-item to="/contact">Contact</b-nav-item>
-						<b-link to="/loan/get-started">
-							<b-button variant="primary">Apply Now</b-button>
+						<b-link to="/app/users">
+							<b-button variant="primary">Manage Users</b-button>
 						</b-link>
 						<b-link to="/login">
-							<b-button variant="secondary">Login</b-button>
+							<b-button variant="primary">Manage Loans</b-button>
+						</b-link>
+						<b-link to="/login">
+							<b-button variant="secondary">Logout</b-button>
 						</b-link>
 						<!-- <b-button variant="secondary">Login</b-button> -->
 					</b-navbar-nav>

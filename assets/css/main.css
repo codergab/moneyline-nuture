@@ -1,6 +1,6 @@
 html,
 body {
-	font-family: 'Montserrat', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 h1,
@@ -9,7 +9,11 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: "Montserrat", sans-serif;
+  font-family: "Palanquin", sans-serif;
+}
+
+.text-primary {
+  color: #40A774 !important;
 }
 
 .text-link {
@@ -17,68 +21,72 @@ h6 {
 }
 
 .btn {
-	border-radius: 0 !important;
-	margin: 0 0.5em;
+  border-radius: 0 !important;
+  margin: 0 0.5em;
 }
 
 .btn-sm,
 .btn-group-sm > .btn {
-	padding: 0rem 1rem;
-	font-size: 0.875rem;
-	line-height: 1.5;
-	border-radius: 0.2rem;
+  padding: 0rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-radius: 0.2rem;
 }
 
 .btn-primary {
-	color: #fff;
-	background-color: #40a774;
-	border-color: #40a774;
+  color: #fff;
+  background-color: #40A774;
+  border-color: #40A774;
 }
 
 .btn-primary:hover {
-	color: #fff;
-	background-color: #2a6f4d;
-	border-color: #2a6f4d;
+  color: #fff;
+  background-color: #2A6F4D;
+  border-color: #2A6F4D;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active:focus {
-	-webkit-box-shadow: 0 0 0 0.2rem rgba(42, 111, 77, 0.5);
-	box-shadow: 0 0 0 0.2rem rgba(42, 111, 77, 0.5);
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(42, 111, 77, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(42, 111, 77, 0.5);
 }
 
 .btn-primary:not(:disabled):not(.disabled):active {
-	color: #fff;
-	background-color: #2a6f4d;
-	border-color: #2a6f4d;
+  color: #fff;
+  background-color: #2A6F4D;
+  border-color: #2A6F4D;
 }
 
 .btn-secondary {
-	color: #fff;
-	background-color: #025786 !important;
-	border-color: #025786 !important;
+  color: #fff;
+  background-color: #025786 !important;
+  border-color: #025786 !important;
 }
 
 .btn-secondary:hover {
-	color: #fff;
-	background-color: #013a59 !important;
-	border-color: #013a59 !important;
+  color: #fff;
+  background-color: #013A59 !important;
+  border-color: #013A59 !important;
 }
 
 .btn-secondary:not(:disabled):not(.disabled):active:focus {
-	-webkit-box-shadow: 0 0 0 0.2rem rgba(1, 58, 89, 0.5) !important;
-	box-shadow: 0 0 0 0.2rem rgba(1, 58, 89, 0.5) !important;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(1, 58, 89, 0.5) !important;
+          box-shadow: 0 0 0 0.2rem rgba(1, 58, 89, 0.5) !important;
 }
 
 .btn-secondary:not(:disabled):not(.disabled):active {
-	color: #fff;
-	background-color: #013a59 !important;
-	border-color: #013a59 !important;
+  color: #fff;
+  background-color: #013A59 !important;
+  border-color: #013A59 !important;
 }
 
 @media (min-width: 992px) {
-	.navbar-expand-lg .navbar-nav .nav-link {
-		padding-right: 1rem;
-		padding-left: 1rem;
-	}
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+a {
+  color: #40A774 !important;
 }
 /*# sourceMappingURL=main.css.map */
