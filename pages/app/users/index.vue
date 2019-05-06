@@ -1,5 +1,5 @@
 <template>
-	<b-container>
+	<b-container fluid>
 		<div class="manage">
 			<h2>{{ title }}</h2>
 			<div>
@@ -17,14 +17,16 @@
 </template>
 
 <script>
-import UserTable from "@/components/UserTable";
+import UserTable from "@/components/admin/UsersTable";
 import LoanTable from "@/components/LoanTable";
+import { mapGetters } from "vuex";
 export default {
 	layout: "admin",
 	components: {
 		UserTable,
 		LoanTable
 	},
+	mounted() {},
 	data() {
 		return {
 			title: "Manage Users"

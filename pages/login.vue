@@ -1,15 +1,10 @@
 <template>
 	<b-container>
 		<div class="form-wrapper">
-			<h3 class="text-center">Login</h3>
-			<b-card>
+			<h3 class="text-center">Welcome Back</h3>
+			<b-card style="box-shadow: 0px 0px 9px #f3f3f3; border: 0">
 				<b-form @submit="submitForm" v-if="show">
-					<b-form-group
-						id="input-group-1"
-						label="Email address:"
-						label-for="input-1"
-						description="We'll never share your email with anyone else."
-					>
+					<b-form-group label="Email address:" label-for="input-1">
 						<b-form-input
 							id="input-1"
 							v-model="login.email"
@@ -33,6 +28,8 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from "vuex";
+
 export default {
 	data() {
 		return {
@@ -45,19 +42,37 @@ export default {
 			show: true
 		};
 	},
+	mounted() {},
 	methods: {
 		submitForm() {
 			if (this.login.email && this.login.password) {
-				localStorage.setItem("loginDetails", {
-					...this.login.email,
-					...this.login.password
-				});
-				this.$router.push("/app/dashboard");
+				this.$axios
+					.$post("sign-in", this.login)
+					.then(response => {
+						const { data: loggedDetails } = response;
+						console.log(loggedDetails);
+						this.$store.dispatch(
+							"auth/authenticate",
+							loggedDetails
+						);
+						localStorage.setItem(
+							"money_line_valid_token",
+							loggedDetails.token
+						);
+						this.$router.push("/app/dashboard");
+					})
+					.catch(err => {
+						const { error } = err.response.data;
+						this.$noty.error(error);
+					});
 			} else {
 				alert("Please Enter Something");
 			}
 			// alert(JSON.stringify(this.login));
 		}
+		// ...mapActions({
+		// 'authentica'
+		// })
 	}
 };
 </script>

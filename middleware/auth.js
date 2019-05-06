@@ -1,5 +1,8 @@
-export default () => {
-  if (!localStorage.getItem('loginDetails')) {
-    return location.href = '/login';
-  }
+export default ({
+  store,
+  redirect
+}) => {
+  // if (store.getters['auth/authenticated']) {
+  //   return redirect('/app/dashboard');
+  // }
 }

@@ -1,7 +1,9 @@
 <template>
 	<div>
 		<Header/>
-		<Hero/>
+		<div v-if="this.$route.path !== '/app/dashboard'">
+			<Hero/>
+		</div>
 		<nuxt/>
 		<Footer/>
 	</div>
@@ -12,7 +14,7 @@ import Header from "@/components/layouts/HeaderLogged";
 import Footer from "@/components/layouts/Footer";
 import Hero from "@/components/layouts/Hero";
 export default {
-	middleware: "auth",
+	// middleware: "auth",
 	components: {
 		Header,
 		Footer,

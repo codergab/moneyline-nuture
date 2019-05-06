@@ -9,6 +9,7 @@
 <script>
 import Header from "@/components/layouts/Header";
 import Footer from "@/components/layouts/Footer";
+import "vuejs-noty/dist/vuejs-noty.css";
 export default {
 	components: {
 		Header,

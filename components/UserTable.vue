@@ -37,7 +37,17 @@
 
 <script>
 export default {
-	name: "UserTable"
+	name: "UserTable",
+	data() {
+		return {};
+	},
+	computed: {
+		// ...mapGetter(["getUsers"])
+	},
+	mounted() {
+		this.$store.dispatch("fetchUsers");
+		// this.$axios.post('http://localhost:8080/api/v1/')
+	}
 };
 </script>
 

@@ -28,7 +28,7 @@ export default {
       },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,600'
+        href: 'https://fonts.googleapis.com/css?family=Raleway:400,700'
       },
       {
         rel: 'stylesheet',
@@ -41,10 +41,16 @@ export default {
    ** Customize the progress-bar color
    */
   loading: {
-    color: '#40A774',
+    // color: '#40A774',
     throttle: 0,
-    delay: 3000
+    delay: 3000,
+    name: 'chasing-dots',
+    color: '#40A774',
+    background: 'white',
+    height: '4px'
   },
+
+
 
   /*
    ** Global CSS
@@ -56,7 +62,15 @@ export default {
    */
   plugins: [
     '~/plugins/vue-range-slider',
-    '~/plugins/vee-validate'
+    '~/plugins/vee-validate',
+    '~/plugins/axios',
+    '~/plugins/vue-noty',
+    // '~/plugins/vue-modal',
+    '~/plugins/vue-modaltor',
+    {
+      src: '~/plugins/localStorage.js',
+      ssr: false
+    }
   ],
 
   /*
@@ -73,6 +87,7 @@ export default {
    */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+    baseURL: 'http://localhost:8080/api/v1'
   },
 
   /*
