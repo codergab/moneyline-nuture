@@ -35,6 +35,10 @@ export default {
 			{
 				rel: 'stylesheet',
 				href: 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'
+			},
+			{
+				rel: 'stylesheet',
+				href: 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'
 			}
 		]
 	},
@@ -54,7 +58,7 @@ export default {
 	/*
    ** Plugins to load before mounting the App
    */
-	plugins: [ '~/plugins/vee-validate.js' ],
+	plugins: [ '~/plugins/vee-validate.js', '~/plugins/form-wizard.js' ],
 
 	/*
    ** Nuxt.js modules

@@ -13,7 +13,7 @@ h6 {
 }
 
 .text-link {
-  color: #025786 !important;
+	color: #025786 !important;
 }
 
 .btn {
@@ -82,3 +82,8 @@ h6 {
 	}
 }
 /*# sourceMappingURL=main.css.map */
+
+label {
+	color: #068845;
+	font-weight: bolder;
+}
