@@ -40,7 +40,7 @@ h6 {
 }
 
 .btn-sm,
-.btn-group-sm > .btn {
+.btn-group-sm>.btn {
   padding: 0rem 1rem;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -61,7 +61,7 @@ h6 {
 
 .btn-primary:not(:disabled):not(.disabled):active:focus {
   -webkit-box-shadow: 0 0 0 0.2rem rgba(42, 111, 77, 0.5);
-          box-shadow: 0 0 0 0.2rem rgba(42, 111, 77, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(42, 111, 77, 0.5);
 }
 
 .btn-primary:not(:disabled):not(.disabled):active {
@@ -84,7 +84,7 @@ h6 {
 
 .btn-secondary:not(:disabled):not(.disabled):active:focus {
   -webkit-box-shadow: 0 0 0 0.2rem rgba(1, 58, 89, 0.5) !important;
-          box-shadow: 0 0 0 0.2rem rgba(1, 58, 89, 0.5) !important;
+  box-shadow: 0 0 0 0.2rem rgba(1, 58, 89, 0.5) !important;
 }
 
 .btn-secondary:not(:disabled):not(.disabled):active {
@@ -110,7 +110,7 @@ a.nav-link.active {
   border-color: #40A774;
   outline: 0;
   -webkit-box-shadow: 0 0 0 0.1rem #40A774;
-          box-shadow: 0 0 0 0.1rem #40A774;
+  box-shadow: 0 0 0 0.1rem #40A774;
 }
 
 .form-control {
@@ -160,10 +160,10 @@ a:hover {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin-top: -10px;
 }
 
@@ -177,11 +177,11 @@ a:hover {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   outline: none;
   width: 70px;
   height: 70px;
@@ -194,11 +194,11 @@ a:hover {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   width: calc(100% - 2px);
   height: calc(100% - 2px);
   border-radius: 100%;
@@ -327,4 +327,10 @@ a:hover {
 .social-button--npmjs::after {
   background: #c12127;
 }
+
 /*# sourceMappingURL=main.css.map */
+
+label {
+  color: #068845;
+  font-weight: bolder;
+}

@@ -10,10 +10,73 @@
         <div style="background: #fafafa;" class="pt-5 pb-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12">
-                        <horizontal-stepper :steps="applicationSteps" @completed-step="completeStep"
-                                     @active-step="isStepActive">                     
-                        </horizontal-stepper>
+                    <div class="col-md-12 loan" style="background: #fff !important;">
+                        <form-wizard
+                            @on-complete="onComplete"
+                            :title="'LOAN APPLICATION FORM'"
+                            :subtitle="'Fill the form below to get started'"
+                            color="#015A86"
+                            shape="circle"
+                            error-color="#ff4949"
+                            >
+
+                            <tab-content
+                                title="PERSONAL DETAILS"
+                                icon="fa fa-user"
+                                :before-change="() => validate('stepOne')"
+                            >
+                                
+                                <step-one ref="stepOne" @on-validate="onStepValidate"></step-one>
+
+                            </tab-content>
+
+                            <tab-content
+                                title="EMPLOYMENT DETAILS"
+                                icon="fa fa-briefcase"
+                                :before-change="() => validate('stepTwo')"
+                            >
+                                
+                                <step-two ref="stepTwo" @on-validate="onStepValidate"></step-two>
+
+                            </tab-content>
+
+                            <tab-content
+                                title="LOAN DETAILS"
+                                icon="fa fa-credit-card-alt"
+                                :before-change="() => validate('stepThree')"
+                            >
+                                
+                                <step-three ref="stepThree" @on-validate="onStepValidate"></step-three>
+
+                            </tab-content>
+                            <tab-content
+                                title="IDENTITY AND DOCUMENT UPLOAD"
+                                icon="fa fa-id-card-o"
+                                :before-change="() => validate('stepFour')"
+                            >
+                                
+                                <step-four ref="stepFour" @on-validate="onStepValidate"></step-four>
+
+                            </tab-content>
+                            <tab-content
+                                title="DISBURSEMENT DETAILS"
+                                icon="fa fa-university"
+                                :before-change="() => validate('stepFive')"
+                            >
+                                
+                                <step-five ref="stepFive" @on-validate="onStepValidate"></step-five>
+
+                            </tab-content>
+                            <tab-content
+                                title="GUARANTOR DETAILS"
+                                icon="fa fa-male"
+                                :before-change="() => validate('stepSix')"
+                            >
+                                
+                                <step-six ref="stepSix" @on-validate="onStepValidate"></step-six>
+
+                            </tab-content>
+                        </form-wizard>
                     </div>
                 </div>
             </div>
@@ -27,8 +90,11 @@
     .content {
         color: rgb(123, 121, 121);
     }
-    .stepper-box h4 {
-        font-size: 10px !important;
+    h4.wizard-title {
+        margin-bottom: 20px !important;
+    }
+    .stepTitle {
+        font-size: 12px !important;
     }
     h4 {
         font-weight: 600;
@@ -47,6 +113,11 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
+    .loan {
+        -webkit-box-shadow: 0px 0px 5px 1px rgba(219,219,219,1);
+        -moz-box-shadow: 0px 0px 5px 1px rgba(219,219,219,1);
+        box-shadow: 0px 0px 5px 1px rgba(219,219,219,1);
+    }
     .payoff {
         font-size: 2.15em;
         font-weight: 200;
@@ -55,6 +126,10 @@
     }
     .highlight {
         font-weight: bold;
+    }
+    .error{
+        color: #bf0915;
+        font-size: 11px
     }
 </style>
 <script>
@@ -73,85 +148,33 @@ export default {
         Header,
         CallToAction,
         HorizontalStepper,
+        StepOne,
+        StepTwo,
+        StepThree,
+        StepFour,
+        StepFive,
+        StepSix,
     },
     data() {
         return {
-            applicationSteps: [
-                {
-                    icon: 'account_circle',
-                    name: 'one',
-                    title: 'PERSONAL DETAILS',
-                    component: StepOne,
-                    completed: false
-
-                }
-                ,
-                {
-                    icon: 'card_travel',
-                    name: 'two',
-                    title: 'SECTION B - EMPLOYMENT DETAILS',
-                    component: StepTwo,
-                    completed: false
-                }
-                ,
-                {
-                    icon: 'credit_card',
-                    name: 'three',
-                    title: 'SECTION C - LOAN DETAILS',
-                    component: StepThree,
-                    completed: false
-                }
-                ,
-                {
-                    icon: 'cloud_upload',
-                    name: 'four',
-                    title: 'SECTION D - IDENTITY AND DOCUMENT UPLOAD',
-                    component: StepFour,
-                    completed: false
-                }
-                ,
-                {
-                    icon: 'call_split',
-                    name: 'five',
-                    title: 'SECTION E - DISBURSEMENT DETAILS',
-                    component: StepFive,
-                    completed: false
-                }
-                ,
-                {
-                    icon: 'accessibility',
-                    name: 'six',
-                    title: 'SECTION F - GUARANTOR DETAILS',
-                    component: StepSix,
-                    completed: false
-                }
-                ,
-            ]
+            finalModel: {},
+            topButtons: true,
         }
     },
     methods: {
-        // Executed when @completed-step event is triggered
-        completeStep(payload) {
-            this.applicationSteps.forEach((step) => {
-                if (step.name === payload.name) {
-                    step.completed = true;
-                }
+        validate(ref) {
+            return this.$refs[ref].validate();
+        },
+        onStepValidate(validated, model) {
+            if (validated) {
+                this.finalModel = { ...this.finalModel, ...model };
+            }
+        },
+        onComplete() {
+            this.$axios.post('/loans', this.finalModel).then(res => {
+                this.$router.push('/loans/me');
             })
         },
-        // Executed when @active-step event is triggered
-        isStepActive(payload) {
-            this.applicationSteps.forEach((step) => {
-                if (step.name === payload.name) {
-                    if(step.completed === true) {
-                        step.completed = false;
-                    }
-                }
-            })
-        },
-        // Executed when @stepper-finished event is triggered
-        alert(payload) {
-            alert('end')
-        }
     },
 };
 </script>

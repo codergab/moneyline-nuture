@@ -65,7 +65,7 @@ export default {
     '~/plugins/vee-validate',
     '~/plugins/axios',
     '~/plugins/vue-noty',
-    // '~/plugins/vue-modal',
+    '~/plugins/form-wizard.js',
     '~/plugins/vue-modaltor',
     {
       src: '~/plugins/localStorage.js',

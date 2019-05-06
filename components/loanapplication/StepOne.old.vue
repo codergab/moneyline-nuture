@@ -6,29 +6,33 @@
                 <div class="row">
                     <div class="col-md-12 mb-2">
                         Fields marked with  <span class="text-danger">*</span> are required
-
-                        <ul>
-                <li v-for="(error, index) in errors.all()" :key="index">{{ error }}</li>
-                </ul>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="label">Title <span class="text-danger">*</span></label>
-                            <select v-model="model.title" v-validate="'required'" class="form-control">
+                            <select  class="form-control">
                                 <option>Mr.</option>
                                 <option>Ms.</option>
                                 <option>Mrs.</option>
                                 <option>Dr.</option>
                                 <option>Other.</option>
                             </select>
+                            <el-select v-model="value" placeholder="Select Title">
+                                <el-option
+                                v-for="item in ['Mr']"
+                                :key="item.value"
+                                :label="item.label"
+                                :value="item.value">
+                                </el-option>
+                            </el-select>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="label">Gender <span class="text-danger">*</span></label>
-                            <select v-model="model.gender" class="form-control">
+                            <select class="form-control">
                                 <option>Male</option>
                                 <option>Female</option>
                             </select>
@@ -39,22 +43,19 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label class="label">Surname <span class="text-danger">*</span></label>
-                            <input name="surname"  v-model="model.surname" type="text" v-validate="'required'" class="form-control" placeholder="Enter your surname">
-                            <span class="error">{{ errors.first('surname') }}</span>
+                            <input name="surname"  type="text" class="form-control" placeholder="Enter your surname">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label class="label">Firstname <span class="text-danger">*</span></label>
-                            <input type="text"  v-model="model.first_name" name="first_name" v-validate="'required'"  class="form-control" placeholder="Enter your firstname">
-                            <span class="error">{{ errors.first('first_name') }}</span>
+                            <input type="text" name="firstname"   class="form-control" placeholder="Enter your firstname">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label class="label">Other Name <span class="text-danger">*</span></label>
-                            <input type="text"  v-model="model.other_name" name="other_name" v-validate="'required'"   class="form-control" placeholder="Enter your Othername">
-                            <span class="error">{{ errors.first('other_name') }}</span>
+                            <input type="text" name="othername"   class="form-control" placeholder="Enter your Othername">
                         </div>
                     </div>
                 </div>
@@ -62,21 +63,19 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label class="label">Date Of Birth <span class="text-danger">*</span></label>
-                            <input type="date"  v-model="model.date_of_birth" name="date_of_birth" v-validate="'required'"   class="form-control">
-                            <span class="error">{{ errors.first('date_of_birth') }}</span>
+                            <input type="date" name="dob"   class="form-control">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label class="label">Phone Number <span class="text-danger">*</span></label>
-                            <input type="text" name="phone"  v-model="model.phone" v-validate="'required|numeric'" class="form-control" placeholder="2348123456789">
-                            <span class="error">{{ errors.first('phone') }}</span>
+                            <input type="text" name="phone"   class="form-control" placeholder="2348123456789">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label class="label">Marital Status <span class="text-danger">*</span></label>
-                            <select  v-model="model.marital_status"  class="form-control">
+                            <select   class="form-control">
                                 <option>Single</option>
                                 <option>Married</option>
                                 <option>Divorced</option>
@@ -89,14 +88,13 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label class="label">Email <span class="text-danger">*</span></label>
-                            <input name="email"  v-model="model.email" type="email" v-validate="'required|email'" placeholder="Enter you email" class="form-control">
-                            <span class="error">{{ errors.first('email') }}</span>
+                            <input name="email"  type="email" class="form-control">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label class="label">Highest Educational Level <span class="text-danger">*</span></label>
-                            <select  v-model="model.highest_education_level" name="highest_education_level" v-validate="'required'" class="form-control">
+                            <select   class="form-control">
                                 <option>SSCE</option>
                                 <option>OND</option>
                                 <option>HND</option>
@@ -117,32 +115,33 @@ export default {
     data() {
         return {
             model: {
-                title: 'Mr.',
-                gender: 'Male',
-                surname: '',
-                first_name: '',
-                other_name: '',
-                date_of_birth: '',
-                phone: '',
-                marital_status: 'Single',
-                email: '',
-                highest_education_level: 'SSCE',
+                employee_business_owner: 'employee'
             },
+            rules: {
+                firstName: [{
+                required: true,
+                message: 'First name is required',
+                trigger: 'blur'
+                }],
+                lastName: [{
+                required: true,
+                message: 'Last name is required',
+                trigger: 'blur'
+                }],
+                email: [{
+                required: true,
+                message: 'Email is required',
+                trigger: 'blur'
+                },
+                {
+                type: 'email',
+                message: 'Invalid email',
+                trigger: 'change'
+                }],
+            }
         }
     },
     methods: {
-        validate() {
-
-           return  this.$validator.validate().then(valid => {
-				if (valid) {
-                    this.$emit('on-validate', valid, this.model);
-					return true;
-				}else{
-					return false
-				}
-			})
-
-        }
     },
     mounted() {
     },
