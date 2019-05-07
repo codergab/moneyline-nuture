@@ -17,9 +17,9 @@
 						<b-link to="/app/users">
 							<b-button variant="primary">Manage Users</b-button>
 						</b-link>
-						<b-link to="/login">
+						<!-- <b-link to="/login">
 							<b-button variant="primary">Manage Loans</b-button>
-						</b-link>
+						</b-link> -->
 						<b-link to="/login">
 							<b-button variant="secondary">Logout</b-button>
 						</b-link>

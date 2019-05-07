@@ -4,7 +4,10 @@
 			<b-container fluid>
 				<h2 class="text-center">Loan Calculator</h2>
 				<div class="loan-calculator-wrapper">
-					<h4 class="text-center" style="margin-top: 2rem">Choose Amount</h4>
+					<h4 class="text-center" style="margin: 2rem 0">
+						<span class="font-weight-bold">Choose Amount</span>
+						<input class="form-minimal" v-model="selectedAmount" @keyup.enter="calculateMonths">
+					</h4>
 					<div style="
 						display: flex;
 						justify-content: space-between
@@ -20,9 +23,10 @@
 						:contained="true"
 						:tooltip="'focus'"
 					></vue-slider>
+
 					<hr class="short">
 					<div class="month">
-						<h4 class="text-center" style="margin-top: 2rem">Choose Term</h4>
+						<h4 class="text-center font-weight-bold" style="margin-top: 2rem">Choose Term</h4>
 
 						<vue-slider
 							v-model="selectedNoOfMonths"
@@ -35,20 +39,20 @@
 						></vue-slider>
 					</div>
 
-					<div class="loan-result" style="margin-top: 5em">
+					<div class="loan-result" style="margin-top: 5em; border-bottom: 1px solid #ccc">
 						<span class="text-title">Loan</span>
-						<span class="figure" style="padding-left: 0.5em">N{{ numberComma(selectedAmount) }}</span>
+						<span class="figure" style="padding-left: 0.5em">N{{ formatFigure(selectedAmount) }}</span>
 					</div>
-					<div class="loan-result">
+					<div class="loan-result" style=" border-bottom: 1px solid #ccc">
 						<span class="text-title">Term</span>
 						<span
 							class="figure"
 							style="padding-left: 0.5em"
 						>{{ selectedNoOfMonths }} {{ selectedNoOfMonths > 1 ? ' Months' : 'Month' }}</span>
 					</div>
-					<div class="loan-result">
-						<span class="text-title">Monthly Payent</span>
-						<span class="figure" style="padding-left: 0.5em">N{{ numberComma(monthlyRepayment) }}</span>
+					<div class="loan-result" style=" border-bottom: 1px solid #ccc">
+						<span class="text-title font-weight-bold">Monthly Payment</span>
+						<span class="figure" style="padding-left: 0.5em">N{{ formatMonthlyPayment(monthlyRepayment) }}</span>
 					</div>
 
 					<!-- Button -->
@@ -82,35 +86,104 @@
 					></path>
 				</svg>
 			</template>
-			<h4 class="text-center">Complete Loan Application</h4>
+			<h4 class="text-center">Create a Profile</h4>
 			<hr class="short">
+			<div v-if="responseErrors.length > 0" class="alert alert-danger">
+				<ul>
+					<li v-for="(respErr, index) in responseErrors" :key="index">{{ respErr }}</li>
+				</ul>
+			</div>
 			<b-card-body>
 				<div class="form-group">
 					<label>Firstname</label>
-					<input class="form-control" type="text" v-model="loan.first_name">
+					<input
+						class="form-control"
+						name="firstname"
+						type="text"
+						v-model="loan.first_name"
+						:class="{'is-invalid': errors.has('firstname')}"
+						v-validate="'required'"
+					>
 				</div>
 				<div class="form-group">
 					<label>Lastname</label>
-					<input class="form-control" type="text" v-model="loan.last_name">
+					<input
+						class="form-control"
+						name="lastname"
+						type="text"
+						v-model="loan.last_name"
+						:class="{'is-invalid': errors.has('lastname')}"
+						v-validate="'required'"
+					>
 				</div>
 				<div class="form-group">
 					<label>Email Address</label>
-					<input class="form-control" type="email" v-model="loan.email">
+					<input
+						class="form-control"
+						name="email"
+						type="email"
+						v-model="loan.email"
+						:class="{'is-invalid': errors.has('email')}"
+						v-validate="'required|email'"
+					>
+					<span v-show="errors.has('email')" class="help text-danger">{{ errors.first('email') }}</span>
 				</div>
+
 				<div class="form-group">
 					<label>Phone</label>
-					<input class="form-control" type="email" v-model="loan.phone">
+					<input
+						class="form-control"
+						type="tel"
+						maxlength="13"
+						v-model="loan.phone"
+						name="phone"
+						:class="{'is-invalid': errors.has('phone')}"
+						v-validate="'required|numeric|min:13|max:13'"
+					>
+					<span v-show="errors.has('phone')" class="help text-danger">{{ errors.first('phone') }}</span>
 				</div>
 				<div class="form-group">
 					<label>Password</label>
-					<input class="form-control" type="password" v-model="loan.password">
+					<input
+						class="form-control"
+						name="password"
+						type="password"
+						v-model="loan.password"
+						:class="{'is-invalid': errors.has('password')}"
+						v-validate="'required'"
+						ref="password"
+					>
+					<span v-show="errors.has('password')" class="help text-danger">{{ errors.first('password') }}</span>
 				</div>
 				<div class="form-group">
 					<label>Confirm Password</label>
-					<input class="form-control" type="password" v-model="loan.password_confirmation">
+					<input
+						name="password_confirmation"
+						class="form-control"
+						type="password"
+						v-model="loan.password_confirmation"
+						:class="{'is-invalid': errors.has('password_confirmation')}"
+						v-validate="'required|confirmed:password'"
+					>
+					<span
+						v-show="errors.has('password_confirmation')"
+						class="help text-danger"
+					>{{ errors.first('password_confirmation') }}</span>
 				</div>
 				<div class="form-group">
-					<b-button variant="primary" block>Continue</b-button>
+					<b-button
+						v-if="!loading"
+						:disabled="loading"
+						variant="primary"
+						block
+						@click.prevent="sumbitLoan()"
+					>Continue</b-button>
+					<div v-if="loading" class="text-center">
+						<i class="fa fa-spin fa-spinner fa-2x" style="color: #2A6F4D"></i>
+					</div>
+					<!-- <button-spinner :is-loading="isLoading" :disabled="isLoading" :status="status">
+						<span>Submit</span>
+					</button-spinner>-->
 				</div>
 			</b-card-body>
 		</vue-modaltor>
@@ -120,7 +193,7 @@
 
 <script>
 import VueSlider from "vue-slider-component";
-
+import ADD_NEW_USER from "../../utils/api-routes";
 export default {
 	components: {
 		VueSlider
@@ -129,6 +202,9 @@ export default {
 	data() {
 		return {
 			showModal: false,
+			loading: false,
+			isLoading: false,
+			status: "",
 			loan: {
 				first_name: null,
 				last_name: null,
@@ -150,7 +226,8 @@ export default {
 			selectedNoOfMonths: 1,
 			value2: 0,
 			totalRepayment: 0,
-			monthlyRepayment: 0
+			monthlyRepayment: 0,
+			responseErrors: []
 		};
 	},
 	computed: {
@@ -159,6 +236,9 @@ export default {
 				this.getCompoundInterest(this.selectedAmount) /
 				this.selectedNoOfMonths;
 			this.totalRepayment = this.getCompoundInterest(this.selectedAmount);
+		},
+		computedAmount() {
+			return this.formatFigure(this.selectedAmount);
 		}
 	},
 	methods: {
@@ -170,6 +250,16 @@ export default {
 			return (value += Math.round(value * 0.068, 1));
 		},
 
+		roundInThousands(value) {
+			return parseInt(Math.round(value / 1000) * 1000);
+		},
+
+		formatMonthlyPayment(number) {
+			return this.numberComma(number);
+		},
+		formatFigure(number) {
+			return this.numberComma(this.roundInThousands(number));
+		},
 		toggleModal() {
 			this.$modal.show("complete-loan", {
 				title: "Alert!",
@@ -184,6 +274,37 @@ export default {
 					{ title: "Close" }
 				]
 			});
+		},
+		sumbitLoan() {
+			this.$validator.validate().then(valid => {
+				if (valid) {
+					// alert("Contact message sent successful");
+					this.loading = true;
+					this.$axios
+						.post("register", this.loan)
+						.then(response => {
+							let { status } = response.data;
+							this.showModal = false;
+							if (status) {
+								this.$router.push("/account/verify");
+							}
+						})
+						.catch(err => {
+							this.loading = false;
+							const { error } = err.response.data;
+							if (error.length > 0) {
+								error.forEach(err => {
+									this.responseErrors.push(err);
+								});
+							}
+							// for (const err of error) {
+							// }
+						});
+					// this.$store.dispatch("auth/createUser", this.loan);
+					// console.log({ ...this.loan });
+				} else {
+				}
+			});
 		}
 	}
 };
@@ -191,6 +312,11 @@ export default {
 
 
 <style>
+.form-minimal {
+	border: 1px solid #40a774;
+	margin-left: 13rem;
+	width: 30%;
+}
 @media screen and (min-width: 768px) {
 	.loan-calculator-wrapper {
 		max-width: 40% !important;
@@ -287,6 +413,9 @@ hr.short {
 		rgba(0, 0, 0, 0)
 	);
 	margin-top: 2rem;
+}
+
+.form-minimal {
 }
 </style>
 

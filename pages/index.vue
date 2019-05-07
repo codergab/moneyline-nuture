@@ -9,21 +9,15 @@
 			</div>-->
 			<div class="slidee-description">
 				<h2 class="text-primary">Quick and Accessible Financial Loan Support For All</h2>
-				<b-link
-					to="/loan/get-started"
-					class="c_btn-primary"
-					variant="primary"
-					style="margin-left: 60%;
-							width: 45%;
-							padding: 0.2em 1.5em;
-							margin-top: 10px;
-							position: absolute;
-							background: #1E6B93;
-    color: #fff;
-				"
-				>
-					Apply Now
-					<i style="color: #fff;" class="fa fa-arrow-right"></i>
+				<b-link to="/loan/get-started">
+					<b-button
+						to="/loan/get-started"
+						class="btn-flex"
+						style="margin-left: 60%; width: 48%; margin-top: 1.5em; position: absolute"
+					>
+						<span class="btn-text">DOWNLOAD FORM</span>
+						<img class="btn-icon" src="/icons/right-arrow.svg">
+					</b-button>
 				</b-link>
 			</div>
 		</div>
@@ -97,7 +91,21 @@
 						Let us help you achieve your dreams.
 					</p>
 				</b-col>
-				<b-col sm="8"></b-col>
+				<b-col sm="8">
+					<!-- <swiper :options="swiperOption">
+						<swiper-slide>Slide 1</swiper-slide>
+						<swiper-slide>Slide 2</swiper-slide>
+						<swiper-slide>Slide 3</swiper-slide>
+						<swiper-slide>Slide 4</swiper-slide>
+						<swiper-slide>Slide 5</swiper-slide>
+						<swiper-slide>Slide 6</swiper-slide>
+						<swiper-slide>Slide 7</swiper-slide>
+						<swiper-slide>Slide 8</swiper-slide>
+						<swiper-slide>Slide 9</swiper-slide>
+						<swiper-slide>Slide 10</swiper-slide>
+						<div class="swiper-pagination" slot="pagination"></div>
+					</swiper>-->
+				</b-col>
 			</b-row>
 		</b-container>
 
@@ -114,48 +122,41 @@
 						>Apply and get quick, hassle free access to your loan request in 48 hours by following these easy steps.</p>
 
 						<b-row style="margin-top: 20px;">
-							<b-col sm="4" style="margin-right: 0">
-								<b-img src="/apply.png" alt="apply"/>
+							<b-col sm="4" style="margin-left: 51px;">
+								<b-img src="/apply.png" alt="apply" width="75"/>
 							</b-col>
-							<b-col sm="8" style="margin-left: 0">
-								<h3>Apply</h3>
+							<b-col sm="8" style="margin-left: -80px;">
+								<h5 class="font-weight-bold">APPLY</h5>
 								<p>complete our online form and fill in primary details such as Name, Contact, etc.</p>
 							</b-col>
 						</b-row>
 						<b-row style="margin-top: 20px;">
-							<b-col sm="4" style="margin-right: 0">
-								<b-img src="/apply.png" alt="apply"/>
+							<b-col sm="4" style="margin-left: 51px;">
+								<b-img src="/apply.png" alt="apply" width="75"/>
 							</b-col>
-							<b-col sm="8" style="margin-left: 0">
-								<h3>Apply</h3>
-								<p>complete our online form and fill in primary details such as Name, Contact, etc.</p>
+							<b-col sm="8" style="margin-left: -80px;">
+								<h5 class="font-weight-bold">PROVIDE DOCUMENTS</h5>
+								<p>Upload your Government ID, Proof of address and Bank Statement and other required documents</p>
 							</b-col>
 						</b-row>
 						<b-row style="margin-top: 20px;">
-							<b-col sm="4" style="margin-right: 0">
-								<b-img src="/apply.png" alt="apply"/>
+							<b-col sm="4" style="margin-left: 51px;">
+								<b-img src="/apply.png" alt="apply" width="75"/>
 							</b-col>
-							<b-col sm="8" style="margin-left: 0">
-								<h3>Apply</h3>
-								<p>complete our online form and fill in primary details such as Name, Contact, etc.</p>
+							<b-col sm="8" style="margin-left: -80px;">
+								<h5 class="font-weight-bold">GET YOUR MONEY</h5>
+								<p>Receive money within 24 hours if approved.</p>
 							</b-col>
 						</b-row>
 
-						<b-row class="text-center">
+						<b-row style="margin-top: 20px;">
 							<b-button
 								to="/loan/get-started"
-								class="c_btn-primary"
-								variant="primary"
-								style="
-							width: 60%;
-							padding: 0.2em 1.5em;
-							margin: 2rem auto;
-							background: #1E6B93;
-    color: #fff;
-				"
+								class="btn-flex"
+								style="margin-left: 30%; width: 52%; margin-top: 1.5em; position: absolute"
 							>
-								Apply Now
-								<i style="color: #fff;" class="fa fa-arrow-right"></i>
+								<span class="btn-text">DOWNLOAD FORM</span>
+								<img class="btn-icon" src="/icons/right-arrow.svg">
 							</b-button>
 						</b-row>
 					</b-col>
@@ -208,19 +209,11 @@
 						<b-row class="text-center">
 							<b-button
 								to="/loan/get-started"
-								class="c_btn-primary"
-								variant="primary"
-								style="
-							width: 60%;
-							padding: 0.2em 1.5em;
-							margin: 2rem auto;
-							background: #1E6B93;
-    						color: #fff;
-							font-size: 1.5rem
-				"
+								class="btn-flex"
+								style="margin-left: 20%;width: 36%;margin-top: 1.5em; position: absolute"
 							>
-								Apply Now
-								<i style="color: #fff;" class="fa fa-arrow-right"></i>
+								<span class="btn-text">APPLY NOW</span>
+								<img class="btn-icon" src="/icons/right-arrow.svg">
 							</b-button>
 						</b-row>
 					</b-col>
@@ -237,20 +230,50 @@
 	</div>
 </template>
 <script>
+// require styles
+
+// import { swiper, swiperSlide } from "vue-awesome-swiper";
+// import { swiper, swiperSlide } from "swiper";
+// import "swiper/dist/css/swiper.css";
+
 import Header from "@/components/layouts/Header";
 import Footer from "@/components/layouts/Footer";
 import CallToAction from "@/components/layouts/CallToAction";
+
 export default {
 	components: {
 		Header,
 		Footer,
 		CallToAction
-	}
+		// swiper,
+		// swiperSlide
+	},
+	data() {
+		return {
+			// 	swiperOption: {
+			// 		slidesPerView: 3,
+			// 		spaceBetween: 30,
+			// 		freeMode: true,
+			// 		pagination: {
+			// 			el: ".swiper-pagination",
+			// 			clickable: true
+			// 		}
+			// 	}
+			// };
+		};
+	},
+	computed: {
+		// swiper() {
+		// return this.$refs.mySwiper.swiper;
+		// }
+	},
+	mounted() {}
 };
 </script>
 
 <style scoped>
 @import "~/assets/css/imagehover.css";
+
 .slidee {
 	background: #40a774 url("/home-slide1.png");
 	background-repeat: no-repeat;

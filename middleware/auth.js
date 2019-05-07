@@ -2,7 +2,7 @@ export default ({
   store,
   redirect
 }) => {
-  // if (store.getters['auth/authenticated']) {
-  //   return redirect('/app/dashboard');
-  // }
+  if (store.getters['auth/authenticated']) {
+    return redirect('/app/dashboard');
+  }
 }

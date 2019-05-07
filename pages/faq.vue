@@ -51,7 +51,7 @@
 		<CallToAction/>
 	</div>
 </template>
-<style>
+<style scoped>
 .content {
 	color: rgb(123, 121, 121);
 }
@@ -70,7 +70,7 @@ h6.title {
 .accord {
 	background: transparent;
 	border: none;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.125) !important;
 	border-radius: 0px;
 	padding-bottom: 15px;
 	margin-left: 60px;
@@ -78,7 +78,7 @@ h6.title {
 div.tab-content {
 	margin-top: -27px;
 	margin-left: -50px;
-	border: 2px dashed rgb(50, 159, 105, 0.9);
+	border: 2px dashed rgb(50, 159, 105, 0.9) !important;
 	padding: 20px;
 }
 .faq {

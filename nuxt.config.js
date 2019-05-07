@@ -67,6 +67,7 @@ export default {
     '~/plugins/vue-noty',
     '~/plugins/form-wizard.js',
     '~/plugins/vue-modaltor',
+    '~/plugins/vue-button-loader',
     {
       src: '~/plugins/localStorage.js',
       ssr: false

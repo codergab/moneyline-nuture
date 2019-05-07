@@ -5,10 +5,15 @@
 		<br>
 		<nuxt-link to="/terms" class="terms">*Terms and conditions apply</nuxt-link>
 		<br>
-		<nuxt-link class="btn c_btn-primary mt-2" to="/loan/calculate">
-			APPLY NOW
-			<i style="color: #2E9460;" class="fa fa-arrow-right"></i>
-		</nuxt-link>
+		<b-button
+			to="/loan/get-started"
+			class="btn-flex variant-white"
+			variant="primary"
+			style="width: 16%; margin: 1em auto 0 auto"
+		>
+			<span class="btn-text">APPLY NOW</span>
+			<img class="btn-icon" src="/icons/right-arrow-green.svg">
+		</b-button>
 	</div>
 </template>
 

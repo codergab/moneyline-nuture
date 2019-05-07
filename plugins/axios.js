@@ -2,7 +2,6 @@ let token;
 if (localStorage.getItem('money_line_valid_token')) {
   let appStorage = localStorage.getItem('money_line_valid_token');
   token = appStorage;
-
 }
 
 
@@ -31,7 +30,7 @@ export default function ({
       // app.$toast.error(error.response.data)
       // return response
     } else {
-      alert(error)
+      // this.$noty.error(`${err.response.statusText}, Please Try Again`);
     }
   })
 }
