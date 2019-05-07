@@ -181,7 +181,7 @@ export default {
                 this.finalModel.have_you_applied_for_a_loan_with_moneyline = true;
             }
             this.$axios.post('/loans', this.finalModel).then(res => {
-                this.$router.push('/loans/me');
+                this.$router.push('/loan/my-loans');
             })
         },
     },

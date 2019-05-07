@@ -52,34 +52,38 @@
 	</div>
 </template>
 <style>
+
+a.nav-link.active {
+	color: #fff !important;
+}
 .content {
-	color: rgb(123, 121, 121);
+	color: rgb(123, 121, 121) !important;
 }
 h4 {
-	font-weight: 600;
+	font-weight: 600 !important;
 }
 h6 {
-	color: green;
-	font-weight: 600;
+	color: green !important;
+	font-weight: 600 !important;
 }
 h6.title {
-	color: #fff;
-	text-transform: uppercase;
-	font-weight: 300px;
+	color: #fff !important;
+	text-transform: uppercase !important;
+	font-weight: 300px !important;
 }
 .accord {
-	background: transparent;
-	border: none;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-	border-radius: 0px;
-	padding-bottom: 15px;
-	margin-left: 60px;
+	background: transparent !important;
+	border: none !important;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.125) !important;
+	border-radius: 0px !important;
+	padding-bottom: 15px !important;
+	margin-left: 60px !important;
 }
 div.tab-content {
-	margin-top: -27px;
-	margin-left: -50px;
-	border: 2px dashed rgb(50, 159, 105, 0.9);
-	padding: 20px;
+	margin-top: -27px !important;
+	margin-left: -50px !important;
+	border: 2px dashed rgb(50, 159, 105, 0.9) !important;
+	padding: 20px !important;
 }
 .faq {
 	padding-left: 0;
