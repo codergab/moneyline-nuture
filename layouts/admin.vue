@@ -1,19 +1,24 @@
 <template>
 	<div>
 		<Header/>
+		<div v-if="this.$route.path !== '/app/dashboard'">
+			<Hero/>
+		</div>
 		<nuxt/>
 		<Footer/>
 	</div>
 </template>
 
 <script>
-import Header from "@/components/layouts/Header";
+import Header from "@/components/layouts/HeaderLogged";
 import Footer from "@/components/layouts/Footer";
-import "vuejs-noty/dist/vuejs-noty.css";
+import Hero from "@/components/layouts/Hero";
 export default {
+	// middleware: "auth",
 	components: {
 		Header,
-		Footer
+		Footer,
+		Hero
 	}
 };
 </script>

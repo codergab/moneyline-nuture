@@ -47,7 +47,13 @@ export default {
    ** Customize the progress-bar color
    */
 	loading: {
-		color: '#fff'
+		// color: '#40A774',
+		throttle: 0,
+		delay: 3000,
+		name: 'chasing-dots',
+		color: '#40A774',
+		background: 'white',
+		height: '4px'
 	},
 
 	/*
@@ -58,7 +64,19 @@ export default {
 	/*
    ** Plugins to load before mounting the App
    */
-	plugins: [ '~/plugins/vee-validate.js', '~/plugins/form-wizard.js' ],
+	plugins: [
+		'~/plugins/form-wizard.js',
+		'~/plugins/vue-range-slider',
+		'~/plugins/vee-validate',
+		'~/plugins/axios',
+		'~/plugins/vue-noty',
+		// '~/plugins/vue-modal',
+		'~/plugins/vue-modaltor',
+		{
+			src: '~/plugins/localStorage.js',
+			ssr: false
+		}
+	],
 
 	/*
    ** Nuxt.js modules
@@ -74,6 +92,8 @@ export default {
    */
 	axios: {
 		// See https://github.com/nuxt-community/axios-module#options
+		// baseURL: 'http://localhost:8080/api/v1'
+		baseURL: 'http://192.168.0.104:8080/api/v1'
 	},
 
 	/*

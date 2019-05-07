@@ -7,13 +7,13 @@
 </template>
 
 <script>
-import Header from "@/components/layouts/Header";
+import Header from "@/components/layouts/HeaderLogged";
 import Footer from "@/components/layouts/Footer";
-import "vuejs-noty/dist/vuejs-noty.css";
 export default {
+	// middleware: "auth",
 	components: {
 		Header,
-		Footer
+		Footer,
 	}
 };
 </script>

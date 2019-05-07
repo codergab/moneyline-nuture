@@ -1,16 +1,10 @@
 <template>
 	<div class="content">
-        <div class="">
-            <div class="slidee">
-                <div class="payoff">
-                    <span class="highlight">LOAN APPLICATION FORM</span>
-                </div>
-            </div>  
-        </div>
+        <UserHero :pageTitle="pageTitle" />
         <div style="background: #fafafa;" class="pt-5 pb-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12 loan" style="background: #fff !important;">
+                    <div class="col-md-12 pt-4 loan" style="background: #fff !important;">
                         <form-wizard
                             @on-complete="onComplete"
                             :title="'LOAN APPLICATION FORM'"
@@ -26,7 +20,7 @@
                                 :before-change="() => validate('stepOne')"
                             >
                                 
-                                <step-one ref="stepOne" @on-validate="onStepValidate"></step-one>
+                                <step-one ref="stepOne" @on-validate="onStepValidate" @employee_business_owner="workType"></step-one>
 
                             </tab-content>
 
@@ -36,7 +30,7 @@
                                 :before-change="() => validate('stepTwo')"
                             >
                                 
-                                <step-two ref="stepTwo" @on-validate="onStepValidate"></step-two>
+                                <step-two ref="stepTwo" :workType="employee_or_business_owner" @on-validate="onStepValidate"></step-two>
 
                             </tab-content>
 
@@ -82,7 +76,6 @@
             </div>
         </div>
 
-        <CallToAction/>
 
 	</div>
 </template>
@@ -135,6 +128,7 @@
 <script>
 import HorizontalStepper from '@/node_modules/vue-stepper';
 import Header from "@/components/layouts/Header";
+import UserHero from "@/components/layouts/UserHero";
 import CallToAction from "@/components/layouts/CallToAction";
 import StepOne from '@/components/loanapplication/StepOne.vue';
 import StepTwo from '@/components/loanapplication/StepTwo.vue';
@@ -144,8 +138,10 @@ import StepFive from '@/components/loanapplication/StepFive.vue';
 import StepSix from '@/components/loanapplication/StepSix.vue';
 
 export default {
+    layout: 'user',
 	components: {
         Header,
+        UserHero,
         CallToAction,
         HorizontalStepper,
         StepOne,
@@ -158,7 +154,9 @@ export default {
     data() {
         return {
             finalModel: {},
+            pageTitle: 'LOAN APPLICATION',
             topButtons: true,
+            employee_or_business_owner: ''
         }
     },
     methods: {
@@ -167,10 +165,21 @@ export default {
         },
         onStepValidate(validated, model) {
             if (validated) {
-                this.finalModel = { ...this.finalModel, ...model };
+                this.finalModel = { ...this.finalModel, ...model };    
             }
         },
+        workType(value) {
+            this.employee_or_business_owner = value;
+        },
         onComplete() {
+            this.finalModel.currently_servicing_a_loan_from_another_financial_company = false;
+            this.finalModel.have_you_applied_for_a_loan_with_moneyline = false;
+            if(this.finalModel.currently_servicing_a_loan_from_another_financial_company == 'true') {
+                this.finalModel.currently_servicing_a_loan_from_another_financial_company = true;
+            }
+            if(this.finalModel.have_you_applied_for_a_loan_with_moneyline == 'true') {
+                this.finalModel.have_you_applied_for_a_loan_with_moneyline = true;
+            }
             this.$axios.post('/loans', this.finalModel).then(res => {
                 this.$router.push('/loans/me');
             })

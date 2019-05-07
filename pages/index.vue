@@ -1,22 +1,32 @@
 <template>
 	<div>
-		<div class="slider">
-			<div class="slidee">
-				<img src="/home-slide1.png" style="width: 100%; height: 90vh;  background-size: cover;">
-			</div>
+		<div class="slidee">
+			<!-- <div class="payoff">
+				We listen to your
+				<br>
+				<span class="highlight">financial</span> needs when no
+				<br>one else does
+			</div>-->
 			<div class="slidee-description">
 				<h2 class="text-primary">Quick and Accessible Financial Loan Support For All</h2>
-				<b-button
-					class="custom"
+				<b-link
+					to="/loan/get-started"
+					class="c_btn-primary"
 					variant="primary"
-					style="margin-left: 75%;
-							width: 150px;
-							margin-top: 25px;
-							position: absolute;"
-				>Apply Now</b-button>
+					style="margin-left: 60%;
+							width: 45%;
+							padding: 0.2em 1.5em;
+							margin-top: 10px;
+							position: absolute;
+							background: #1E6B93;
+    color: #fff;
+				"
+				>
+					Apply Now
+					<i style="color: #fff;" class="fa fa-arrow-right"></i>
+				</b-link>
 			</div>
 		</div>
-
 		<b-container class="intro">
 			<h2
 				class="text-secondary text-center intro-text text-link"
@@ -27,11 +37,11 @@
 
 				<b-col sm="4">
 					<div class="feature-image">
-						<figure class="imghvr-fade">
+						<figure class="imghvr-zoom-out-up">
 							<!-- <img src="#"> -->
 							<b-img alt="friendlier" width="300" src="/features/feature1.png" fluid></b-img>
 							<figcaption>
-								<b-button variant="outline-primary">Apply Now</b-button>
+								<b-button variant="outline-primary img-button">Apply Now</b-button>
 							</figcaption>
 							<a href="#"></a>
 						</figure>
@@ -43,11 +53,11 @@
 				</b-col>
 				<b-col sm="4">
 					<div class="feature-image">
-						<figure class="imghvr-fade">
+						<figure class="imghvr-zoom-out-up">
 							<!-- <img src="#"> -->
 							<b-img alt="friendlier" width="300" src="/features/feature2.png" fluid></b-img>
 							<figcaption>
-								<b-button variant="outline-primary">Apply Now</b-button>
+								<b-button variant="outline-primary img-button">Apply Now</b-button>
 							</figcaption>
 							<a href="#"></a>
 						</figure>
@@ -59,11 +69,11 @@
 				</b-col>
 				<b-col sm="4">
 					<div class="feature-image">
-						<figure class="imghvr-fade">
+						<figure class="imghvr-zoom-out-up">
 							<!-- <img src="#"> -->
 							<b-img alt="friendlier" width="300" src="/features/feature3.png" fluid></b-img>
 							<figcaption>
-								<b-button variant="outline-primary">Apply Now</b-button>
+								<b-button variant="outline-primary img-button">Apply Now</b-button>
 							</figcaption>
 							<a href="#"></a>
 						</figure>
@@ -132,7 +142,21 @@
 						</b-row>
 
 						<b-row class="text-center">
-							<b-button variant="primary">Download Form</b-button>
+							<b-button
+								to="/loan/get-started"
+								class="c_btn-primary"
+								variant="primary"
+								style="
+							width: 60%;
+							padding: 0.2em 1.5em;
+							margin: 2rem auto;
+							background: #1E6B93;
+    color: #fff;
+				"
+							>
+								Apply Now
+								<i style="color: #fff;" class="fa fa-arrow-right"></i>
+							</b-button>
 						</b-row>
 					</b-col>
 				</b-row>
@@ -182,7 +206,22 @@
 							</b-col>
 						</b-row>
 						<b-row class="text-center">
-							<b-button variant="primary">Download Form</b-button>
+							<b-button
+								to="/loan/get-started"
+								class="c_btn-primary"
+								variant="primary"
+								style="
+							width: 60%;
+							padding: 0.2em 1.5em;
+							margin: 2rem auto;
+							background: #1E6B93;
+    						color: #fff;
+							font-size: 1.5rem
+				"
+							>
+								Apply Now
+								<i style="color: #fff;" class="fa fa-arrow-right"></i>
+							</b-button>
 						</b-row>
 					</b-col>
 
@@ -212,19 +251,34 @@ export default {
 
 <style scoped>
 @import "~/assets/css/imagehover.css";
-
 .slidee {
+	background: #40a774 url("/home-slide1.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 90vh;
+}
+.payoff {
+	font-size: 2.15em;
+	font-weight: 200;
+	color: #fff;
+	padding: 111px 0 145px 30px;
+}
+/* .slidee {
 	position: relative;
 	width: 100%;
-}
+} */
 .slidee-description {
-	font-family: "Palanquin", sans-serif;
+	/* font-family: "Mon", sans-serif; */
 	position: absolute;
-	top: 100%;
+	/* top: 100%; */
 	background: rgba(255, 255, 255, 0.89);
 	padding: 3rem;
 	max-width: 38%;
-	margin-top: -30%;
+	margin-top: 15%;
+	font-weight: 600;
+}
+
+.slidee-description h2 {
 	font-weight: 700;
 }
 
@@ -233,7 +287,7 @@ export default {
 }
 
 .intro-text {
-	max-width: 50%;
+	max-width: 55%;
 	margin: 0 auto;
 }
 
@@ -248,7 +302,7 @@ export default {
 .feature-title {
 	text-transform: uppercase;
 	font-family: sans-serif;
-	font-weight: bold;
+	font-weight: 700;
 	margin: 1em 0 0 0;
 }
 
@@ -259,7 +313,7 @@ export default {
 h3.feature-title::before {
 	position: absolute;
 	background-color: #349f6b;
-	bottom: 140px;
+	bottom: 170px;
 	width: 70px;
 	height: 5px;
 	content: "";
