@@ -2,11 +2,13 @@
 	<div class="content">
 		<div class>
 			<div class="slidee">
-				<div class="payoff">
-					<span class="highlight">Got questions?</span>
-					<br>let us provide your
-					<br>answers
-				</div>
+				<b-container fluid>
+					<div class="payoff">
+						<span class="highlight">Got questions?</span>
+						<br>let us provide your
+						<br>answers
+					</div>
+				</b-container>
 			</div>
 			<CallToAction/>
 		</div>
@@ -120,7 +122,7 @@ div.tab-content {
 	background-color: #329f69;
 }
 .slidee {
-	background-image: url("/Artboard–2.png");
+	background: #274263 url("/faq.svg");
 	background-repeat: no-repeat;
 	background-size: cover;
 }

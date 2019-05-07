@@ -9,10 +9,10 @@
 			to="/loan/get-started"
 			class="btn-flex variant-white"
 			variant="primary"
-			style="width: 16%; margin: 1em auto 0 auto"
+			style="width: 20%; margin: 1em auto 0 auto"
 		>
 			<span class="btn-text">APPLY NOW</span>
-			<img class="btn-icon" src="/icons/right-arrow-green.svg">
+			<img class="btn-icon" src="/right-arrow-green.svg">
 		</b-button>
 	</div>
 </template>

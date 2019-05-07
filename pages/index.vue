@@ -13,10 +13,10 @@
 					<b-button
 						to="/loan/get-started"
 						class="btn-flex"
-						style="margin-left: 60%; width: 48%; margin-top: 1.5em; position: absolute"
+						style="margin-left: 60%; width: 50%; margin-top: 1.5em; position: absolute"
 					>
-						<span class="btn-text">DOWNLOAD FORM</span>
-						<img class="btn-icon" src="/icons/right-arrow.svg">
+						<span class="btn-text">APPLY NOW</span>
+						<img class="btn-icon" src="/right-arrow.svg">
 					</b-button>
 				</b-link>
 			</div>
@@ -122,28 +122,28 @@
 						>Apply and get quick, hassle free access to your loan request in 48 hours by following these easy steps.</p>
 
 						<b-row style="margin-top: 20px;">
-							<b-col sm="4" style="margin-left: 51px;">
+							<b-col sm="4" style="margin-left: 40px;">
 								<b-img src="/apply.png" alt="apply" width="75"/>
 							</b-col>
-							<b-col sm="8" style="margin-left: -80px;">
+							<b-col sm="8" style="margin-left: -60px;">
 								<h5 class="font-weight-bold">APPLY</h5>
 								<p>complete our online form and fill in primary details such as Name, Contact, etc.</p>
 							</b-col>
 						</b-row>
 						<b-row style="margin-top: 20px;">
-							<b-col sm="4" style="margin-left: 51px;">
+							<b-col sm="4" style="margin-left: 40px;">
 								<b-img src="/apply.png" alt="apply" width="75"/>
 							</b-col>
-							<b-col sm="8" style="margin-left: -80px;">
+							<b-col sm="8" style="margin-left: -60px;">
 								<h5 class="font-weight-bold">PROVIDE DOCUMENTS</h5>
 								<p>Upload your Government ID, Proof of address and Bank Statement and other required documents</p>
 							</b-col>
 						</b-row>
 						<b-row style="margin-top: 20px;">
-							<b-col sm="4" style="margin-left: 51px;">
+							<b-col sm="4" style="margin-left: 40px;">
 								<b-img src="/apply.png" alt="apply" width="75"/>
 							</b-col>
-							<b-col sm="8" style="margin-left: -80px;">
+							<b-col sm="8" style="margin-left: -60px;">
 								<h5 class="font-weight-bold">GET YOUR MONEY</h5>
 								<p>Receive money within 24 hours if approved.</p>
 							</b-col>
@@ -153,10 +153,10 @@
 							<b-button
 								to="/loan/get-started"
 								class="btn-flex"
-								style="margin-left: 30%; width: 52%; margin-top: 1.5em; position: absolute"
+								style="margin-left: 30%; width: 60	%; margin-top: 1.5em; position: absolute"
 							>
 								<span class="btn-text">DOWNLOAD FORM</span>
-								<img class="btn-icon" src="/icons/right-arrow.svg">
+								<img class="btn-icon" src="/right-arrow.svg">
 							</b-button>
 						</b-row>
 					</b-col>
@@ -164,7 +164,7 @@
 			</b-container>
 		</section>
 
-		<section class="why_choose_us">
+		<section class="why_choose_us" style="margin: 3rem 0">
 			<b-container fluid>
 				<b-row>
 					<b-col sm="6">
@@ -210,10 +210,10 @@
 							<b-button
 								to="/loan/get-started"
 								class="btn-flex"
-								style="margin-left: 20%;width: 36%;margin-top: 1.5em; position: absolute"
+								style="margin-left: 20%;width: 45%;margin-top: 1.5em; position: absolute"
 							>
 								<span class="btn-text">APPLY NOW</span>
-								<img class="btn-icon" src="/icons/right-arrow.svg">
+								<img class="btn-icon" src="/right-arrow.svg">
 							</b-button>
 						</b-row>
 					</b-col>
@@ -275,7 +275,7 @@ export default {
 @import "~/assets/css/imagehover.css";
 
 .slidee {
-	background: #40a774 url("/home-slide1.png");
+	background: #40a774 url("/home-banner.svg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 90vh;
