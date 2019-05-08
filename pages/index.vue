@@ -188,30 +188,6 @@
 										</div>
 
 										<div class="loan-title">
-											<h5>TRAVEL MONEY</h5>
-										</div>
-
-										<div class="loan-arrow">
-											<img src="/right-arrow-green.svg" width="100">
-										</div>
-									</div>
-									<div class="hover-presentation">
-										<h6 class="font-weight-bold">TRAVEL MONEY</h6>
-										<p
-											style
-											class="text-white"
-										>With Money Line, we provide Travel loans as a useful option for when you want to pay for travel expenses but don’t have the funds available immediately. Our loan process has been simplified so you can concentrate on the things that truly matter.</p>
-									</div>
-								</div>
-							</div>
-							<div>
-								<div class="loan-options" style="width: 90% !important; height: 305px;  margin: 0 auto">
-									<div class="presentation">
-										<div class="loan-icon">
-											<img src="/9.gif">
-										</div>
-
-										<div class="loan-title">
 											<h5>Pawn Broking Services</h5>
 										</div>
 
@@ -232,7 +208,7 @@
 								<div class="loan-options" style="width: 90% !important; min-height: 305px;  margin: 0 auto">
 									<div class="presentation">
 										<div class="loan-icon">
-											<img src="/9.gif">
+											<img src="/7.gif">
 										</div>
 
 										<div class="loan-title">
@@ -302,7 +278,7 @@
 							<b-button
 								to="/loan/get-started"
 								class="btn-flex"
-								style="margin-left: 30%; width: 60	%; margin-top: 1.5em; position: absolute"
+								style="margin-left: 30%; width: 52%; margin-top: 1.5em; position: absolute"
 							>
 								<span class="btn-text">DOWNLOAD FORM</span>
 								<img class="btn-icon" src="/right-arrow.svg">
@@ -359,7 +335,7 @@
 							<b-button
 								to="/loan/get-started"
 								class="btn-flex"
-								style="margin-left: 20%;width: 45%;margin-top: 1.5em; position: absolute"
+								style="margin-left: 20%;width: 40%;margin-top: 1.5em; position: absolute"
 							>
 								<span class="btn-text">APPLY NOW</span>
 								<img class="btn-icon" src="/right-arrow.svg">

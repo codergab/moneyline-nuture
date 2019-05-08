@@ -1,6 +1,17 @@
 <template>
 	<div>
-		<div v-if="allUsers.length == 0">Loading .....</div>
+		<div v-if="allUsers.length == 0">
+			<content-loader
+				:height="160"
+				:width="1000"
+				:speed="2"
+				primaryColor="#f3f3f3"
+				secondaryColor="#ecebeb"
+			>
+				<rect x="11.34" y="7.07" rx="0" ry="0" width="811.2" height="40.04"/>
+				<rect x="11.34" y="68.07" rx="0" ry="0" width="823.2" height="44"/>
+			</content-loader>
+		</div>
 		<table class="table" v-if="allUsers.length > 0">
 			<thead class="thead-light">
 				<tr>
@@ -44,8 +55,12 @@
 <script>
 // import { mapGetters, mapActions, mapState } from "vuex";
 // import
+import { ContentLoader } from "vue-content-loader";
 export default {
 	name: "UserTable",
+	components: {
+		ContentLoader
+	},
 	data() {
 		return {
 			allUsers: []

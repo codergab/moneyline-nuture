@@ -1,7 +1,8 @@
 <template>
 	<b-container>
 		<div class="form-wrapper">
-			<h3 class="text-center">Welcome Back</h3>
+			<!-- <h3 class="text-center font-weight-bold">You are on Track</h3> -->
+			<h4 class="text-center">Welcome Back</h4>
 			<b-card style="box-shadow: 0px 0px 9px #f3f3f3; border: 0">
 				<b-form @submit="submitForm" v-if="show">
 					<b-form-group label="Email address:" label-for="input-1">
@@ -17,9 +18,11 @@
 					<b-form-group id="input-group-2" label="Password:" label-for="input-2">
 						<b-form-input id="input-2" v-model="login.password" required placeholder="*************"></b-form-input>
 					</b-form-group>
-					<b-checkbox v-model="login.remember">Remember Me</b-checkbox>
+					<!-- <b-checkbox v-model="login.remember">Remember Me</b-checkbox> -->
 					<b-form-group>
 						<b-button
+							block
+							variant="primary"
 							@click.prevent="submitForm()"
 							:disabled="loading"
 						>{{ loading ? 'Logging In...' : 'Login' }}</b-button>
@@ -34,6 +37,7 @@
 import { mapActions, mapGetters } from "vuex";
 
 export default {
+	layout: "guest",
 	data() {
 		return {
 			login: {
@@ -64,7 +68,12 @@ export default {
 							"auth/authenticate",
 							loggedDetails
 						);
-						this.$router.push("/app/me");
+
+						if (loggedDetails.user.roles[0].name == "admin") {
+							this.$router.push("/app/admin/dashboard");
+						} else {
+							this.$router.push("/app/me");
+						}
 					})
 					.catch(err => {
 						this.loading = false;
@@ -93,7 +102,7 @@ export default {
 
 <style>
 .form-wrapper {
-	max-width: 50%;
+	max-width: 40%;
 	margin: 5rem auto;
 }
 </style>
