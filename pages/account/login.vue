@@ -62,11 +62,16 @@ export default {
 						this.$router.push("/app/dashboard");
 					})
 					.catch(err => {
-						const { error } = err.response.data;
-						this.$noty.error(error);
+						const { error } = err.response;
+						if(error) {
+							this.$noty.error(error);
+						}else {
+							
+							this.$noty.error(`${err.response.statusText}, Please Try Again`);
+						}
 					});
 			} else {
-				alert("Please Enter Something");
+				this.$noty.error('Please Fill in your credentials')
 			}
 			// alert(JSON.stringify(this.login));
 		}

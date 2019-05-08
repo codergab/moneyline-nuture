@@ -1,5 +1,6 @@
 export const store = () => ({
-  user: false
+  user: false,
+  registered: false,
 });
 
 export const mutations = {
@@ -14,6 +15,10 @@ export const actions = {
     context.commit('authenticate', payload);
   },
 
+  createUser: payload => {
+
+  }
+
 }
 
 
@@ -22,6 +27,8 @@ export const getters = {
   // authUser: state => {
   //   return state.user
   // },
+
+  // isUserRegistered
 
   authenticated: state => {
     if (state.user) {

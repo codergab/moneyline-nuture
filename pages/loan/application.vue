@@ -172,6 +172,7 @@ export default {
             this.employee_or_business_owner = value;
         },
         onComplete() {
+            console.log(this.finalModel);
             this.finalModel.currently_servicing_a_loan_from_another_financial_company = false;
             this.finalModel.have_you_applied_for_a_loan_with_moneyline = false;
             if(this.finalModel.currently_servicing_a_loan_from_another_financial_company == 'true') {

@@ -10,7 +10,7 @@
 import Header from "@/components/layouts/user/HeaderLogged";
 import Footer from "@/components/layouts/Footer";
 export default {
-	middleware: "auth",
+	// middleware: "auth",
 	components: {
 		Header,
 		Footer,

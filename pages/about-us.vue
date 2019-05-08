@@ -101,7 +101,7 @@
                         </p>
                     </div> -->
                     <div class="col-md-3 col-sm-12">
-                        <img src="/4.gif" class="rounded-circle mb-4" width="80px">
+                        <img src="/5.gif" class="rounded-circle mb-4" width="80px">
                         <h6 class="title">Excellence</h6>
                         <p>
                             We are competent and deliver quality service 

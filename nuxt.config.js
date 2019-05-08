@@ -30,11 +30,7 @@ export default {
 			},
 			{
 				rel: 'stylesheet',
-				href: 'https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,600'
-			},
-			{
-				rel: 'stylesheet',
-				href: 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'
+				href: 'https://fonts.googleapis.com/css?family=Raleway:400,700'
 			},
 			{
 				rel: 'stylesheet',
@@ -65,13 +61,13 @@ export default {
    ** Plugins to load before mounting the App
    */
 	plugins: [
-		'~/plugins/form-wizard.js',
 		'~/plugins/vue-range-slider',
 		'~/plugins/vee-validate',
 		'~/plugins/axios',
 		'~/plugins/vue-noty',
-		// '~/plugins/vue-modal',
+		'~/plugins/form-wizard.js',
 		'~/plugins/vue-modaltor',
+		'~/plugins/vue-button-loader',
 		{
 			src: '~/plugins/localStorage.js',
 			ssr: false
@@ -93,7 +89,7 @@ export default {
 	axios: {
 		// See https://github.com/nuxt-community/axios-module#options
 		// baseURL: 'http://localhost:8080/api/v1'
-		baseURL: 'http://192.168.0.104:8080/api/v1'
+		baseURL: 'http://192.168.0.105:8080/api/v1'
 	},
 
 	/*

@@ -15,7 +15,7 @@
 						<b-nav-item to="/faq">FAQ</b-nav-item>
 						<b-nav-item to="/contact">Contact</b-nav-item>
                         
-						<b-link to="/login">
+						<b-link to="/account/login">
 							<b-button variant="secondary">Logout</b-button>
 						</b-link>
 					</b-navbar-nav>

@@ -17,7 +17,7 @@
 						<b-link to="/loan/get-started">
 							<b-button variant="primary">Apply Now</b-button>
 						</b-link>
-						<b-link to="/login">
+						<b-link to="/account/login">
 							<b-button variant="secondary">Login</b-button>
 						</b-link>
 						<!-- <b-button variant="secondary">Login</b-button> -->
