@@ -51,6 +51,11 @@ export default {
 					.then(response => {
 						const { data: loggedDetails } = response;
 						console.log(loggedDetails);
+						this.$axios.setHeader(
+							"Authorization",
+							`${loggedDetails.token}`
+						);
+
 						this.$store.dispatch(
 							"auth/authenticate",
 							loggedDetails
@@ -63,15 +68,16 @@ export default {
 					})
 					.catch(err => {
 						const { error } = err.response;
-						if(error) {
+						if (error) {
 							this.$noty.error(error);
-						}else {
-							
-							this.$noty.error(`${err.response.statusText}, Please Try Again`);
+						} else {
+							this.$noty.error(
+								`${err.response.statusText}, Please Try Again`
+							);
 						}
 					});
 			} else {
-				this.$noty.error('Please Fill in your credentials')
+				this.$noty.error("Please Fill in your credentials");
 			}
 			// alert(JSON.stringify(this.login));
 		}

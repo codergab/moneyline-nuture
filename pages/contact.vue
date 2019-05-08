@@ -200,7 +200,7 @@ h5 {
 	font-weight: 600;
 }
 .slidee {
-	background: #274263 url("/contact.svg");
+	background: #274263 url("/new-contact-banner.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 }

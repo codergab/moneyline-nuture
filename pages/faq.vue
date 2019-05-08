@@ -122,7 +122,7 @@ div.tab-content {
 	background-color: #329f69;
 }
 .slidee {
-	background: #274263 url("/faq.svg");
+	background: #274263 url("/new-faq-banner.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 }

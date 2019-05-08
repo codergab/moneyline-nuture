@@ -15,10 +15,6 @@ export const actions = {
     context.commit('authenticate', payload);
   },
 
-  createUser: payload => {
-
-  }
-
 }
 
 

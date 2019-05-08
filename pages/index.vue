@@ -105,6 +105,155 @@
 						<swiper-slide>Slide 10</swiper-slide>
 						<div class="swiper-pagination" slot="pagination"></div>
 					</swiper>-->
+					<div class="preloan-holder"></div>
+					<div class="loans-holder">
+						<slick ref="slick" :options="slickOptions">
+							<div>
+								<div class="loan-options" style="width: 90% !important; height: 305px;  margin: 0 auto">
+									<div class="presentation">
+										<div class="loan-icon">
+											<img src="/9.gif">
+										</div>
+
+										<div class="loan-title">
+											<h5>PAYDAY LOANS</h5>
+										</div>
+
+										<div class="loan-arrow">
+											<img src="/right-arrow-green.svg" width="100">
+										</div>
+									</div>
+									<div class="hover-presentation">
+										<h6 class="font-weight-bold">PAYDAY LOANS</h6>
+										<p style class="text-white">
+											At Money line, we provide payday loans to help you deliver on urgent financial responsibilities that mostly occur at odd and unexpected times.
+											Get started with us today and have your financial needs met in a short period of time
+										</p>
+									</div>
+								</div>
+							</div>
+							<div>
+								<div class="loan-options" style="width: 90% !important; height: 305px;  margin: 0 auto">
+									<div class="presentation">
+										<div class="loan-icon">
+											<img src="/9.gif">
+										</div>
+
+										<div class="loan-title">
+											<h5>SHORT TERM LOANS</h5>
+										</div>
+
+										<div class="loan-arrow">
+											<img src="/right-arrow-green.svg" width="100">
+										</div>
+									</div>
+									<div class="hover-presentation">
+										<h6 class="font-weight-bold">SHORT TERM LOANS</h6>
+										<p
+											style
+											class="text-white"
+										>At MoneyLine, we provide quick loans to deal with pressing financial situations or help support personal or business capital needs. It is easy to acquire, with faster processing and lower interest rates.</p>
+									</div>
+								</div>
+							</div>
+							<div>
+								<div class="loan-options" style="width: 90% !important; height: 305px;  margin: 0 auto">
+									<div class="presentation">
+										<div class="loan-icon">
+											<img src="/9.gif">
+										</div>
+
+										<div class="loan-title">
+											<h5>GUARANTOR LOANS</h5>
+										</div>
+
+										<div class="loan-arrow">
+											<img src="/right-arrow-green.svg" width="100">
+										</div>
+									</div>
+									<div class="hover-presentation">
+										<h6 class="font-weight-bold">GUARANTOR LOANS</h6>
+										<p style class="text-white">
+											Are you are borrowing money for the first time or have a bad credit history? A guarantor loan could help you borrow what you need.
+											We offer easily accessible guarantor loan with low interest rate.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div>
+								<div class="loan-options" style="width: 90% !important; height: 305px;  margin: 0 auto">
+									<div class="presentation">
+										<div class="loan-icon">
+											<img src="/9.gif">
+										</div>
+
+										<div class="loan-title">
+											<h5>TRAVEL MONEY</h5>
+										</div>
+
+										<div class="loan-arrow">
+											<img src="/right-arrow-green.svg" width="100">
+										</div>
+									</div>
+									<div class="hover-presentation">
+										<h6 class="font-weight-bold">TRAVEL MONEY</h6>
+										<p
+											style
+											class="text-white"
+										>With Money Line, we provide Travel loans as a useful option for when you want to pay for travel expenses but don’t have the funds available immediately. Our loan process has been simplified so you can concentrate on the things that truly matter.</p>
+									</div>
+								</div>
+							</div>
+							<div>
+								<div class="loan-options" style="width: 90% !important; height: 305px;  margin: 0 auto">
+									<div class="presentation">
+										<div class="loan-icon">
+											<img src="/9.gif">
+										</div>
+
+										<div class="loan-title">
+											<h5>Pawn Broking Services</h5>
+										</div>
+
+										<div class="loan-arrow">
+											<img src="/right-arrow-green.svg" width="100">
+										</div>
+									</div>
+									<div class="hover-presentation">
+										<h6 class="font-weight-bold">Pawn Broking Services</h6>
+										<p
+											style="font-size: 14px !important;"
+											class="text-white"
+										>With our Pawn broking service, you can apply for loans with household goods or personal effects as security or collateral on the loans. It’s quick, with fewer credit checks and you can redeem your goods at any time.</p>
+									</div>
+								</div>
+							</div>
+							<div>
+								<div class="loan-options" style="width: 90% !important; min-height: 305px;  margin: 0 auto">
+									<div class="presentation">
+										<div class="loan-icon">
+											<img src="/9.gif">
+										</div>
+
+										<div class="loan-title">
+											<h5>TRAVEL MONEY</h5>
+										</div>
+
+										<div class="loan-arrow">
+											<img src="/right-arrow-green.svg" width="100">
+										</div>
+									</div>
+									<div class="hover-presentation">
+										<h6 class="font-weight-bold">TRAVEL MONEY</h6>
+										<p
+											style
+											class="text-white"
+										>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti accusamus voluptate eum tenetur illo unde aliquam adipisci tempor.</p>
+									</div>
+								</div>
+							</div>
+						</slick>
+					</div>
 				</b-col>
 			</b-row>
 		</b-container>
@@ -240,11 +389,15 @@ import Header from "@/components/layouts/Header";
 import Footer from "@/components/layouts/Footer";
 import CallToAction from "@/components/layouts/CallToAction";
 
+import Slick from "vue-slick";
+import "slick-carousel/slick/slick.css";
+
 export default {
 	components: {
 		Header,
 		Footer,
-		CallToAction
+		CallToAction,
+		Slick
 		// swiper,
 		// swiperSlide
 	},
@@ -260,6 +413,17 @@ export default {
 			// 		}
 			// 	}
 			// };
+			slickOptions: {
+				slidesToShow: 3,
+				slidesToScroll: 1,
+				autoplay: true,
+				autoplaySpeed: 2000,
+				prevArrow:
+					"<img class='a-left control-c prev slick-prev' src='../images/shoe_story/arrow-left.png'>",
+				nextArrow:
+					"<img class='a-right control-c next slick-next' src='../images/shoe_story/arrow-right.png'>"
+				// Any other options that can be got from plugin documentation
+			}
 		};
 	},
 	computed: {
@@ -267,7 +431,23 @@ export default {
 		// return this.$refs.mySwiper.swiper;
 		// }
 	},
-	mounted() {}
+	mounted() {},
+	methods: {
+		next() {
+			this.$refs.slick.next();
+		},
+
+		prev() {
+			this.$refs.slick.prev();
+		},
+
+		reInit() {
+			// Helpful if you have to deal with v-for to update dynamic lists
+			this.$nextTick(() => {
+				this.$refs.slick.reSlick();
+			});
+		}
+	}
 };
 </script>
 
@@ -275,7 +455,7 @@ export default {
 @import "~/assets/css/imagehover.css";
 
 .slidee {
-	background: #40a774 url("/home-banner.svg");
+	background: #40a774 url("/new-home-banner.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 90vh;
@@ -363,5 +543,85 @@ h3.feature-title::before {
 .why_choose_us .why-choose-img img {
 	width: 80%;
 	margin: 0 auto 0 5rem;
+}
+
+.loans-holder {
+	margin-top: -120px !important;
+	width: 90%;
+	margin: 0 auto;
+}
+
+.loan-options {
+	cursor: pointer;
+	position: relative;
+	background: #fff;
+	padding: 1em;
+	width: 90%;
+	border-radius: 5%;
+	box-shadow: 1px 12px 6px 0px rgba(212, 205, 205, 0.21);
+	transition: all 0.2s ease-in;
+}
+
+/* .loan-options .hover-presentation {
+} */
+.loan-options:hover .presentation {
+	display: none;
+}
+.loan-options .hover-presentation {
+	display: none;
+	padding: 1em;
+	color: #fff;
+}
+.loan-options .hover-presentation p {
+	font-size: 14px !important;
+}
+.loan-options:hover .hover-presentation {
+	display: block;
+}
+.loan-options:hover {
+	background: #025786;
+}
+
+.loan-arrow {
+	transition: all 0.3s ease-in;
+}
+
+.loan-options .loan-icon {
+	width: 50%;
+	margin: 0 auto;
+}
+
+.loan-options:hover .loan-icon {
+	display: none;
+}
+.loan-options .loan-icon img {
+	width: 100%;
+}
+
+.loan-options .loan-title h5 {
+	font-weight: 700;
+	text-align: center;
+	margin: 2rem auto;
+	text-transform: uppercase;
+}
+
+.loan-options .loan-arrow img {
+	width: 40px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.loan-options:hover .loan-arrow {
+	padding-left: 10px;
+}
+
+.preloan-holder {
+	width: 90%;
+	margin: 0 auto;
+	background: #3a8753;
+	height: 150px;
+	position: relative;
+	box-shadow: 0px 15px 13px 0px #cacaca94;
+	/* border-radius: 5%; */
 }
 </style>

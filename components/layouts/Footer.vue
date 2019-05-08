@@ -31,7 +31,7 @@
 		</b-row>
 		<b-row style="align-items: baseline">
 			<b-col sm="4">
-				<img src="/logo.png">
+				<img src="/logo.png" width="250">
 			</b-col>
 			<b-col sm="4">
 				<p

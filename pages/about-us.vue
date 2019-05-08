@@ -146,7 +146,7 @@ h6.title {
 	font-size: 14px;
 }
 .slidee {
-	background: #274263 url("/about-banner.svg");
+	background: #274263 url("/new-about-banner.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 }
