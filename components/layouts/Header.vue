@@ -1,15 +1,19 @@
 <template>
 	<b-navbar toggleable="lg" type="light" variant="light">
 		<div class="container-fluid">
-			<b-navbar-brand href="#">
-				<img src="/logo.png" width="200" alt="Kitten">
+			<b-navbar-brand>
+				<b-link to="/">
+					<img src="/logo.png" width="180" alt="moneyline_logo">
+				</b-link>
 			</b-navbar-brand>
 			<b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
 			<b-collapse id="nav-collapse" is-nav>
 				<!-- Right aligned nav items -->
 				<b-navbar-nav class="ml-auto">
-					<b-navbar-nav>
+					<b-navbar-nav v-if="!isAuthenticated">
+						<!-- When a user is not logged in -->
+
 						<b-nav-item to="/">Home</b-nav-item>
 						<b-nav-item to="/about-us">About Us</b-nav-item>
 						<b-nav-item to="/faq">FAQ</b-nav-item>
@@ -20,8 +24,18 @@
 						<b-link to="/account/login">
 							<b-button variant="secondary">Login</b-button>
 						</b-link>
-						<!-- <b-button variant="secondary">Login</b-button> -->
 					</b-navbar-nav>
+					<!-- Logged in auth -->
+					<b-navbar-nav v-if="isAuthenticated">
+						<!-- <b-nav-item to="/">Home</b-nav-item>
+					<b-nav-item to="/about-us">About Us</b-nav-item>
+					<b-nav-item to="/faq">FAQ</b-nav-item>
+						<b-nav-item to="/contact">Contact</b-nav-item>-->
+						<b-link to="/account/login">
+							<b-button variant="secondary" @click="logout">Logout</b-button>
+						</b-link>
+					</b-navbar-nav>
+					<!-- <b-button variant="secondary">Login</b-button> -->
 
 					<!-- <b-nav-item-dropdown text="Lang" right>
 						<b-dropdown-item href="#">EN</b-dropdown-item>
@@ -45,8 +59,21 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
-	name: "Header"
+	name: "Header",
+
+	computed: {
+		...mapGetters({
+			isAuthenticated: "auth/authenticated"
+		})
+	},
+	methods: {
+		logout() {
+			this.$store.dispatch("auth/logout");
+			this.$router.push("/");
+		}
+	}
 };
 </script>
 

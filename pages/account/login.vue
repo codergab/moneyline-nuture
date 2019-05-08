@@ -19,7 +19,10 @@
 					</b-form-group>
 					<b-checkbox v-model="login.remember">Remember Me</b-checkbox>
 					<b-form-group>
-						<b-button @click.prevent="submitForm()">Login</b-button>
+						<b-button
+							@click.prevent="submitForm()"
+							:disabled="loading"
+						>{{ loading ? 'Logging In...' : 'Login' }}</b-button>
 					</b-form-group>
 				</b-form>
 			</b-card>
@@ -38,7 +41,7 @@ export default {
 				password: null,
 				remember: false
 			},
-
+			loading: false,
 			show: true
 		};
 	},
@@ -46,6 +49,7 @@ export default {
 	methods: {
 		submitForm() {
 			if (this.login.email && this.login.password) {
+				this.loading = true;
 				this.$axios
 					.$post("sign-in", this.login)
 					.then(response => {
@@ -60,14 +64,13 @@ export default {
 							"auth/authenticate",
 							loggedDetails
 						);
-						localStorage.setItem(
-							"money_line_valid_token",
-							loggedDetails.token
-						);
-						this.$router.push("/app/dashboard");
+						this.$router.push("/app/me");
 					})
 					.catch(err => {
-						const { error } = err.response;
+						this.loading = false;
+						console.log(err.response);
+						const { error } = err.response.data;
+
 						if (error) {
 							this.$noty.error(error);
 						} else {

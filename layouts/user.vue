@@ -7,13 +7,19 @@
 </template>
 
 <script>
-import Header from "@/components/layouts/user/HeaderLogged";
+import Header from "@/components/layouts/Header";
 import Footer from "@/components/layouts/Footer";
+import { mapGetters } from "vuex";
 export default {
 	// middleware: "auth",
 	components: {
 		Header,
-		Footer,
+		Footer
+	},
+	computed: {
+		...mapGetters({
+			fullName: "auth/authUser"
+		})
 	}
 };
 </script>

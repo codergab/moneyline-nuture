@@ -281,7 +281,7 @@
 						</b-row>
 						<b-row style="margin-top: 20px;">
 							<b-col sm="4" style="margin-left: 40px;">
-								<b-img src="/apply.png" alt="apply" width="75"/>
+								<b-img src="/provide_doc.png" alt="apply" width="75"/>
 							</b-col>
 							<b-col sm="8" style="margin-left: -60px;">
 								<h5 class="font-weight-bold">PROVIDE DOCUMENTS</h5>
@@ -290,7 +290,7 @@
 						</b-row>
 						<b-row style="margin-top: 20px;">
 							<b-col sm="4" style="margin-left: 40px;">
-								<b-img src="/apply.png" alt="apply" width="75"/>
+								<b-img src="/get-money.png" alt="apply" width="75"/>
 							</b-col>
 							<b-col sm="8" style="margin-left: -60px;">
 								<h5 class="font-weight-bold">GET YOUR MONEY</h5>

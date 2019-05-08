@@ -7,6 +7,10 @@ export const mutations = {
   authenticate(state, payload) {
     state.user = payload;
   },
+
+  logout(state) {
+    state.user = false
+  }
 };
 
 export const actions = {
@@ -15,14 +19,31 @@ export const actions = {
     context.commit('authenticate', payload);
   },
 
+  logout: (context) => {
+    context.commit('logout')
+  }
+
+
 }
 
 
 export const getters = {
 
-  // authUser: state => {
-  //   return state.user
-  // },
+  authUser: state => {
+    const {
+      first_name,
+      last_name
+    } = state.user.user;
+    return `${first_name} ${last_name}`;
+  },
+
+
+  authUserRole: state => {
+    const {
+      userRole
+    } = state.user.user.roles[0].name;
+    return userRole;
+  },
 
   // isUserRegistered
 

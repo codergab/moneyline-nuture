@@ -2,12 +2,17 @@
 	<div>
 		<section class="apply-loan">
 			<b-container fluid>
+				<div class="text-center">
+					<img src="/logo.png" width="100">
+				</div>
 				<h2 class="text-center">Loan Calculator</h2>
 				<div class="loan-calculator-wrapper">
-					<h4 class="text-center" style="margin: 2rem 0">
-						<span class="font-weight-bold">Choose Amount</span>
-						<input class="form-minimal" v-model="selectedAmount" @keyup.enter="calculateMonths">
-					</h4>
+					<div style="margin: 2rem 0; display: flex; justify-content: space-between">
+						<span class="text-cemter font-weight-bold" style="width: 40%">Choose Amount</span>
+						<span style="width: 50%">
+							<input class="form-minimal" v-model="selectedAmount" @keyup.enter="calculateMonths">
+						</span>
+					</div>
 					<div style="
 						display: flex;
 						justify-content: space-between
@@ -95,27 +100,32 @@
 			</div>
 			<b-card-body>
 				<div class="form-group">
-					<label>Firstname</label>
-					<input
-						class="form-control"
-						name="firstname"
-						type="text"
-						v-model="loan.first_name"
-						:class="{'is-invalid': errors.has('firstname')}"
-						v-validate="'required'"
-					>
+					<b-row>
+						<b-col sm="6">
+							<label>Firstname</label>
+							<input
+								class="form-control"
+								name="firstname"
+								type="text"
+								v-model="loan.first_name"
+								:class="{'is-invalid': errors.has('firstname')}"
+								v-validate="'required'"
+							>
+						</b-col>
+						<b-col sm="6">
+							<label>Lastname</label>
+							<input
+								class="form-control"
+								name="lastname"
+								type="text"
+								v-model="loan.last_name"
+								:class="{'is-invalid': errors.has('lastname')}"
+								v-validate="'required'"
+							>
+						</b-col>
+					</b-row>
 				</div>
-				<div class="form-group">
-					<label>Lastname</label>
-					<input
-						class="form-control"
-						name="lastname"
-						type="text"
-						v-model="loan.last_name"
-						:class="{'is-invalid': errors.has('lastname')}"
-						v-validate="'required'"
-					>
-				</div>
+				<div class="form-group"></div>
 				<div class="form-group">
 					<label>Email Address</label>
 					<input
@@ -143,33 +153,38 @@
 					<span v-show="errors.has('phone')" class="help text-danger">{{ errors.first('phone') }}</span>
 				</div>
 				<div class="form-group">
-					<label>Password</label>
-					<input
-						class="form-control"
-						name="password"
-						type="password"
-						v-model="loan.password"
-						:class="{'is-invalid': errors.has('password')}"
-						v-validate="'required'"
-						ref="password"
-					>
-					<span v-show="errors.has('password')" class="help text-danger">{{ errors.first('password') }}</span>
+					<b-row>
+						<b-col sm="6">
+							<label>Password</label>
+							<input
+								class="form-control"
+								name="password"
+								type="password"
+								v-model="loan.password"
+								:class="{'is-invalid': errors.has('password')}"
+								v-validate="'required'"
+								ref="password"
+							>
+							<span v-show="errors.has('password')" class="help text-danger">{{ errors.first('password') }}</span>
+						</b-col>
+						<b-col sm="6">
+							<label>Confirm Password</label>
+							<input
+								name="password_confirmation"
+								class="form-control"
+								type="password"
+								v-model="loan.password_confirmation"
+								:class="{'is-invalid': errors.has('password_confirmation')}"
+								v-validate="'required|confirmed:password'"
+							>
+							<span
+								v-show="errors.has('password_confirmation')"
+								class="help text-danger"
+							>{{ errors.first('password_confirmation') }}</span>
+						</b-col>
+					</b-row>
 				</div>
-				<div class="form-group">
-					<label>Confirm Password</label>
-					<input
-						name="password_confirmation"
-						class="form-control"
-						type="password"
-						v-model="loan.password_confirmation"
-						:class="{'is-invalid': errors.has('password_confirmation')}"
-						v-validate="'required|confirmed:password'"
-					>
-					<span
-						v-show="errors.has('password_confirmation')"
-						class="help text-danger"
-					>{{ errors.first('password_confirmation') }}</span>
-				</div>
+
 				<div class="form-group">
 					<b-button
 						v-if="!loading"
@@ -185,6 +200,12 @@
 						<span>Submit</span>
 					</button-spinner>-->
 				</div>
+
+				<b-form-group>
+					<div class="text-center" style="margin-top: 1em">
+						<img src="/logo.png" width="100">
+					</div>
+				</b-form-group>
 			</b-card-body>
 		</vue-modaltor>
 	</div>
@@ -242,6 +263,10 @@ export default {
 		}
 	},
 	methods: {
+		// update() {
+		// 	var tempVal = this.$el.value + '';
+		// 	this.Number(tempVal.replace(/[^0-9\.]+/g,"")
+		// },
 		numberComma(x) {
 			return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 		},
@@ -313,9 +338,10 @@ export default {
 
 <style>
 .form-minimal {
-	border: 1px solid #40a774;
-	margin-left: 13rem;
-	width: 30%;
+	border: 2px solid #40a774;
+	/* padding: 0.5em; */
+	font-size: 20px;
+	padding-left: 0.5em;
 }
 @media screen and (min-width: 768px) {
 	.loan-calculator-wrapper {
