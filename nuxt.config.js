@@ -50,8 +50,6 @@ export default {
     height: '4px'
   },
 
-
-
   /*
    ** Global CSS
    */
