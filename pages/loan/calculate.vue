@@ -10,7 +10,7 @@
 					<div style="margin: 2rem 0; display: flex; justify-content: space-between">
 						<span class="text-cemter font-weight-bold" style="width: 40%">Choose Amount</span>
 						<span style="width: 50%">
-							<input class="form-minimal" v-model="selectedAmount" @keyup.enter="calculateMonths">
+							<input class="form-minimal" v-model="selectedAmount" @keypress="isNumber">
 						</span>
 					</div>
 					<div style="
@@ -23,6 +23,7 @@
 					<vue-slider
 						v-model="selectedAmount"
 						@change="calculateMonths"
+						:interval="500"
 						:min="amount.min"
 						:max="amount.max"
 						:contained="true"
@@ -222,6 +223,7 @@ export default {
 	// template: '#modal-templa'
 	data() {
 		return {
+			step: 500,
 			showModal: false,
 			loading: false,
 			isLoading: false,
@@ -254,9 +256,9 @@ export default {
 	computed: {
 		calculateMonths() {
 			this.monthlyRepayment =
-				this.getCompoundInterest(this.selectedAmount) /
+				this.getCompoundInterest(parseInt(this.selectedAmount, 10)) /
 				this.selectedNoOfMonths;
-			this.totalRepayment = this.getCompoundInterest(this.selectedAmount);
+			this.totalRepayment = this.getCompoundInterest(parseInt(this.selectedAmount, 10));
 		},
 		computedAmount() {
 			return this.formatFigure(this.selectedAmount);
@@ -267,6 +269,15 @@ export default {
 		// 	var tempVal = this.$el.value + '';
 		// 	this.Number(tempVal.replace(/[^0-9\.]+/g,"")
 		// },
+		isNumber: function(evt) {
+			evt = (evt) ? evt : window.event;
+			var charCode = (evt.which) ? evt.which : evt.keyCode;
+			if ((charCode > 31 && (charCode < 48 || charCode > 57)) && charCode !== 46) {
+				evt.preventDefault();;
+			} else {
+				return true;
+			}
+		},
 		numberComma(x) {
 			return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 		},
@@ -276,13 +287,17 @@ export default {
 		},
 
 		roundInThousands(value) {
-			return parseInt(Math.round(value / 1000) * 1000);
+			return Math.round( parseInt(value, 10) / 1000) * 1000;
 		},
 
 		formatMonthlyPayment(number) {
+			if(isNaN(number))
+				return 0;
 			return this.numberComma(number);
 		},
 		formatFigure(number) {
+			if(isNaN(number) || number == '')
+				return 0;
 			return this.numberComma(this.roundInThousands(number));
 		},
 		toggleModal() {

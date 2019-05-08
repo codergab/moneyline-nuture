@@ -68,7 +68,7 @@ export default {
 <style scoped>
 footer {
 	padding: 3rem;
-	background: rgb(239, 239, 239);
+	background: rgb(233, 233, 233);
 }
 
 .footer-list-link {
