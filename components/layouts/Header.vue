@@ -27,31 +27,10 @@
 					</b-navbar-nav>
 					<!-- Logged in auth -->
 					<b-navbar-nav v-if="isAuthenticated">
-						<!-- <b-nav-item to="/">Home</b-nav-item>
-					<b-nav-item to="/about-us">About Us</b-nav-item>
-					<b-nav-item to="/faq">FAQ</b-nav-item>
-						<b-nav-item to="/contact">Contact</b-nav-item>-->
 						<b-link to="/account/login">
 							<b-button variant="secondary" @click="logout">Logout</b-button>
 						</b-link>
 					</b-navbar-nav>
-					<!-- <b-button variant="secondary">Login</b-button> -->
-
-					<!-- <b-nav-item-dropdown text="Lang" right>
-						<b-dropdown-item href="#">EN</b-dropdown-item>
-						<b-dropdown-item href="#">ES</b-dropdown-item>
-						<b-dropdown-item href="#">RU</b-dropdown-item>
-						<b-dropdown-item href="#">FA</b-dropdown-item>
-					</b-nav-item-dropdown>
-
-					<b-nav-item-dropdown right>
-					Using 'button-content' slot-->
-					<!-- <template slot="button-content">
-							<em>User</em>
-						</template>
-						<b-dropdown-item href="#">Profile</b-dropdown-item>
-						<b-dropdown-item href="#">Sign Out</b-dropdown-item>
-					</b-nav-item-dropdown>-->
 				</b-navbar-nav>
 			</b-collapse>
 		</div>
@@ -71,6 +50,7 @@ export default {
 	methods: {
 		logout() {
 			this.$store.dispatch("auth/logout");
+			this.$store.dispatch("users/logout");
 			this.$router.push("/");
 		}
 	}
@@ -80,11 +60,48 @@ export default {
 
 <style scoped>
 .navbar {
-	padding: 1rem 1rem;
+	/* padding: 1rem 1rem; */
 }
 
 .bg-light {
 	background-color: #ffffff !important;
 	box-shadow: 0px 1px 9px rgba(193, 193, 193, 0.1);
+}
+
+.navbar-toggler {
+	border-radius: 0;
+	padding: 0;
+	border: 1px solid #40a774;
+}
+
+@media screen and (max-width: 560px) {
+	.navbar-brand {
+		margin-left: 1rem;
+	}
+
+	.navbar.navbar-light .container-fluid {
+		padding: 0 !important;
+	}
+
+	.navbar-light .navbar-toggler {
+		color: rgb(64, 167, 116);
+		border-color: rgb(64, 167, 116);
+	}
+
+	.navbar {
+		padding: 0 !important;
+	}
+
+	.navbar-toggler {
+		margin: 0 1rem 0 0;
+	}
+	.navbar-collapse {
+		background: #40a774;
+		padding: 0 2rem;
+	}
+
+	.navbar-light .navbar-nav .nav-link {
+		color: #fff;
+	}
 }
 </style>

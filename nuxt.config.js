@@ -2,6 +2,10 @@ import pkg from './package';
 
 export default {
   mode: 'spa',
+  server: {
+    // port:
+    host: '0.0.0.0'
+  },
 
   /*
    ** Headers of the page

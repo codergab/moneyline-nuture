@@ -1,5 +1,23 @@
 <template>
 	<div>
+		<div class="mobile-banner">
+			<!-- <div class="payoff">
+				We listen to your
+				<br>
+				<span class="highlight">financial</span> needs when no
+				<br>one else does
+			</div>-->
+			<div class="slidee-description">
+				<h2 class="text-primary">Quick and Accessible Financial Loan Support For All</h2>
+				<b-link to="/loan/get-started">
+					<b-button to="/loan/get-started" class="btn-flex">
+						<span class="btn-text">APPLY NOW</span>
+						<img class="btn-icon" src="/right-arrow.svg">
+					</b-button>
+				</b-link>
+			</div>
+		</div>
+
 		<div class="slidee">
 			<!-- <div class="payoff">
 				We listen to your
@@ -10,18 +28,14 @@
 			<div class="slidee-description">
 				<h2 class="text-primary">Quick and Accessible Financial Loan Support For All</h2>
 				<b-link to="/loan/get-started">
-					<b-button
-						to="/loan/get-started"
-						class="btn-flex"
-						style="margin-left: 60%; width: 50%; margin-top: 1.5em; position: absolute"
-					>
+					<b-button to="/loan/get-started" class="btn-flex" style>
 						<span class="btn-text">APPLY NOW</span>
 						<img class="btn-icon" src="/right-arrow.svg">
 					</b-button>
 				</b-link>
 			</div>
 		</div>
-		<b-container class="intro">
+		<b-container class="intro" fluid>
 			<h2
 				class="text-secondary text-center intro-text text-link"
 			>We provide loans to individuals, small businesses and organizations in Nigeria</h2>
@@ -82,10 +96,10 @@
 			</b-row>
 		</b-container>
 
-		<b-container fluid style="padding: 3rem">
+		<b-container fluid style="padding: 3rem" class="sectioned">
 			<b-row>
 				<b-col sm="4">
-					<h2>LET US HELP CREATE THE FUTURE YOU DESIRE</h2>
+					<h2 class="font-weight-bold">LET US HELP CREATE THE FUTURE YOU DESIRE</h2>
 					<p class="text-left">
 						Transforming your Dreams to reality can be very expensive. While you need an open mind, drive, motivation, and the desire to achieve it, if you don’t have enough money, you may find it difficult. At Moneyline, we are here to not just get you a step closer to your dreams deliver you at the final destination of financial freedom.
 						Let us help you achieve your dreams.
@@ -105,130 +119,257 @@
 						<swiper-slide>Slide 10</swiper-slide>
 						<div class="swiper-pagination" slot="pagination"></div>
 					</swiper>-->
-					<div class="preloan-holder"></div>
-					<div class="loans-holder">
-						<slick ref="slick" :options="slickOptions">
-							<div>
-								<div class="loan-options" style="width: 90% !important; height: 305px;  margin: 0 auto">
-									<div class="presentation">
-										<div class="loan-icon">
-											<img src="/9.gif">
-										</div>
+					<div class="lg-slick">
+						<div class="preloan-holder"></div>
+						<div class="loans-holder">
+							<slick ref="slick" :options="slickOptions">
+								<div>
+									<div class="loan-options" style="width: 90% !important; height: 305px;  margin: 0 auto">
+										<div class="presentation">
+											<div class="loan-icon">
+												<img src="/9.gif">
+											</div>
 
-										<div class="loan-title">
-											<h5>PAYDAY LOANS</h5>
-										</div>
+											<div class="loan-title">
+												<h5>PAYDAY LOANS</h5>
+											</div>
 
-										<div class="loan-arrow">
-											<img src="/right-arrow-green.svg" width="100">
+											<div class="loan-arrow text-center">
+												<img src="/right-arrow-green.svg" width="100">
+											</div>
 										</div>
-									</div>
-									<div class="hover-presentation">
-										<h6 class="font-weight-bold">PAYDAY LOANS</h6>
-										<p style class="text-white">
-											At Money line, we provide payday loans to help you deliver on urgent financial responsibilities that mostly occur at odd and unexpected times.
-											Get started with us today and have your financial needs met in a short period of time
-										</p>
-									</div>
-								</div>
-							</div>
-							<div>
-								<div class="loan-options" style="width: 90% !important; height: 305px;  margin: 0 auto">
-									<div class="presentation">
-										<div class="loan-icon">
-											<img src="/9.gif">
+										<div class="hover-presentation">
+											<h6 class="font-weight-bold">PAYDAY LOANS</h6>
+											<p style class="text-white">
+												At Money line, we provide payday loans to help you deliver on urgent financial responsibilities that mostly occur at odd and unexpected times.
+												Get started with us today and have your financial needs met in a short period of time
+											</p>
 										</div>
-
-										<div class="loan-title">
-											<h5>SHORT TERM LOANS</h5>
-										</div>
-
-										<div class="loan-arrow">
-											<img src="/right-arrow-green.svg" width="100">
-										</div>
-									</div>
-									<div class="hover-presentation">
-										<h6 class="font-weight-bold">SHORT TERM LOANS</h6>
-										<p
-											style
-											class="text-white"
-										>At MoneyLine, we provide quick loans to deal with pressing financial situations or help support personal or business capital needs. It is easy to acquire, with faster processing and lower interest rates.</p>
 									</div>
 								</div>
-							</div>
-							<div>
-								<div class="loan-options" style="width: 90% !important; height: 305px;  margin: 0 auto">
-									<div class="presentation">
-										<div class="loan-icon">
-											<img src="/9.gif">
-										</div>
+								<div>
+									<div class="loan-options" style="width: 90% !important; height: 305px;  margin: 0 auto">
+										<div class="presentation">
+											<div class="loan-icon">
+												<img src="/9.gif">
+											</div>
 
-										<div class="loan-title">
-											<h5>GUARANTOR LOANS</h5>
-										</div>
+											<div class="loan-title">
+												<h5>SHORT TERM LOANS</h5>
+											</div>
 
-										<div class="loan-arrow">
-											<img src="/right-arrow-green.svg" width="100">
+											<div class="loan-arrow text-center">
+												<img src="/right-arrow-green.svg" width="100">
+											</div>
 										</div>
-									</div>
-									<div class="hover-presentation">
-										<h6 class="font-weight-bold">GUARANTOR LOANS</h6>
-										<p style class="text-white">
-											Are you are borrowing money for the first time or have a bad credit history? A guarantor loan could help you borrow what you need.
-											We offer easily accessible guarantor loan with low interest rate.
-										</p>
-									</div>
-								</div>
-							</div>
-							<div>
-								<div class="loan-options" style="width: 90% !important; height: 305px;  margin: 0 auto">
-									<div class="presentation">
-										<div class="loan-icon">
-											<img src="/9.gif">
+										<div class="hover-presentation">
+											<h6 class="font-weight-bold">SHORT TERM LOANS</h6>
+											<p
+												style
+												class="text-white"
+											>At MoneyLine, we provide quick loans to deal with pressing financial situations or help support personal or business capital needs. It is easy to acquire, with faster processing and lower interest rates.</p>
 										</div>
-
-										<div class="loan-title">
-											<h5>Pawn Broking Services</h5>
-										</div>
-
-										<div class="loan-arrow">
-											<img src="/right-arrow-green.svg" width="100">
-										</div>
-									</div>
-									<div class="hover-presentation">
-										<h6 class="font-weight-bold">Pawn Broking Services</h6>
-										<p
-											style="font-size: 14px !important;"
-											class="text-white"
-										>With our Pawn broking service, you can apply for loans with household goods or personal effects as security or collateral on the loans. It’s quick, with fewer credit checks and you can redeem your goods at any time.</p>
 									</div>
 								</div>
-							</div>
-							<div>
-								<div class="loan-options" style="width: 90% !important; min-height: 305px;  margin: 0 auto">
-									<div class="presentation">
-										<div class="loan-icon">
-											<img src="/7.gif">
-										</div>
+								<div>
+									<div class="loan-options" style="width: 90% !important; height: 305px;  margin: 0 auto">
+										<div class="presentation">
+											<div class="loan-icon">
+												<img src="/9.gif">
+											</div>
 
-										<div class="loan-title">
-											<h5>TRAVEL MONEY</h5>
-										</div>
+											<div class="loan-title">
+												<h5>GUARANTOR LOANS</h5>
+											</div>
 
-										<div class="loan-arrow">
-											<img src="/right-arrow-green.svg" width="100">
+											<div class="loan-arrow text-center">
+												<img src="/right-arrow-green.svg" width="100">
+											</div>
 										</div>
-									</div>
-									<div class="hover-presentation">
-										<h6 class="font-weight-bold">TRAVEL MONEY</h6>
-										<p
-											style
-											class="text-white"
-										>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti accusamus voluptate eum tenetur illo unde aliquam adipisci tempor.</p>
+										<div class="hover-presentation">
+											<h6 class="font-weight-bold">GUARANTOR LOANS</h6>
+											<p style class="text-white">
+												Are you are borrowing money for the first time or have a bad credit history? A guarantor loan could help you borrow what you need.
+												We offer easily accessible guarantor loan with low interest rate.
+											</p>
+										</div>
 									</div>
 								</div>
+								<div>
+									<div class="loan-options" style="width: 90% !important; height: 305px;  margin: 0 auto">
+										<div class="presentation">
+											<div class="loan-icon">
+												<img src="/9.gif">
+											</div>
+
+											<div class="loan-title">
+												<h5>Pawn Broking Services</h5>
+											</div>
+
+											<div class="loan-arrow text-center">
+												<img src="/right-arrow-green.svg" width="100">
+											</div>
+										</div>
+										<div class="hover-presentation">
+											<h6 class="font-weight-bold">Pawn Broking Services</h6>
+											<p
+												style="font-size: 14px !important;"
+												class="text-white"
+											>With our Pawn broking service, you can apply for loans with household goods or personal effects as security or collateral on the loans. It’s quick, with fewer credit checks and you can redeem your goods at any time.</p>
+										</div>
+									</div>
+								</div>
+								<div>
+									<div
+										class="loan-options"
+										style="width: 90% !important; min-height: 305px;  margin: 0 auto"
+									>
+										<div class="presentation">
+											<div class="loan-icon">
+												<img src="/7.gif">
+											</div>
+
+											<div class="loan-title">
+												<h5>TRAVEL MONEY</h5>
+											</div>
+
+											<div class="loan-arrow text-center">
+												<img src="/right-arrow-green.svg" width="100">
+											</div>
+										</div>
+										<div class="hover-presentation">
+											<h6 class="font-weight-bold">TRAVEL MONEY</h6>
+											<p
+												style
+												class="text-white"
+											>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti accusamus voluptate eum tenetur illo unde aliquam adipisci tempor.</p>
+										</div>
+									</div>
+								</div>
+							</slick>
+						</div>
+					</div>
+					<div class="sm-slick">
+						<div class="sm-slick-child">
+							<div class="loan-options" style="width: 90% !important; height: 305px;  margin: 0 auto">
+								<div class="presentation">
+									<div class="loan-icon">
+										<img src="/9.gif">
+									</div>
+
+									<div class="loan-title">
+										<h5>PAYDAY LOANS</h5>
+									</div>
+
+									<div class="loan-arrow text-center">
+										<img src="/right-arrow-green.svg" width="100">
+									</div>
+								</div>
+								<div class="hover-presentation">
+									<h6 class="font-weight-bold">PAYDAY LOANS</h6>
+									<p style class="text-white">
+										At Money line, we provide payday loans to help you deliver on urgent financial responsibilities that mostly occur at odd and unexpected times.
+										Get started with us today and have your financial needs met in a short period of time
+									</p>
+								</div>
 							</div>
-						</slick>
+						</div>
+						<div class="sm-slick-child">
+							<div class="loan-options" style="width: 90% !important; height: 305px;  margin: 0 auto">
+								<div class="presentation">
+									<div class="loan-icon">
+										<img src="/9.gif">
+									</div>
+
+									<div class="loan-title">
+										<h5>SHORT TERM LOANS</h5>
+									</div>
+
+									<div class="loan-arrow text-center">
+										<img src="/right-arrow-green.svg" width="100">
+									</div>
+								</div>
+								<div class="hover-presentation">
+									<h6 class="font-weight-bold">SHORT TERM LOANS</h6>
+									<p
+										style
+										class="text-white"
+									>At MoneyLine, we provide quick loans to deal with pressing financial situations or help support personal or business capital needs. It is easy to acquire, with faster processing and lower interest rates.</p>
+								</div>
+							</div>
+						</div>
+						<div class="sm-slick-child">
+							<div class="loan-options" style="width: 90% !important; height: 305px;  margin: 0 auto">
+								<div class="presentation">
+									<div class="loan-icon">
+										<img src="/9.gif">
+									</div>
+
+									<div class="loan-title">
+										<h5>GUARANTOR LOANS</h5>
+									</div>
+
+									<div class="loan-arrow text-center">
+										<img src="/right-arrow-green.svg" width="100">
+									</div>
+								</div>
+								<div class="hover-presentation">
+									<h6 class="font-weight-bold">GUARANTOR LOANS</h6>
+									<p style class="text-white">
+										Are you are borrowing money for the first time or have a bad credit history? A guarantor loan could help you borrow what you need.
+										We offer easily accessible guarantor loan with low interest rate.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="sm-slick-child">
+							<div class="loan-options" style="width: 90% !important; height: 305px;  margin: 0 auto">
+								<div class="presentation">
+									<div class="loan-icon">
+										<img src="/9.gif">
+									</div>
+
+									<div class="loan-title">
+										<h5>Pawn Broking Services</h5>
+									</div>
+
+									<div class="loan-arrow text-center">
+										<img src="/right-arrow-green.svg" width="100">
+									</div>
+								</div>
+								<div class="hover-presentation">
+									<h6 class="font-weight-bold">Pawn Broking Services</h6>
+									<p
+										style="font-size: 14px !important;"
+										class="text-white"
+									>With our Pawn broking service, you can apply for loans with household goods or personal effects as security or collateral on the loans. It’s quick, with fewer credit checks and you can redeem your goods at any time.</p>
+								</div>
+							</div>
+						</div>
+						<div class="sm-slick-child">
+							<div class="loan-options" style="width: 90% !important; min-height: 305px;  margin: 0 auto">
+								<div class="presentation">
+									<div class="loan-icon">
+										<img src="/7.gif">
+									</div>
+
+									<div class="loan-title">
+										<h5>TRAVEL MONEY</h5>
+									</div>
+
+									<div class="loan-arrow text-center">
+										<img src="/right-arrow-green.svg" width="100">
+									</div>
+								</div>
+								<div class="hover-presentation">
+									<h6 class="font-weight-bold">TRAVEL MONEY</h6>
+									<p
+										style
+										class="text-white"
+									>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti accusamus voluptate eum tenetur illo unde aliquam adipisci tempor.</p>
+								</div>
+							</div>
+						</div>
 					</div>
 				</b-col>
 			</b-row>
@@ -241,45 +382,41 @@
 						<b-img src="/how-it-works.png" draggable="false" style="width: 90%;" alt="how_it_works"/>
 					</b-col>
 					<b-col sm="5">
-						<h2 class="text-center text-black text-uppercase text-link">How does it work?</h2>
+						<h2 class="text-center text-black text-uppercase font-weight-bold text-link">How does it work?</h2>
 						<p
 							class="text-left text-secondary"
 						>Apply and get quick, hassle free access to your loan request in 48 hours by following these easy steps.</p>
 
-						<b-row style="margin-top: 20px;">
-							<b-col sm="4" style="margin-left: 40px;">
+						<b-row style="margin-top: 20px;" class="how-it-works-rows">
+							<b-col sm="4" class="how-it-works--child-left">
 								<b-img src="/apply.png" alt="apply" width="75"/>
 							</b-col>
-							<b-col sm="8" style="margin-left: -60px;">
+							<b-col sm="8" class="hos-it-works--child-right">
 								<h5 class="font-weight-bold">APPLY</h5>
 								<p>complete our online form and fill in primary details such as Name, Contact, etc.</p>
 							</b-col>
 						</b-row>
-						<b-row style="margin-top: 20px;">
-							<b-col sm="4" style="margin-left: 40px;">
+						<b-row style="margin-top: 20px;" class="how-it-works-rows">
+							<b-col sm="4" class="how-it-works--child-left">
 								<b-img src="/provide_doc.png" alt="apply" width="75"/>
 							</b-col>
-							<b-col sm="8" style="margin-left: -60px;">
+							<b-col sm="8" class="hos-it-works--child-right">
 								<h5 class="font-weight-bold">PROVIDE DOCUMENTS</h5>
 								<p>Upload your Government ID, Proof of address and Bank Statement and other required documents</p>
 							</b-col>
 						</b-row>
-						<b-row style="margin-top: 20px;">
-							<b-col sm="4" style="margin-left: 40px;">
+						<b-row style="margin-top: 20px;" class="how-it-works-rows">
+							<b-col sm="4" class="how-it-works--child-left">
 								<b-img src="/get-money.png" alt="apply" width="75"/>
 							</b-col>
-							<b-col sm="8" style="margin-left: -60px;">
+							<b-col sm="8" class="hos-it-works--child-right">
 								<h5 class="font-weight-bold">GET YOUR MONEY</h5>
 								<p>Receive money within 24 hours if approved.</p>
 							</b-col>
 						</b-row>
 
 						<b-row style="margin-top: 20px;">
-							<b-button
-								to="/loan/get-started"
-								class="btn-flex"
-								style="margin-left: 30%; width: 52%; margin-top: 1.5em; position: absolute"
-							>
+							<b-button to="/loan/get-started" class="btn-flex download-form">
 								<span class="btn-text">DOWNLOAD FORM</span>
 								<img class="btn-icon" src="/right-arrow.svg">
 							</b-button>
@@ -298,7 +435,7 @@
 							class="text-left"
 						>We are continually working with our clients, to help build a strong reputation for their businesses and financial incapability by providing effective loan service to help prevent money problems. We handle everything from loan issues that require quick response to those with only technical solutions.</p>
 
-						<b-row>
+						<b-row class="why_choose_us-rows">
 							<b-col sm="2">
 								<b-img src="/why-choose1.png"/>
 							</b-col>
@@ -309,7 +446,7 @@
 								</p>
 							</b-col>
 						</b-row>
-						<b-row>
+						<b-row class="why_choose_us-rows">
 							<b-col sm="2">
 								<b-img src="/why-choose1.png"/>
 							</b-col>
@@ -320,7 +457,7 @@
 								</p>
 							</b-col>
 						</b-row>
-						<b-row>
+						<b-row class="why_choose_us-rows">
 							<b-col sm="2">
 								<b-img src="/why-choose1.png"/>
 							</b-col>
@@ -332,11 +469,7 @@
 							</b-col>
 						</b-row>
 						<b-row class="text-center">
-							<b-button
-								to="/loan/get-started"
-								class="btn-flex"
-								style="margin-left: 20%;width: 40%;margin-top: 1.5em; position: absolute"
-							>
+							<b-button to="/loan/get-started" class="btn-flex">
 								<span class="btn-text">APPLY NOW</span>
 								<img class="btn-icon" src="/right-arrow.svg">
 							</b-button>
@@ -430,11 +563,27 @@ export default {
 <style scoped>
 @import "~/assets/css/imagehover.css";
 
+.how.it-works--child-left {
+	margin-left: 40px;
+}
+.how.it-works--child-right {
+	margin-left: -60px;
+}
+
+.how-it-works .download-form {
+	margin-left: 30% !important;
+	width: 60% !important;
+	/* margin-top: 1.5em; */
+	position: absolute;
+}
+
 .slidee {
 	background: #40a774 url("/new-home-banner.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
-	height: 90vh;
+	background-position: center;
+	min-height: 600px;
+	max-height: 100%;
 }
 .payoff {
 	font-size: 2.15em;
@@ -447,14 +596,57 @@ export default {
 	width: 100%;
 } */
 .slidee-description {
-	/* font-family: "Mon", sans-serif; */
 	position: absolute;
-	/* top: 100%; */
-	background: rgba(255, 255, 255, 0.89);
-	padding: 3rem;
-	max-width: 38%;
-	margin-top: 15%;
-	font-weight: 600;
+	background: rgba(255, 255, 255, 0.89) !important;
+	padding: 2rem;
+	/* padding-top: 2rem; */
+	margin: 2em auto;
+	width: 100%;
+}
+
+.mobile-banner {
+	height: 250px;
+	background: #40a774 url(/new-home-banner.jpg);
+	background-repeat: no-repeat;
+	background-size: auto;
+	display: none !important;
+}
+
+.mobile-banner .slidee-description {
+	position: absolute;
+	background: rgba(255, 255, 255, 0.83);
+	padding: 2rem;
+	/* padding-top: 2rem; */
+	margin: 0em auto;
+	width: 100%;
+	height: inherit;
+}
+
+.slidee {
+	display: none;
+}
+
+@media screen and (min-width: 768px) {
+	.slidee {
+		display: block;
+	}
+	/* .slidee {
+		max-height: 
+	} */
+	.slidee-description {
+		padding: 3rem;
+		width: 40%;
+		margin-top: 15%;
+		font-weight: 600;
+		background: rgba(255, 255, 255, 0.89) !important;
+	}
+
+	.slidee-description .btn-flex {
+		margin-left: 60% !important;
+		width: 60% !important;
+		margin-top: 1.5em !important;
+		position: absolute !important;
+	}
 }
 
 .slidee-description h2 {
@@ -466,8 +658,101 @@ export default {
 }
 
 .intro-text {
-	max-width: 55%;
+	width: 100%;
 	margin: 0 auto;
+}
+
+.sm-slick-child {
+	margin: 1em 0;
+}
+
+@media screen and (min-width: 560px) {
+	.intro-text {
+		width: 55%;
+	}
+}
+
+.sm-slick {
+	display: none;
+}
+
+.why_choose_us button {
+	position: absolute;
+	margin: 2em;
+	left: 7rem;
+}
+@media screen and (max-width: 560px) {
+	.mobile-banner .slidee-description .btn-flex {
+		position: relative !important;
+		margin: 1em 0em !important;
+		width: 100% !important;
+		/* width: 100%  */
+	}
+	.why_choose_us {
+		padding: 1em !important;
+	}
+
+	.why_choose_us-rows {
+		text-align: center;
+	}
+	.why_choose_us .why-choose-img img {
+		margin: 1em auto !important;
+		display: none;
+	}
+
+	.why_choose_us button {
+		margin-left: 20%;
+		width: 70%;
+		/* margin-top: 1.5em; */
+		position: relative;
+		margin: 0rem auto;
+	}
+
+	.mobile-banner {
+		display: block !important;
+	}
+	.how-it-works {
+		padding: 1rem !important;
+	}
+
+	.how.it-works--child-left {
+		margin-left: 0;
+	}
+	.how.it-works--child-right {
+		margin-top: 1em;
+	}
+
+	.how-it-works .download-form {
+		margin-left: 0% !important;
+		width: 100% !important;
+		/* margin-top: 1.5em; */
+		position: absolute;
+	}
+
+	.how-it-works-rows {
+		text-align: center;
+	}
+
+	.lg-slick {
+		display: none;
+	}
+
+	.sm-slick {
+		display: block;
+	}
+	.intro-text {
+		margin: 1em 0em -1em 0;
+		font-size: 26px;
+	}
+
+	h3.feature-title::before {
+		display: none !important;
+		margin: 0 !important;
+	}
+
+	.sectioned {
+		margin: 2rem 0;
+	}
 }
 
 /* .feature-image {

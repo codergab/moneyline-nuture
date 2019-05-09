@@ -22,6 +22,7 @@
 						<div class="col-md-6 col-sm-12 col-xs-12 col-lg-6">
 							<b-card>
 								<div class="contact-form">
+									<h2 class="text-center">Get In Touch With Us</h2>
 									<b-form @submit.prevent="contactUs">
 										<b-form-group id="input-group-2" label="Name:" label-for="name">
 											<b-form-input id="name" name="name" v-model="contact.name" v-validate="'required'"></b-form-input>
@@ -104,7 +105,7 @@
 									<a href="https://www.emojilib.com"></a>
 								</div>
 							</div>
-							<div style="padding-top:20px">
+							<div class="addr">
 								<h4>57A Oyikan Abayomi Drive</h4>
 								<h5>Ikoyi, Lagos</h5>
 								<p class="p-marging">
@@ -161,6 +162,27 @@ export default {
 </script>
 
 <style scoped>
+@media screen and (max-width: 560px) {
+	.slidee {
+		height: 170px !important;
+	}
+
+	.payoff {
+		padding: 28px 0 145px 0px !important;
+		font-size: 1.15em !important;
+	}
+
+	.contact-section,
+	.contact-form {
+		padding: 0 !important;
+	}
+	.addr {
+		padding: 1em;
+	}
+}
+.addr {
+	padding-top: 20px;
+}
 h4 {
 	font-weight: bold;
 }

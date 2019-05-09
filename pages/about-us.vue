@@ -18,7 +18,7 @@
 				<div class="row">
 					<div class="col-md-8 mx-auto">
 						<div class="row">
-							<div class="col-md-12">
+							<div class="col-md-12 text-center">
 								MoneyLine is a trading name of Chestnut Financial Services Limited. We offer a
 								range of financial services including short term loans,Payday loans, Guarantor
 								loans, Travel money, Pawn broking Services
@@ -149,6 +149,17 @@ h6.title {
 	background: #274263 url("/new-about-banner.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+
+@media screen and (max-width: 560px) {
+	.slidee {
+		height: 170px !important;
+	}
+
+	.payoff {
+		padding: 28px 0 145px 0px !important;
+		font-size: 1.15em !important;
+	}
 }
 .payoff {
 	font-size: 2.15em;
