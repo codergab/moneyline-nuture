@@ -416,7 +416,7 @@
 						</b-row>
 
 						<b-row style="margin-top: 20px;">
-							<b-button to="/loan/get-started" class="btn-flex download-form">
+							<b-button @click="showModalForm" class="btn-flex download-form">
 								<span class="btn-text">DOWNLOAD FORM</span>
 								<img class="btn-icon" src="/right-arrow.svg">
 							</b-button>
@@ -485,6 +485,68 @@
 			</b-container>
 		</section>
 		<CallToAction/>
+		<vue-modaltor
+			:visible="showModal"
+			@hide="() => showModal  = !showModal"
+			:resize-width="{1200:'30%',992:'90%',768:'90%'}"
+		>
+			<template slot="close-icon">
+				<svg
+					version="1.1"
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 40 40"
+					width="20"
+					height="20"
+					xml:space="preserve"
+				>
+					<path
+						class="st0"
+						fill="#41b883"
+						d="M8.7,7.6c-0.4-0.4-1-0.4-1.4,0C6.9,8,6.9,8.6,7.3,9l11,11l-11,11c-0.4,0.4-0.4,1,0,1.4c0.4,0.4,1,0.4,1.4,0 l11-11l11,11c0.4,0.4,1,0.4,1.4,0c0.4-0.4,0.4-1,0-1.4l-11-11L32,9c0.4-0.4,0.4-1,0-1.4c-0.4-0.4-1-0.4-1.4,0l-11,11L8.7,7.6z"
+					></path>
+				</svg>
+			</template>
+			<h4 class="text-center">Download Loan Application Forms</h4>
+			<hr class="short">
+			<b-card-body>
+				<b-row style="margin-bottom: 2rem">
+					<b-col>
+						<b-row align-content="center">
+							<b-col md="6" align-self="center">
+								<center>
+									<img class="align-self-center" src="/checklist.svg" width="150">
+									<br>
+									<br>
+									<a
+										href="/Loan-App-form.pdf"
+										download="MoneylineNG_Loan_Form.pdf"
+										class="btn btn-primary"
+									>Download Loan Form</a>
+								</center>
+							</b-col>
+							<b-col md="6" align-self="center">
+								<center>
+									<img class="align-self-center" src="/evaluation.svg" width="150">
+									<br>
+									<br>
+									<a
+										href="/Guarantor-form.pdf"
+										download="MoneylineNG_Loan_Guarantor_Form.pdf"
+										class="btn btn-secondary"
+									>Download Loan Guarantor Form</a>
+								</center>
+							</b-col>
+							<!-- <b-col md="6">Hello</b-col> -->
+						</b-row>
+					</b-col>
+				</b-row>
+				<b-form-group>
+					<div class="text-center" style="margin-top: 1em">
+						<img src="/logo.png" width="100">
+					</div>
+				</b-form-group>
+			</b-card-body>
+		</vue-modaltor>
 	</div>
 </template>
 <script>
@@ -512,16 +574,7 @@ export default {
 	},
 	data() {
 		return {
-			// 	swiperOption: {
-			// 		slidesPerView: 3,
-			// 		spaceBetween: 30,
-			// 		freeMode: true,
-			// 		pagination: {
-			// 			el: ".swiper-pagination",
-			// 			clickable: true
-			// 		}
-			// 	}
-			// };
+			showModal: false,
 			slickOptions: {
 				slidesToShow: 3,
 				slidesToScroll: 1,
@@ -554,6 +607,9 @@ export default {
 			this.$nextTick(() => {
 				this.$refs.slick.reSlick();
 			});
+		},
+		showModalForm() {
+			this.showModal = true;
 		}
 	}
 };
