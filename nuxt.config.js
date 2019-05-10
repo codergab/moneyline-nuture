@@ -2,10 +2,6 @@ import pkg from './package';
 
 export default {
   mode: 'spa',
-  server: {
-    // port:
-    host: '0.0.0.0'
-  },
 
   /*
    ** Headers of the page
@@ -90,9 +86,8 @@ export default {
    */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
-    // baseURL: 'http://192.168.43.143:8080/api/v1'
-    baseURL: 'http://localhost:8080/api/v1'
-    // baseURL: 'https://api.moneyline.ng/api/v1'
+    // baseURL: 'http://localhost:8080/api/v1'
+    baseURL: 'https://api.moneyline.ng/api/v1'
   },
 
   /*

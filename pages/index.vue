@@ -127,7 +127,7 @@
 									<div class="loan-options" style="width: 90% !important; height: 305px;  margin: 0 auto">
 										<div class="presentation">
 											<div class="loan-icon">
-												<img src="/9.gif">
+												<img src="/Pay-Day-Loan.gif">
 											</div>
 
 											<div class="loan-title">
@@ -151,7 +151,7 @@
 									<div class="loan-options" style="width: 90% !important; height: 305px;  margin: 0 auto">
 										<div class="presentation">
 											<div class="loan-icon">
-												<img src="/9.gif">
+												<img src="/Short-Term-Loan.gif">
 											</div>
 
 											<div class="loan-title">
@@ -175,7 +175,7 @@
 									<div class="loan-options" style="width: 90% !important; height: 305px;  margin: 0 auto">
 										<div class="presentation">
 											<div class="loan-icon">
-												<img src="/9.gif">
+												<img src="/Guarantors-Loan.gif">
 											</div>
 
 											<div class="loan-title">
@@ -199,7 +199,7 @@
 									<div class="loan-options" style="width: 90% !important; height: 305px;  margin: 0 auto">
 										<div class="presentation">
 											<div class="loan-icon">
-												<img src="/9.gif">
+												<img src="/Pawn-Broking.gif">
 											</div>
 
 											<div class="loan-title">
@@ -254,7 +254,7 @@
 							<div class="loan-options" style="width: 90% !important; height: 305px;  margin: 0 auto">
 								<div class="presentation">
 									<div class="loan-icon">
-										<img src="/9.gif">
+										<img src="/Pay-Day-Loan.gif">
 									</div>
 
 									<div class="loan-title">
@@ -278,7 +278,7 @@
 							<div class="loan-options" style="width: 90% !important; height: 305px;  margin: 0 auto">
 								<div class="presentation">
 									<div class="loan-icon">
-										<img src="/9.gif">
+										<img src="/Short-Term-Loan.gif">
 									</div>
 
 									<div class="loan-title">
@@ -302,7 +302,7 @@
 							<div class="loan-options" style="width: 90% !important; height: 305px;  margin: 0 auto">
 								<div class="presentation">
 									<div class="loan-icon">
-										<img src="/9.gif">
+										<img src="/Guarantors-Loan.gif">
 									</div>
 
 									<div class="loan-title">
@@ -326,7 +326,7 @@
 							<div class="loan-options" style="width: 90% !important; height: 305px;  margin: 0 auto">
 								<div class="presentation">
 									<div class="loan-icon">
-										<img src="/9.gif">
+										<img src="/Pawn-Broking.gif">
 									</div>
 
 									<div class="loan-title">

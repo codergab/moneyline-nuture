@@ -11,7 +11,7 @@ import Header from "@/components/layouts/Header";
 import Footer from "@/components/layouts/Footer";
 import { mapGetters } from "vuex";
 export default {
-	// middleware: "auth",
+	middleware: "auth",
 	components: {
 		Header,
 		Footer

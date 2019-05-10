@@ -36,14 +36,14 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label class="label">Surname <span class="text-danger">*</span></label>
-                            <input name="Surname"  v-model="model.surname" type="text" v-validate="'required'" class="form-control" placeholder="Enter your surname">
+                            <input name="Surname"  v-model="model.surname" type="text" v-validate="'required'" class="form-control" placeholder="Enter your surname" disabled>
                             <span class="error">{{ errors.first('Surname') }}</span>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label class="label">Firstname <span class="text-danger">*</span></label>
-                            <input type="text"  v-model="model.first_name" name="Firstname" v-validate="'required'"  class="form-control" placeholder="Enter your firstname">
+                            <input type="text"  v-model="model.first_name" name="Firstname" v-validate="'required'"  class="form-control" placeholder="Enter your firstname" disabled>
                             <span class="error">{{ errors.first('Firstname') }}</span>
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label class="label">Phone Number <span class="text-danger">*</span></label>
-                            <input type="text" name="Phone"  v-model="model.phone" v-validate="'required|numeric|min:13|max:13'" class="form-control" placeholder="2348123456789">
+                            <input type="text" name="Phone"  v-model="model.phone" v-validate="'required|numeric|min:13|max:13'" class="form-control" placeholder="2348123456789" disabled>
                             <span class="error">{{ errors.first('Phone') }}</span>
                         </div>
                     </div>
@@ -96,7 +96,7 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label class="label">Email <span class="text-danger">*</span></label>
-                            <input name="Email"  v-model="model.email" type="email" v-validate="'required|email'" placeholder="Enter you email" class="form-control">
+                            <input name="Email"  v-model="model.email" type="email" v-validate="'required|email'" placeholder="Enter you email" class="form-control" disabled>
                             <span class="error">{{ errors.first('Email') }}</span>
                         </div>
                     </div>
@@ -181,13 +181,19 @@
 <script>
 export default {
     name: "StepOne",
+    props: {
+        loggedInUser: {
+            type: Object
+        }
+    },
     data() {
         return {
+            userDetails: {},
             model: {
                 title: 'Mr.',
                 gender: 'Male',
                 surname: '',
-                first_name: '',
+                first_name: '', //this.$store.state.auth.user.user.first_name,
                 other_name: '',
                 date_of_birth: '',
                 phone: '',
@@ -219,9 +225,19 @@ export default {
 				}
 			})
 
+        },
+        populateUserInfo() {
+            let authUser = this.$store.state.auth.user.user;
+            this.model.first_name = authUser.first_name;
+            this.model.surname = authUser.last_name;
+            this.model.email = authUser.email;
+            this.model.phone = authUser.phone;
         }
     },
-    mounted() {
+    created() {
+        console.log(this.$store.state.auth.user.user);
+        this.populateUserInfo();
+        
     },
 
 };
