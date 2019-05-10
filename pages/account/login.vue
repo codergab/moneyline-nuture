@@ -15,7 +15,7 @@
 					</b-form-group>
 
 					<b-form-group id="input-group-2" label="Password:" label-for="input-2">
-						<b-form-input id="input-2" v-model="login.password" required placeholder="*************"></b-form-input>
+						<b-form-input id="input-2" type="password" v-model="login.password" required placeholder="*************"></b-form-input>
 					</b-form-group>
 					<b-checkbox v-model="login.remember">Remember Me</b-checkbox>
 					<b-form-group>

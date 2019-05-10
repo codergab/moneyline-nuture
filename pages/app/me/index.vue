@@ -2,20 +2,7 @@
 	<div class="col-md-11 mt-5 mb-5 mx-auto">
 		<div class="d-flex" id="wrapper">
 			<!-- Sidebar -->
-			<div class="bg-light border-right" id="sidebar-wrapper">
-				<div class="sidebar-heading">{{ fullName }}</div>
-				<div class="list-group list-group-flush">
-					<a href="#" class="list-group-item list-group-item-action bg-light">
-						Profile
-						<i class="fa fa-user pull-right"></i>
-					</a>
-					<a href="#" class="list-group-item list-group-item-action bg-light">
-						Loans
-						<i class="fa fa-money pull-right"></i>
-					</a>
-					<!-- <a href="#" class="list-group-item list-group-item-action bg-light">Applications <i class="fa fa-user"></i></a> -->
-				</div>
-			</div>
+			<SideBar />
 			<!-- /#sidebar-wrapper -->
 
 			<!-- Page Content -->
@@ -68,7 +55,7 @@
 					</table>-->
 
 					<h6
-						class="mt-5"
+						class=""
 						style="background: #015786; color: #fff; padding: 15px; "
 					>Your Loan Applications</h6>
 					<table class="table table-striped table">
@@ -172,9 +159,12 @@ a.bg-light:hover {
 
 <script>
 import { numberComma } from "@/utils/formatter";
-import { mapGetters } from "vuex";
+import SideBar  from "@/components/layouts/user/SideBar";
 export default {
 	layout: "user",
+	components: {
+		SideBar
+	},
 	data() {
 		return {
 			data1: [],
@@ -185,11 +175,6 @@ export default {
 		this.getUserLoans();
 		// this.checkLoans();
 	},
-	computed: {
-		...mapGetters({
-			fullName: "auth/authUser"
-		})
-	},
 	methods: {
 		getUserLoans() {
 			this.$axios.get("/loans/me").then(res => {
@@ -198,7 +183,6 @@ export default {
 			});
 		}
 
-		// checkLo
 	}
 };
 </script>

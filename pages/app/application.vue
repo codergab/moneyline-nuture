@@ -20,7 +20,7 @@
                                 :before-change="() => validate('stepOne')"
                             >
                                 
-                                <step-one ref="stepOne" @on-validate="onStepValidate" @employee_business_owner="workType"></step-one>
+                                <step-one ref="stepOne" :loggedInUser="loggedInUser" @on-validate="onStepValidate" @employee_business_owner="workType"></step-one>
 
                             </tab-content>
 
@@ -153,11 +153,15 @@ export default {
     },
     data() {
         return {
+            loggedInUser: '',
             finalModel: {},
             pageTitle: 'LOAN APPLICATION',
             topButtons: true,
             employee_or_business_owner: ''
         }
+    },
+    mounted() {
+        this.loggedInUser = this.$store.state.auth.user.user;
     },
     methods: {
         validate(ref) {
