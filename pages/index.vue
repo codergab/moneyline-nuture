@@ -448,7 +448,7 @@
 						</b-row>
 						<b-row class="why_choose_us-rows">
 							<b-col sm="2">
-								<b-img src="/why-choose1.png"/>
+								<b-img src="/why-choose2.png"/>
 							</b-col>
 							<b-col sm="10">
 								<p>
@@ -459,7 +459,7 @@
 						</b-row>
 						<b-row class="why_choose_us-rows">
 							<b-col sm="2">
-								<b-img src="/why-choose1.png"/>
+								<b-img src="/why-choose3.png"/>
 							</b-col>
 							<b-col sm="10">
 								<p>
@@ -527,10 +527,9 @@ export default {
 				slidesToScroll: 1,
 				autoplay: true,
 				autoplaySpeed: 2000,
-				prevArrow:
-					"<img class='a-left control-c prev slick-prev' src='../images/shoe_story/arrow-left.png'>",
-				nextArrow:
-					"<img class='a-right control-c next slick-next' src='../images/shoe_story/arrow-right.png'>"
+				arrows: false,
+				prevArrow: null,
+				nextArrow: null
 				// Any other options that can be got from plugin documentation
 			}
 		};
@@ -777,12 +776,12 @@ export default {
 h3.feature-title::before {
 	position: absolute;
 	background-color: #349f6b;
-	bottom: 170px;
+	bottom: 150px;
 	width: 70px;
 	height: 5px;
 	content: "";
 	display: inline-block;
-	margin-top: -50px;
+	/* margin-top: -50px; */
 }
 
 .first {

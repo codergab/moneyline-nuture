@@ -149,7 +149,7 @@
 						v-model="loan.phone"
 						name="phone"
 						:class="{'is-invalid': errors.has('phone')}"
-						v-validate="'required|numeric|min:13|max:13'"
+						v-validate="'required|numeric|min:11|max:11'"
 					>
 					<span v-show="errors.has('phone')" class="help text-danger">{{ errors.first('phone') }}</span>
 				</div>
@@ -258,7 +258,9 @@ export default {
 			this.monthlyRepayment =
 				this.getCompoundInterest(parseInt(this.selectedAmount, 10)) /
 				this.selectedNoOfMonths;
-			this.totalRepayment = this.getCompoundInterest(parseInt(this.selectedAmount, 10));
+			this.totalRepayment = this.getCompoundInterest(
+				parseInt(this.selectedAmount, 10)
+			);
 		},
 		computedAmount() {
 			return this.formatFigure(this.selectedAmount);
@@ -270,10 +272,14 @@ export default {
 		// 	this.Number(tempVal.replace(/[^0-9\.]+/g,"")
 		// },
 		isNumber: function(evt) {
-			evt = (evt) ? evt : window.event;
-			var charCode = (evt.which) ? evt.which : evt.keyCode;
-			if ((charCode > 31 && (charCode < 48 || charCode > 57)) && charCode !== 46) {
-				evt.preventDefault();;
+			evt = evt ? evt : window.event;
+			var charCode = evt.which ? evt.which : evt.keyCode;
+			if (
+				charCode > 31 &&
+				(charCode < 48 || charCode > 57) &&
+				charCode !== 46
+			) {
+				evt.preventDefault();
 			} else {
 				return true;
 			}
@@ -287,17 +293,15 @@ export default {
 		},
 
 		roundInThousands(value) {
-			return Math.round( parseInt(value, 10) / 1000) * 1000;
+			return Math.round(parseInt(value, 10) / 1000) * 1000;
 		},
 
 		formatMonthlyPayment(number) {
-			if(isNaN(number))
-				return 0;
+			if (isNaN(number)) return 0;
 			return this.numberComma(number);
 		},
 		formatFigure(number) {
-			if(isNaN(number) || number == '')
-				return 0;
+			if (isNaN(number) || number == "") return 0;
 			return this.numberComma(this.roundInThousands(number));
 		},
 		toggleModal() {

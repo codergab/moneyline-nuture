@@ -16,7 +16,13 @@
 					</b-form-group>
 
 					<b-form-group id="input-group-2" label="Password:" label-for="input-2">
-						<b-form-input id="input-2" v-model="login.password" required placeholder="*************"></b-form-input>
+						<b-form-input
+							type="password"
+							id="input-2"
+							v-model="login.password"
+							required
+							placeholder="*************"
+						></b-form-input>
 					</b-form-group>
 					<!-- <b-checkbox v-model="login.remember">Remember Me</b-checkbox> -->
 					<b-form-group>
@@ -102,7 +108,13 @@ export default {
 
 <style>
 .form-wrapper {
-	max-width: 40%;
-	margin: 5rem auto;
+	width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+	.form-wrapper {
+		width: 40%;
+		margin: 5rem auto;
+	}
 }
 </style>
