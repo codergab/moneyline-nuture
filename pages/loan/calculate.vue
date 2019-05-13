@@ -149,7 +149,7 @@
 						v-model="loan.phone"
 						name="phone"
 						:class="{'is-invalid': errors.has('phone')}"
-						v-validate="'required|numeric|min:13|max:13'"
+						v-validate="'required|numeric|min:11|max:11'"
 					>
 					<span v-show="errors.has('phone')" class="help text-danger">{{ errors.first('phone') }}</span>
 				</div>
