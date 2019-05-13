@@ -21,9 +21,9 @@
 						<b-link to="/loan/get-started">
 							<b-button variant="primary">Apply Now</b-button>
 						</b-link>
-						<b-link to="/account/login">
+						<a href="/account/login">
 							<b-button variant="secondary">Login</b-button>
-						</b-link>
+						</a>
 					</b-navbar-nav>
 					<!-- Logged in auth -->
 					<b-navbar-nav v-if="isAuthenticated">
@@ -75,7 +75,7 @@ export default {
 	methods: {
 		logout() {
 			this.$store.dispatch("auth/logout");
-			this.$store.dispatch("users/logout");
+			// this.$store.dispatch("users/logout");
 			this.$router.push("/");
 		}
 	}
