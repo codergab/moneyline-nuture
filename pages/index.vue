@@ -242,7 +242,7 @@
 											<p
 												style
 												class="text-white"
-											>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti accusamus voluptate eum tenetur illo unde aliquam adipisci tempor.</p>
+											>With Money Line, we provide Travel loans as a useful option for when you want to pay for travel expenses but don’t have the funds available immediately. Our loan process has been simplified so you can concentrate on the things that truly matter.</p>
 										</div>
 									</div>
 								</div>
@@ -366,7 +366,7 @@
 									<p
 										style
 										class="text-white"
-									>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti accusamus voluptate eum tenetur illo unde aliquam adipisci tempor.</p>
+									>With Money Line, we provide Travel loans as a useful option for when you want to pay for travel expenses but don’t have the funds available immediately. Our loan process has been simplified so you can concentrate on the things that truly matter.</p>
 								</div>
 							</div>
 						</div>

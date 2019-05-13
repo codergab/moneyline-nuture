@@ -2,62 +2,13 @@
 	<div class="col-md-11 mt-5 mb-5 mx-auto">
 		<div class="d-flex" id="wrapper">
 			<!-- Sidebar -->
-			<SideBar />
+			<SideBar/>
 			<!-- /#sidebar-wrapper -->
 
 			<!-- Page Content -->
 			<div id="page-content-wrapper">
 				<div style="padding-left:10px;">
-					<!-- <h6 class style="background: #2E9462; color: #fff; padding: 15px; ">Approved Loans</h6>
-					<table class="table table-striped table">
-						<thead>
-							<tr>
-								<th>Appliction ID</th>
-								<th>Amount Requested (&#8358;)</th>
-								<th>Amount Approved (&#8358;)</th>
-								<th>Balance Due (&#8358;)</th>
-								<th>Date Approved</th>
-								<th>Repayment Date</th>
-								<th>Status</th>
-								<th>Actions</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>738383893939393</td>
-								<td>500,000.00</td>
-								<td>300,000.00</td>
-								<td>100,000.00</td>
-								<td>01/03/2019</td>
-								<td>01/03/2019</td>
-								<td>
-									<span class="badge badge-warning">Running</span>
-								</td>
-								<td>
-									<button class="btn btn-success btn-sm">View</button>
-								</td>
-							</tr>
-							<tr>
-								<td>738383893939393</td>
-								<td>500,000.00</td>
-								<td>500,000.00</td>
-								<td>0.00</td>
-								<td>01/03/2019</td>
-								<td>01/03/2019</td>
-								<td>
-									<span class="badge badge-success">Completed</span>
-								</td>
-								<td>
-									<button class="btn btn-success btn-sm">View</button>
-								</td>
-							</tr>
-						</tbody>
-					</table>-->
-
-					<h6
-						class=""
-						style="background: #015786; color: #fff; padding: 15px; "
-					>Your Loan Applications</h6>
+					<h6 class style="background: #015786; color: #fff; padding: 15px; ">Your Loan Applications</h6>
 					<table class="table table-striped table">
 						<thead>
 							<tr>
@@ -65,13 +16,13 @@
 								<th>Amount Requested (&#8358;)</th>
 								<th>Date Requested</th>
 								<th>Status</th>
-								<th>Actions</th>
+								<!-- <th>Actions</th> -->
 							</tr>
 						</thead>
 						<tbody>
-							<tr v-for="(loan, i) in data1" :key="i">
+							<tr v-for="(loan, i) in loans" :key="i">
 								<td>{{ loan._idd }}</td>
-								<td>{{ loan.request_amount }}</td>
+								<td>₦{{ loan.request_amount | numFormat }}</td>
 								<td>{{ loan.created_at }}</td>
 								<td>
 									<span class="badge badge-warning" v-if="loan.loan_status.name == 'pending'">Pending</span>
@@ -81,9 +32,9 @@
 									<span class="badge badge-success" v-if="loan.loan_status.name == 'disbursed'">Disbursed</span>
 									<span class="badge badge-success" v-if="loan.loan_status.name == 'repaid'">Repaid</span>
 								</td>
-								<td>
+								<!-- <td>
 									<button class="btn btn-success btn-sm">View</button>
-								</td>
+								</td>-->
 							</tr>
 						</tbody>
 					</table>
@@ -159,7 +110,7 @@ a.bg-light:hover {
 
 <script>
 import { numberComma } from "@/utils/formatter";
-import SideBar  from "@/components/layouts/user/SideBar";
+import SideBar from "@/components/layouts/user/SideBar";
 export default {
 	layout: "user",
 	components: {
@@ -167,8 +118,7 @@ export default {
 	},
 	data() {
 		return {
-			data1: [],
-			data2: []
+			loans: []
 		};
 	},
 	mounted() {
@@ -178,11 +128,13 @@ export default {
 	methods: {
 		getUserLoans() {
 			this.$axios.get("/loans/me").then(res => {
-				this.data1 = res.data.data.data;
+				const { data: loans } = res.data.data;
+				loans.forEach(loan => {
+					this.loans.push(loan);
+				});
 				// [...this.data1, requested_amount: numberComma(this.data1.requested_amount)]
 			});
 		}
-
 	}
 };
 </script>

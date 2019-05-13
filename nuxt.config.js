@@ -66,6 +66,7 @@ export default {
     '~/plugins/form-wizard.js',
     '~/plugins/vue-modaltor',
     '~/plugins/vue-button-loader',
+    '~/plugins/vue-filters.js',
     {
       src: '~/plugins/localStorage.js',
       ssr: false

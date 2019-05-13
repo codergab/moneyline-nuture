@@ -26,7 +26,9 @@
 						</a>
 					</b-navbar-nav>
 					<!-- Logged in auth -->
-					<b-navbar-nav v-if="isAuthenticated">
+					<b-navbar-nav
+						v-if="isAuthenticated && $store.state.auth.user.user.roles[0].name == 'customer'"
+					>
 						<b-nav-item to="/">Home</b-nav-item>
 						<b-nav-item to="/about-us">About Us</b-nav-item>
 						<b-nav-item to="/faq">FAQ</b-nav-item>
@@ -40,6 +42,14 @@
 						<b-nav-item to="/app/me">
 							<i class="fa fa-dashboard"></i> Dashboard
 						</b-nav-item>
+					</b-navbar-nav>
+					<b-navbar-nav v-if="isAuthenticated && $store.state.auth.user.user.roles[0].name == 'admin'">
+						<b-nav-item to="/app/admin/dashboard">
+							<i class="fa fa-dashboard"></i> Dashboard
+						</b-nav-item>
+						<b-link to="/account/login">
+							<b-button variant="secondary" @click="logout">Logout</b-button>
+						</b-link>
 					</b-navbar-nav>
 					<!-- <b-navbar-nav v-if="isAuthenticated">
 						<b-nav-item to="/">Home</b-nav-item>

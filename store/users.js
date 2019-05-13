@@ -19,19 +19,10 @@ export const mutations = {
 export const actions = {
   fetchUsers({
     commit
-  }) {
-    this.$axios.get(ALL_USERS).then(response => {
-      const {
-        data
-      } = response.data;
-      const users = data.data;
-      console.log(users)
-      commit('loadUsers', users);
-      commit('additionals', data);
-    })
-  },
-
-}
+  }, payload) {
+    commit('loadUsers', payload);
+  }
+};
 
 export const getters = {
   getUsers: state => {

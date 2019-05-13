@@ -1,40 +1,87 @@
 <template>
-	<b-container fluid>
-		<div class="manage">
-			<h2>{{ title }}</h2>
-			<div>
-				<b-tabs content-class="mt-3" align="right">
-					<b-tab title="Manage Users" active @click.prevent="changeTitle('Manage Users')">
-						<UserTable/>
-					</b-tab>
-					<b-tab title="Manage Loans" @click.prevent="changeTitle('Manage Loans')">
-						<LoanTable/>
-					</b-tab>
-				</b-tabs>
-			</div>
-		</div>
-	</b-container>
+	<div>
+		<h6 class style="background: #015786; color: #fff; padding: 15px; ">All Users</h6>
+
+		<table class="table table-striped table">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Fullname</th>
+					<th>Email Address</th>
+					<th>Phone Number</th>
+					<th>User Type</th>
+					<th>Status</th>
+					<!-- <th>Actions</th> -->
+				</tr>
+			</thead>
+			<tbody v-if="!loading">
+				<tr v-for="(user, i) in allUsers" :key="i">
+					<td>{{ i+1 }}</td>
+					<td>{{ user.first_name }} {{ user.last_name }}</td>
+					<td>{{ user.email}}</td>
+					<td>{{ user.phone}}</td>
+					<td>{{ user.roles[0].name }}</td>
+					<td>
+						<span class="badge badge-success" v-if="user.verified == 1">Verified</span>
+						<span class="badge badge-warning" v-else>Pending Verification</span>
+					</td>
+					<!-- <td>
+						<button class="btn btn-success btn-sm">View</button>
+					</td>-->
+				</tr>
+			</tbody>
+			<tbody v-if="loading">
+				<tr>
+					<td colspan="10">
+						<content-loader
+							:height="160"
+							:width="1000"
+							:speed="2"
+							primaryColor="#f3f3f3"
+							secondaryColor="#ecebeb"
+						>
+							<rect x="11.34" y="7.07" rx="0" ry="0" width="811.2" height="40.04"/>
+							<rect x="11.34" y="68.07" rx="0" ry="0" width="823.2" height="44"/>
+						</content-loader>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </template>
 
 <script>
-import UserTable from "@/components/admin/UsersTable";
-import LoanTable from "@/components/LoanTable";
 import { mapGetters } from "vuex";
+import { ALL_USERS } from "~/utils/api-routes";
+import { ContentLoader } from "vue-content-loader";
 export default {
 	layout: "admin",
 	components: {
-		UserTable,
-		LoanTable
+		ContentLoader
 	},
-	mounted() {},
 	data() {
 		return {
-			title: "Manage Users"
+			allUsers: [],
+			loading: true
 		};
 	},
+	mounted() {
+		this.fetchUsers();
+	},
 	methods: {
-		changeTitle(title) {
-			this.title = title;
+		fetchUsers() {
+			this.$axios.get(ALL_USERS).then(response => {
+				const { data } = response.data;
+				this.allUsers = data.data;
+				setTimeout(() => {
+					this.loading = false;
+				}, 1000);
+			});
+		},
+		setUsers() {
+			setTimeout(() => {
+				this.$store.dispatch("users/fetchUsers", this.allUsers);
+			}, 2000);
 		}
 	}
 };
