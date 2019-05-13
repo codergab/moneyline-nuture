@@ -3,9 +3,7 @@ import createPersistedState from 'vuex-persistedstate'
 export default ({
   store
 }) => {
-  window.onNuxtReady(() => {
-    createPersistedState({
-      key: 'moneyline',
-    })(store)
-  })
+  createPersistedState({
+    key: 'moneyline',
+  })(store)
 }

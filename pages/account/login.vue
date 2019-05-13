@@ -55,7 +55,18 @@ export default {
 			show: true
 		};
 	},
-	mounted() {},
+	mounted() {
+		if (this.$store.state.auth.user) {
+			console.log(this.$store.state.auth.user);
+			// console.log(this.$store.state.auth.user.user);
+			// return;
+			// if (this.$store.state.user.roles[0].name == "admin") {
+			// 	this.$router.push("/app/admin/dashboard");
+			// } else {
+			// 	this.$router.push("/app/me");
+			// }
+		}
+	},
 	methods: {
 		submitForm() {
 			if (this.login.email && this.login.password) {

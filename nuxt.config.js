@@ -86,8 +86,8 @@ export default {
    */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
-    // baseURL: 'http://localhost:8080/api/v1'
-    baseURL: 'https://api.moneyline.ng/api/v1'
+    baseURL: 'http://localhost:8080/api/v1'
+    // baseURL: 'https://api.moneyline.ng/api/v1'
   },
 
   /*

@@ -17,8 +17,8 @@
 						display: flex;
 						justify-content: space-between
 					">
-						<span class="start">10,000</span>
-						<span class="end">3,000,000</span>
+						<span class="start">₦10,000</span>
+						<span class="end">₦3,000,000</span>
 					</div>
 					<vue-slider
 						v-model="selectedAmount"
@@ -47,7 +47,7 @@
 
 					<div class="loan-result" style="margin-top: 5em; border-bottom: 1px solid #ccc">
 						<span class="text-title">Loan</span>
-						<span class="figure" style="padding-left: 0.5em">N{{ formatFigure(selectedAmount) }}</span>
+						<span class="figure" style="padding-left: 0.5em">₦{{ formatFigure(selectedAmount) }}</span>
 					</div>
 					<div class="loan-result" style=" border-bottom: 1px solid #ccc">
 						<span class="text-title">Term</span>
@@ -58,7 +58,7 @@
 					</div>
 					<div class="loan-result" style=" border-bottom: 1px solid #ccc">
 						<span class="text-title font-weight-bold">Monthly Payment</span>
-						<span class="figure" style="padding-left: 0.5em">N{{ formatMonthlyPayment(monthlyRepayment) }}</span>
+						<span class="figure" style="padding-left: 0.5em">₦{{ formatMonthlyPayment(monthlyRepayment) }}</span>
 					</div>
 
 					<!-- Button -->
@@ -216,6 +216,7 @@
 <script>
 import VueSlider from "vue-slider-component";
 import ADD_NEW_USER from "../../utils/api-routes";
+
 export default {
 	components: {
 		VueSlider
@@ -267,10 +268,6 @@ export default {
 		}
 	},
 	methods: {
-		// update() {
-		// 	var tempVal = this.$el.value + '';
-		// 	this.Number(tempVal.replace(/[^0-9\.]+/g,"")
-		// },
 		isNumber: function(evt) {
 			evt = evt ? evt : window.event;
 			var charCode = evt.which ? evt.which : evt.keyCode;
@@ -325,28 +322,26 @@ export default {
 					// alert("Contact message sent successful");
 					this.loading = true;
 					this.$axios
-						.post("register", this.loan)
+						.$post("register", this.loan)
 						.then(response => {
-							let { status } = response.data;
+							// let { status } = response.data;
 							this.showModal = false;
-							if (status) {
-								this.$router.push("/account/verify");
-							}
+							this.$router.push("/account/verify");
 						})
 						.catch(err => {
 							this.loading = false;
-							const { error } = err.response.data;
-							if (error.length > 0) {
-								error.forEach(err => {
-									this.responseErrors.push(err);
-								});
+							if (err) {
+								if (
+									err.response.data.error &&
+									err.response.data.error.length > 0
+								) {
+									err.response.data.error.forEach(err => {
+										this.responseErrors.push(err);
+									});
+								}
 							}
-							// for (const err of error) {
-							// }
+							console.log(err);
 						});
-					// this.$store.dispatch("auth/createUser", this.loan);
-					// console.log({ ...this.loan });
-				} else {
 				}
 			});
 		}
