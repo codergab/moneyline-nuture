@@ -127,7 +127,7 @@
 							</b-col>
 							<b-col sm="8" style="margin-left: -80px;">
 								<h5 class="font-weight-bold">APPLY</h5>
-								<p>complete our online form and fill in primary details such as Name, Contact, etc.</p>
+								<p>Complete our online form and fill in primary details such as Name, Contact, etc.</p>
 							</b-col>
 						</b-row>
 						<b-row style="margin-top: 20px;">
@@ -179,7 +179,7 @@
 							</b-col>
 							<b-col sm="10">
 								<p>
-									We understand the reason behind your need for cash.
+									We understand the reason behind your need for cash.<br>
 									We specialize in providing the best loan option possible for whatever cash emergency you may encounter.
 								</p>
 							</b-col>
@@ -190,7 +190,7 @@
 							</b-col>
 							<b-col sm="10">
 								<p>
-									We deliver our loan services on time.
+									We deliver our loan services on time.<br>
 									We understand the urgency of delivering on time as situations out of our control require immediate supply of cash. That is why we always keep our word on timely loan delivery.
 								</p>
 							</b-col>
@@ -201,8 +201,9 @@
 							</b-col>
 							<b-col sm="10">
 								<p>
-									We understand the reason behind your need for cash.
-									We specialize in providing the best loan option possible for whatever cash emergency you may encounter.
+									We deliver our loan services on time.<br>
+We understand the urgency of delivering on time as situations out of our control require immediate supply of cash. That is why we always keep our word on timely loan delivery.
+
 								</p>
 							</b-col>
 						</b-row>
