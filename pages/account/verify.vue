@@ -30,7 +30,7 @@ body {
 .wrapper {
   max-width: 40%;
   display: flex;
-  height: 100vh;
+  height: 100vh;                                                                                            
   padding: 10rem 0;
 }
 </style>
