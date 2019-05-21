@@ -73,7 +73,7 @@
 					<h3 class="feature-title text-link text-left">Faster</h3>
 					<div
 						class="feature-content text-left"
-					>Always think Moneyline. We provide quick and easily accessible loan services. We understand the need to deliver on our promise while remaining time conscious as you can readily access loan service of up to N3,000,000 in 48 hours.</div>
+					>Always think Moneyline. We provide quick and easily accessible loan services. We understand the need to deliver on our promise while remaining time conscious as you can readily access loan service of up to N3,000,000 in 24 hours.</div>
 				</b-col>
 				<b-col sm="4">
 					<div class="feature-image">
@@ -385,7 +385,7 @@
 						<h2 class="text-center text-black text-uppercase font-weight-bold text-link">How does it work?</h2>
 						<p
 							class="text-left text-secondary"
-						>Apply and get quick, hassle free access to your loan request in 48 hours by following these easy steps.</p>
+						>Apply and get quick, hassle free access to your loan request in 24 hours by following these easy steps.</p>
 
 						<b-row style="margin-top: 20px;" class="how-it-works-rows">
 							<b-col sm="4" class="how-it-works--child-left">
@@ -452,8 +452,9 @@
 							</b-col>
 							<b-col sm="10">
 								<p>
-									We deliver our loan services on time.<br>
-									We understand the urgency of delivering on time as situations out of our control require immediate supply of cash. That is why we always keep our word on timely loan delivery.
+									We are always available to cater to your loan need.<br>
+We offer loans to individuals, businesses and firms 24 hours a day, 365 days a year, whenever and wherever you need us.
+
 								</p>
 							</b-col>
 						</b-row>
@@ -463,8 +464,9 @@
 							</b-col>
 							<b-col sm="10">
 								<p>
-									We deliver our loan services on time.<br>
+									We deliver our loan services on time. 
 We understand the urgency of delivering on time as situations out of our control require immediate supply of cash. That is why we always keep our word on timely loan delivery.
+
 
 								</p>
 							</b-col>
