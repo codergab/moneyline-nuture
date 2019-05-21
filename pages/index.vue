@@ -464,7 +464,7 @@ We offer loans to individuals, businesses and firms 24 hours a day, 365 days a y
 							</b-col>
 							<b-col sm="10">
 								<p>
-									We deliver our loan services on time. 
+									We deliver our loan services on time. <br>
 We understand the urgency of delivering on time as situations out of our control require immediate supply of cash. That is why we always keep our word on timely loan delivery.
 
 
