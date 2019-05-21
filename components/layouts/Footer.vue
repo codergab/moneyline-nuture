@@ -1,62 +1,64 @@
 <template>
-	<footer class="container-fluid footer">
-		<b-row>
-			<b-col sm="4">
-				<p>Moneyline is a trading name of Chestnut Financial Services Limited. We Offer a range of financial services including short term loans, Payday loans, Guarantor loans, Travel money, Pawn broking Services</p>
-			</b-col>
-			<b-col sm="4" class="text-center">
-				<ul class="nav flex-column">
-					<li class="footer-list-link">
-						<b-link to="/about-us">About</b-link>
-					</li>
-					<li class="footer-list-link">
-						<b-link to="/careers">Careers</b-link>
-					</li>
-					<li class="footer-list-link">
-						<b-link to="/faq">FAQ</b-link>
-					</li>
-				</ul>
-			</b-col>
-			<b-col sm="4">
-				<div>
-					<h3>Contact Us</h3>
-					<p>We are here if you need us</p>
-				</div>
-				<div>
-					<a class="footer-list-link" href="tel:09078440000">09078440000</a>
-					<br>
-					<a class="footer-list-link" href="mailto:hello@moneyline.ng">hello@moneyline.ng</a>
-				</div>
-			</b-col>
-		</b-row>
-		<b-row style="align-items: baseline">
-			<b-col sm="4">
-				<img src="/logo.png">
-			</b-col>
-			<b-col sm="4">
-				<p
-					class="text-center align-middle font-weight-bold"
-					style="margin-top: 1em"
-				>&copy; Moneyline. All Rights Reserved</p>
-			</b-col>
-			<b-col sm="4">
-				<div class="effect egeon">
-					<div class="buttons">
-						<a href="#" class="fb" title="Join us on Facebook">
-							<i class="fa fa-facebook" aria-hidden="true"></i>
-						</a>
-
-						<a href="#" class="insta" title="Join us on Instagram">
-							<i class="fa fa-instagram" aria-hidden="true"></i>
-						</a>
-						<a href="#" class="tw" title="Join us on Twitter">
-							<i class="fa fa-twitter" aria-hidden="true"></i>
-						</a>
+	<footer class="footer">
+		<b-container fluid>
+			<b-row class="footer-1">
+				<b-col sm="4" lg="4" md="4">
+					<p>Moneyline is a trading name of Chestnut Financial Services Limited. We Offer a range of financial services including short term loans, Payday loans, Guarantor loans, Travel money, Pawn broking Services</p>
+				</b-col>
+				<b-col sm="4" lg="4" class="text-center">
+					<ul class="nav flex-column">
+						<li class="footer-list-link">
+							<b-link to="/about-us">About</b-link>
+						</li>
+						<li class="footer-list-link">
+							<b-link to="/careers">Careers</b-link>
+						</li>
+						<li class="footer-list-link">
+							<b-link to="/faq">FAQ</b-link>
+						</li>
+					</ul>
+				</b-col>
+				<b-col sm="6" lg="4">
+					<div>
+						<h3>Contact Us</h3>
+						<p>We are here if you need us</p>
 					</div>
-				</div>
-			</b-col>
-		</b-row>
-		<!-- <b-row></b-row> -->
+					<div>
+						<a class="footer-list-link" href="tel:09078440000">09078440000</a>
+						<br>
+						<a class="footer-list-link" href="mailto:hello@moneyline.ng">hello@moneyline.ng</a>
+					</div>
+				</b-col>
+			</b-row>
+			<b-row style="align-items: baseline" class="footer-2">
+				<b-col sm="4">
+					<img src="/logo.png" width="250">
+				</b-col>
+				<b-col sm="4">
+					<p
+						class="text-center align-middle font-weight-bold"
+						style="margin-top: 1em"
+					>&copy; Moneyline. All Rights Reserved</p>
+				</b-col>
+				<b-col sm="4">
+					<div class="effect egeon">
+						<div class="buttons">
+							<a href="#" class="fb" title="Join us on Facebook">
+								<i class="fa fa-facebook" aria-hidden="true"></i>
+							</a>
+
+							<a href="#" class="insta" title="Join us on Instagram">
+								<i class="fa fa-instagram" aria-hidden="true"></i>
+							</a>
+							<a href="#" class="tw" title="Join us on Twitter">
+								<i class="fa fa-twitter" aria-hidden="true"></i>
+							</a>
+						</div>
+					</div>
+				</b-col>
+			</b-row>
+			<!-- <b-row></b-row> -->
+		</b-container>
 	</footer>
 </template>
 <script>
@@ -66,9 +68,30 @@ export default {
 </script>
 
 <style scoped>
+@media screen and (max-width: 560px) {
+	.footer {
+		padding: 2rem 0;
+	}
+	.footer-1 {
+		display: none;
+	}
+
+	.effect .buttons {
+		margin-top: 0 !important;
+	}
+
+	.footer-2 {
+		text-align: center;
+	}
+}
+
+.footer-1,
+.footer-2 {
+	/* display:  */
+}
 footer {
 	padding: 3rem;
-	background: rgb(239, 239, 239);
+	background: rgb(233, 233, 233);
 }
 
 .footer-list-link {

@@ -1,44 +1,41 @@
 <template>
 	<div>
 		<div class="row">
-            <div class="col-md-12">
-                <div class="slidee">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="payoff">
-                               We provide <span class="bold">smart loans</span><br>designed to put you at <br>ease
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <CallToAction/>
+			<div class="col-md-12">
+				<div class="slidee">
+					<b-container fluid>
+						<div class="row">
+							<div class="col-sm-6">
+								<div class="payoff">
+									We provide
+									<span class="bold">smart loans</span>
+									<br>designed to put you at
+									<br>ease
+								</div>
+							</div>
+						</div>
+					</b-container>
+				</div>
+				<CallToAction/>
 				<section class="contact-section">
 					<div class="row">
 						<div class="col-md-6 col-sm-12 col-xs-12 col-lg-6">
 							<b-card>
 								<div class="contact-form">
+									<h2 class="text-center">Get In Touch With Us</h2>
 									<b-form @submit.prevent="contactUs">
 										<b-form-group id="input-group-2" label="Name:" label-for="name">
-											<b-form-input 
-											id="name" 
-											name="name" 
-											v-model="contact.name" 
-											v-validate="'required'"
-											></b-form-input>
+											<b-form-input id="name" name="name" v-model="contact.name" v-validate="'required'"></b-form-input>
 											<span class="error">{{ errors.first('name') }}</span>
 										</b-form-group>
 
-										<b-form-group
-											id="email-group"
-											label="Email:"
-											label-for="email">
-											
+										<b-form-group id="email-group" label="Email:" label-for="email">
 											<b-form-input
-											id="email"
-											type="email"
-											v-model="contact.email"
-											v-validate="'required|email'"
-											name="email"
+												id="email"
+												type="email"
+												v-model="contact.email"
+												v-validate="'required|email'"
+												name="email"
 											></b-form-input>
 											<span class="error">{{ errors.first('email') }}</span>
 										</b-form-group>
@@ -55,15 +52,10 @@
 												v-model="contact.company_description"
 												v-validate="'required'"
 												name="company description"
-												></b-form-textarea>
-												<span class="error">{{ errors.first('company description') }}</span>
-
+											></b-form-textarea>
+											<span class="error">{{ errors.first('company description') }}</span>
 										</b-form-group>
-										<b-form-group
-											id="message-group"
-											label="Message:"
-											label-for="message"
-										>
+										<b-form-group id="message-group" label="Message:" label-for="message">
 											<b-form-textarea
 												id="message"
 												rows="6"
@@ -71,19 +63,20 @@
 												v-model="contact.message"
 												name="message"
 												v-validate="'required'"
-												></b-form-textarea>
-												<span class="error">{{ errors.first('message') }}</span>
+											></b-form-textarea>
+											<span class="error">{{ errors.first('message') }}</span>
 										</b-form-group>
 										<div class="text-center form-group">
-											Two + 4 = <input 
-											id="question" 
-											v-model="contact.question" 
-											class="form-input text-center" 
-											placeholder="enter sum in digit" 
-											type="text"
-											v-validate="'required|numeric'"
-											name="question"
-											/>
+											Two + 4 =
+											<input
+												id="question"
+												v-model="contact.question"
+												class="form-input text-center"
+												placeholder="enter sum in digit"
+												type="text"
+												v-validate="'required|numeric'"
+												name="question"
+											>
 											<div class="form-group">
 												<span class="error">{{ errors.first('question') }}</span>
 											</div>
@@ -91,7 +84,6 @@
 										<div class="text-center form-group">
 											<b-button type="submit" variant="primary">SEND MESSAGE</b-button>
 										</div>
-										
 									</b-form>
 								</div>
 							</b-card>
@@ -100,34 +92,37 @@
 						<div class="col-md-4 col-sm-12 col-xs-12 col-lg-4 text-blue">
 							<div class="mapouter">
 								<div class="gmap_canvas">
-									<iframe width="480" 
-									height="302" 
-									id="gmap_canvas" 
-									src="https://maps.google.com/maps?q=57A%20Oyikan%20Abayomi%20Drive%20Ikoyi%2C%20Lagos&t=&z=13&ie=UTF8&iwloc=&output=embed" 
-									frameborder="0" 
-									scrolling="no" 
-									marginheight="0"
-									marginwidth="0"></iframe>
+									<iframe
+										width="480"
+										height="302"
+										id="gmap_canvas"
+										src="https://maps.google.com/maps?q=57A%20Oyikan%20Abayomi%20Drive%20Ikoyi%2C%20Lagos&t=&z=13&ie=UTF8&iwloc=&output=embed"
+										frameborder="0"
+										scrolling="no"
+										marginheight="0"
+										marginwidth="0"
+									></iframe>
 									<a href="https://www.emojilib.com"></a>
 								</div>
 							</div>
-							<div style="padding-top:20px">
+							<div class="addr">
 								<h4>57A Oyikan Abayomi Drive</h4>
 								<h5>Ikoyi, Lagos</h5>
-								<p class="p-marging">MoneyLine is a trading name of Chestnut Financial Services Limited. We offer a
+								<p class="p-marging">
+									MoneyLine is a trading name of Chestnut Financial Services Limited. We offer a
 									range of financial services including short term loans,Payday loans, Guarantor
 									loans, Travel money, Pawn broking Services
 								</p>
-								<p class="p-marging">
-									Visit us online at www.moneyline.ng, email us at hello@moneyline.ng or call us on 0907 844 0000
-								</p>
+								<p
+									class="p-marging"
+								>Visit us online at www.moneyline.ng, email us at hello@moneyline.ng or call us on 0907 844 0000</p>
 							</div>
 						</div>
 					</div>
 				</section>
 				<CallToAction/>
-            </div>
-        </div>
+			</div>
+		</div>
 	</div>
 </template>
 <script>
@@ -136,91 +131,109 @@ import Footer from "@/components/layouts/Footer";
 import CallToAction from "@/components/layouts/CallToAction";
 // import { required, minLength, between } from 'vuelidate/lib/validators'
 export default {
-	"name":"Contact",
-	data(){
+	name: "Contact",
+	data() {
 		return {
-			contact:{
-				name:null,
-				email:null,
-				company_description:null,
-				message:null,
-				question:null,
+			contact: {
+				name: null,
+				email: null,
+				company_description: null,
+				message: null,
+				question: null
 			}
-		}
+		};
 	},
-	methods:{
-		contactUs: function (e) {
+	methods: {
+		contactUs: function(e) {
 			this.$validator.validate().then(valid => {
 				if (valid) {
-					alert('Contact message sent successful')
-				}else{
-					
+					alert("Contact message sent successful");
+				} else {
 				}
-			})
-    	}	
+			});
+		}
 	},
 	components: {
 		Header,
 		Footer,
 		CallToAction
-	},
+	}
 };
 </script>
 
 <style scoped>
-h4{
-	font-weight: bold
+@media screen and (max-width: 560px) {
+	.slidee {
+		height: 170px !important;
+	}
+
+	.payoff {
+		padding: 28px 0 145px 0px !important;
+		font-size: 1.15em !important;
+	}
+
+	.contact-section,
+	.contact-form {
+		padding: 0 !important;
+	}
+	.addr {
+		padding: 1em;
+	}
 }
-h5{
+.addr {
+	padding-top: 20px;
+}
+h4 {
+	font-weight: bold;
+}
+h5 {
 	font-weight: 900;
 }
-.mapouter{
-	position:relative;
-	text-align:right;
-	height:302px;
-	width:480px;
+.mapouter {
+	position: relative;
+	text-align: right;
+	height: 302px;
+	width: 480px;
 }
 
 .gmap_canvas {
-	overflow:hidden;
-	background:none!important;
-	height:290px;
-	width:426px;
+	overflow: hidden;
+	background: none !important;
+	height: 290px;
+	width: 426px;
 }
-.error{
+.error {
 	color: #bf0915;
-	font-size: 14px
+	font-size: 14px;
 }
-.contact-section{
-	padding: 100px
+.contact-section {
+	padding: 100px;
 }
-.text-blue{
-	color: #1E6B93
+.text-blue {
+	color: #1e6b93;
 }
-.p-marging{
-	margin-top: 30px
+.p-marging {
+	margin-top: 30px;
 }
-.contact-form{
-	padding:50px
+.contact-form {
+	padding: 50px;
 }
-.bold{
+.bold {
 	font-weight: 600;
 }
- .slidee {
-        background-image: url('/Artboard_1.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-    .payoff {
-        font-size: 2.15em;
-        font-weight: 200;
-        color: #fff;
-        padding: 111px 0 145px 30px;
-    }
-    .highlight {
-        font-weight: bold;
-    }
-	
-	
+.slidee {
+	background: #274263 url("/new-contact-banner.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.payoff {
+	font-size: 2.15em;
+	font-weight: 200;
+	color: #fff;
+	padding: 111px 0 145px 30px;
+}
+.highlight {
+	font-weight: bold;
+}
 </style>
 

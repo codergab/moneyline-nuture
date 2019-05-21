@@ -5,32 +5,20 @@
                 <!-- <ul>
                 <li v-for="(error, index) in errors.all()" :key="index">{{ error }}</li>
                 </ul> -->
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label class="label">Employee / Business Owner <span class="text-danger">*</span></label>
-                            <select v-model="model.employee_business_owner" name="employee_business_owner" v-validate="'required'"  class="form-control">
-                                <option value="employee">Employee</option>
-                                <option value="business_owner">Business Owner</option>
-                            </select>
-                            <span class="error">{{ errors.first('employee_business_owner') }}</span>
-                        </div>
-                    </div>
-                </div>
-                <template v-if="model.employee_business_owner == 'employee'">
+                <template v-if="workType == 'employee'">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
                             <label class="label">Company Name <span class="text-danger">*</span></label>
-                            <input type="text" name="company_name" v-validate="'required'" v-model="model.company_name" class="form-control" placeholder="Enter company name">
-                            <span class="error">{{ errors.first('company_name') }}</span>
+                            <input type="text" name="Company name" v-validate="'required'" v-model="model.company_name" class="form-control" placeholder="Enter company name">
+                            <span class="error">{{ errors.first('Company name') }}</span>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
                             <label class="label">Company Address <span class="text-danger">*</span></label>
-                            <input type="text" name="company_address" v-validate="'required'" v-model="model.company_address" class="form-control" placeholder="Enter company address">
-                            <span class="error">{{ errors.first('company_address') }}</span>
+                            <input type="text" name="Company address" v-validate="'required'" v-model="model.company_address" class="form-control" placeholder="Enter company address">
+                            <span class="error">{{ errors.first('Company address') }}</span>
                         </div>
                     </div>
                 </div>
@@ -38,15 +26,15 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="label">Position Held <span class="text-danger">*</span></label>
-                            <input type="text" name="position_held" v-validate="'required'" v-model="model.position_held" class="form-control" placeholder="Enter position held">
-                            <span class="error">{{ errors.first('position_held') }}</span>
+                            <input type="text" name="Position held" v-validate="'required'" v-model="model.position_held" class="form-control" placeholder="Enter position held">
+                            <span class="error">{{ errors.first('Position held') }}</span>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="label">Date Of Employment <span class="text-danger">*</span></label>
-                            <input type="date" name="model.date_of_employment" v-validate="'required'" v-model="model.date_of_employment" class="form-control">
-                            <span class="error">{{ errors.first('date_of_employment') }}</span>
+                            <input type="date" name="Date of employment" v-validate="'required'" v-model="model.date_of_employment" class="form-control">
+                            <span class="error">{{ errors.first('Date of employment') }}</span>
                         </div>
                     </div>
                 </div>
@@ -54,42 +42,42 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label class="label">Monthly Pay Day <span class="text-danger">*</span></label>
-                            <select name="monthly_pay_day" v-validate="'required'" v-model="model.monthly_pay_day" class="form-control" id="">
+                            <select name="Monthly pay day" v-validate="'required'" v-model="model.monthly_pay_day" class="form-control" id="">
                                 <option v-for="(i, index) in 31" :key="index" :value="i">{{ i }}</option>
                             </select>
-                            <span class="error">{{ errors.first('monthly_pay_day') }}</span>
+                            <span class="error">{{ errors.first('Monthly pay day') }}</span>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label class="label">Monthly Pay (&#8358;)</label>
-                            <input type="text" name="money_pay" class="form-control" placeholder="Enter your monthly pay">
+                            <input type="text" name="Monthly pay" class="form-control" placeholder="Enter your monthly pay">
                             <!-- <span class="error">{{ errors.first('money_pay') }}</span> -->
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label class="label">Net Salary (&#8358;) <span class="text-danger">*</span></label>
-                            <input type="text" name="net_salary" v-validate="'required'" v-model="model.net_salary" class="form-control" placeholder="Enter your net salary">
-                            <span class="error">{{ errors.first('net_salary') }}</span>
+                            <input type="text" name="Net salary" v-validate="'required'" v-model="model.net_salary" class="form-control" placeholder="Enter your net salary">
+                            <span class="error">{{ errors.first('Net salary') }}</span>
                         </div>
                     </div>
                 </div>
                 </template>
-                <template v-if="model.employee_business_owner == 'business_owner'">
+                <template v-if="workType == 'business_owner'">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
                             <label class="label">Business Name <span class="text-danger">*</span></label>
-                            <input type="text" name="business_name" v-validate="'required'" v-model="model.business_name" class="form-control" placeholder="Enter business name">
-                            <span class="error">{{ errors.first('business_name') }}</span>
+                            <input type="text" name="Business name" v-validate="'required'" v-model="model.business_name" class="form-control" placeholder="Enter business name">
+                            <span class="error">{{ errors.first('Business name') }}</span>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
                             <label class="label">RC Number</label>
-                            <input type="text"  name="model.rc_number" v-model="model.rc_number" class="form-control" placeholder="Enter RC Number">
-                            <span class="error">{{ errors.first('rc_number') }}</span>
+                            <input type="text"  name="Rc number" v-model="model.rc_number" class="form-control" placeholder="Enter RC Number">
+                            <span class="error">{{ errors.first('Rc number') }}</span>
                         </div>
                     </div>
                 </div>
@@ -97,8 +85,8 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="label">Business Address <span class="text-danger">*</span></label>
-                            <input type="text"  name="business_address" v-validate="'required'" v-model="model.business_address" class="form-control" placeholder="Enter business address">
-                            <span class="error">{{ errors.first('business_address') }}</span>
+                            <input type="text"  name="Business address" v-validate="'required'" v-model="model.business_address" class="form-control" placeholder="Enter business address">
+                            <span class="error">{{ errors.first('Business address') }}</span>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -112,15 +100,15 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="label">Business Phone Number <span class="text-danger">*</span></label>
-                            <input type="text" v-validate="'required|numeric'" name="business_phone" v-model="model.business_phone" class="form-control" placeholder="Enter position held">
-                            <span class="error">{{ errors.first('business_phone') }}</span>
+                            <input type="text" v-validate="'required|numeric|min:13|max:13'" name="Business phone" v-model="model.business_phone" class="form-control" placeholder="Enter business phone number">
+                            <span class="error">{{ errors.first('Business phone') }}</span>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="label">Number of years in Business <span class="text-danger">*</span></label>
-                            <input type="text" name="number_of_year_in_business" v-validate="'required|numeric'" v-model="model.number_of_year_in_business" class="form-control">
-                            <span class="error">{{ errors.first('number_of_year_in_business') }}</span>
+                            <input type="text" name="Number of years in business" v-validate="'required|numeric'" v-model="model.number_of_year_in_business" class="form-control">
+                            <span class="error">{{ errors.first('Number of years in business') }}</span>
                         </div>
                     </div>
                 </div>
@@ -128,20 +116,15 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="label">Business Size (Employees) <span class="text-danger">*</span></label>
-                            <select v-validate="'required'"  v-model="model.total_number_of_staff" name="total_number_of_staff" class="form-control">
-                                <option>1 - 9</option>
-                                <option>10 - 49</option>
-                                <option>50 - 249</option>
-                                <option>250+</option>
-                            </select>
-                            <span class="error">{{ errors.first('total_number_of_staff') }}</span>
+                            <input type="number" name="Total number of staff" v-validate="'required|numeric'" v-model="model.total_number_of_staff" class="form-control">
+                            <span class="error">{{ errors.first('Total number of staff') }}</span>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="label">Average Monthly Income (&#8358;) <span class="text-danger">*</span></label>
-                            <input type="text" name="average_monthly_income" v-validate="'required'" v-model="model.average_monthly_income" class="form-control" placeholder="Enter average monthly income">
-                            <span class="error">{{ errors.first('average_monthly_income') }}</span>
+                            <input type="text" name="Average monthly income" v-validate="'required'" v-model="model.average_monthly_income" class="form-control" placeholder="Enter average monthly income">
+                            <span class="error">{{ errors.first('Average monthly income') }}</span>
                         </div>
                     </div>
                 </div>
@@ -154,10 +137,14 @@
 <script>
 export default {
     name: "StepTwo",
+    props: {
+        workType: {
+            type: String
+        }
+    },
     data() {
         return {
             model: {
-                employee_business_owner: '',
                 company_name: '',
                 company_address: '',
                 position_held: '',

@@ -6,7 +6,7 @@
 			<div class="content-center">
 				<center>
 					<h2 class="text-center">Welcome to MoneyLine</h2>
-					<h5 class="text-center">We've sent you an Email, Click on the Link to continue</h5>
+					<h5 class="text-center">Please Check Your mailbox, We'd continue from there!</h5>
 					<!-- <p>
 						Didn't get an Email?,
 						<a href="{{ route('resend-email',$registered->uuid) }}">Resend Email</a>

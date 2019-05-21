@@ -209,4 +209,16 @@ a:hover {
 .btn-flex:hover .btn-icon {
   padding-left: 1em;
 }
+
+@media screen and (max-width: 560px) {
+  .container-fluid {
+    padding: 0 20px !important;
+  }
+  .btn-flex {
+    width: 80% !important;
+    margin: 0 auto;
+    position: relative !important;
+    padding: 0.2em 0.5em !important;
+  }
+}
 /*# sourceMappingURL=main.css.map */

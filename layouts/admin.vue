@@ -1,24 +1,32 @@
 <template>
 	<div>
 		<Header/>
-		<div v-if="this.$route.path !== '/app/dashboard'">
-			<Hero/>
+		<div class="col-md-11 mt-5 mb-5 mx-auto">
+			<div class="d-flex" id="wrapper">
+				<!-- Sidebar -->
+				<SideBar/>
+				<div id="page-content-wrapper">
+					<div style="padding-left:10px;">
+						<nuxt/>
+					</div>
+				</div>
+			</div>
 		</div>
-		<nuxt/>
+
 		<Footer/>
 	</div>
 </template>
 
 <script>
 import Header from "@/components/layouts/HeaderLogged";
+import SideBar from "@/components/admin/SideBar";
 import Footer from "@/components/layouts/Footer";
-import Hero from "@/components/layouts/Hero";
 export default {
-	// middleware: "auth",
+	middleware: "admin",
 	components: {
 		Header,
 		Footer,
-		Hero
+		SideBar
 	}
 };
 </script>

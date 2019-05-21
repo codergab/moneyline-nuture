@@ -1,36 +1,35 @@
-let token;
-if (localStorage.getItem('money_line_valid_token')) {
-  let appStorage = localStorage.getItem('money_line_valid_token');
-  token = appStorage;
-}
+let authToken;
 
+if (localStorage.getItem('moneyline')) {
+  let appStorage = JSON.parse(localStorage.getItem('moneyline'));
+  if (appStorage.auth.user) {
+    const {
+      token
+    } = appStorage.auth.user;
+    authToken = token;
+  }
+}
 
 export default function ({
   $axios,
   app
 }) {
+  $axios.setToken(`${authToken}`);
 
-  // this.$axios.setToken('123', 'Authetication')
+  $axios.setHeader('Content-Type', 'application/json', ['post']);
 
-  //   $axios.setToken(`${token}`, 'Bearer')
+  //   $axios.setHeader('Authorization', `${authToken}`);
 
-  $axios.setHeader('Content-Type', 'application/json', [
-    'post'
-  ])
+  $axios.onRequest((config) => {
+    console.log('Making request to ' + config.url);
+  });
 
-  $axios.setHeader('Authorization', `${token}`)
-
-  $axios.onRequest(config => {
-    console.log('Making request to ' + config.url)
-  })
-
-  $axios.onError(error => {
-    const code = parseInt(error.response && error.response.status)
+  $axios.onError((error) => {
+    const code = parseInt(error.response && error.response.status);
     if (code === 400) {
       // app.$toast.error(error.response.data)
-      // return response
-    } else {
       // this.$noty.error(`${err.response.statusText}, Please Try Again`);
-    }
-  })
+      // return response
+    } else {}
+  });
 }

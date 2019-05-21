@@ -50,8 +50,6 @@ export default {
     height: '4px'
   },
 
-
-
   /*
    ** Global CSS
    */
@@ -68,6 +66,7 @@ export default {
     '~/plugins/form-wizard.js',
     '~/plugins/vue-modaltor',
     '~/plugins/vue-button-loader',
+    '~/plugins/vue-filters.js',
     {
       src: '~/plugins/localStorage.js',
       ssr: false
@@ -88,7 +87,8 @@ export default {
    */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
-    baseURL: 'http://localhost:8080/api/v1'
+    // baseURL: 'http://localhost:8080/api/v1'
+    baseURL: 'https://api.moneyline.ng/api/v1'
   },
 
   /*

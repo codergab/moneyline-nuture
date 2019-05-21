@@ -2,16 +2,18 @@
 	<div class="content">
 		<div class>
 			<div class="slidee">
-				<div class="payoff">
-					<span class="highlight">Got questions?</span>
-					<br>let us provide your
-					<br>answers
-				</div>
+				<b-container fluid>
+					<div class="payoff">
+						<span class="highlight">Got questions?</span>
+						<br>let us provide your
+						<br>answers
+					</div>
+				</b-container>
 			</div>
 			<CallToAction/>
 		</div>
 		<div style="background: #fafafa;" class="pt-5">
-			<div class="container about_content">
+			<div class="container faq_content">
 				<div class="row">
 					<div class="col-md-9 mb-5 mx-auto">
 						<div class="row">
@@ -51,37 +53,42 @@
 		<CallToAction/>
 	</div>
 </template>
-<style scoped>
-.content {
-	color: rgb(123, 121, 121);
+<style>
+.faq .nav-pills .nav-link.active {
+    border-radius: 0px !important;
+    color: #fff !important;
+    background-color: #329f69 !important;
 }
-h4 {
-	font-weight: 600;
+.faq_content .content {
+	color: rgb(123, 121, 121) !important;
 }
-h6 {
-	color: green;
-	font-weight: 600;
+.faq_content h4 {
+	font-weight: 600 !important;
 }
-h6.title {
-	color: #fff;
-	text-transform: uppercase;
-	font-weight: 300px;
+.faq_content h6 {
+	color: green !important;
+	font-weight: 600 !important;
 }
-.accord {
-	background: transparent;
-	border: none;
+.faq_content h6.title {
+	color: #fff !important;
+	text-transform: uppercase !important;
+	font-weight: 300px !important;
+}
+.faq_content .accord {
+	background: transparent !important;
+	border: none !important;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.125) !important;
-	border-radius: 0px;
-	padding-bottom: 15px;
-	margin-left: 60px;
+	border-radius: 0px !important;
+	padding-bottom: 15px !important;
+	margin-left: 60px !important;
 }
 div.tab-content {
-	margin-top: -27px;
-	margin-left: -50px;
+	margin-top: -27px !important;
+	margin-left: -50px !important;
 	border: 2px dashed rgb(50, 159, 105, 0.9) !important;
-	padding: 20px;
+	padding: 20px !important;
 }
-.faq {
+.faq_content .faq {
 	padding-left: 0;
 	padding-top: 70px;
 	padding-bottom: 50px;
@@ -89,22 +96,22 @@ div.tab-content {
 	-moz-box-shadow: 0px 0px 5px 1px rgba(219, 219, 219, 1);
 	box-shadow: 0px 0px 5px 1px rgba(219, 219, 219, 1);
 }
-.faq p.card-text a {
+.faq_content .faq p.card-text a {
 	color: rgb(36, 96, 136);
 	font-weight: 600;
 	margin-bottom: 1px solid #dbdbdb;
 }
-.faq ul.nav {
+.faq_content .faq ul.nav {
 	background: transparent !important;
 	width: 234px;
 	padding: 0;
 	z-index: 9999;
 }
-.faq a.nav-link {
+.faq_content .faq a.nav-link {
 	border-radius: 0px !important;
 	color: #000;
 }
-.faq ul.nav li.nav-item {
+.faq_content .faq ul.nav li.nav-item {
 	border-radius: 0px !important;
 	color: #000;
 	margin-top: 7px;
@@ -120,7 +127,7 @@ div.tab-content {
 	background-color: #329f69;
 }
 .slidee {
-	background-image: url("/Artboard–2.png");
+	background: #274263 url("/new-faq-banner.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -181,7 +188,7 @@ export default {
 							title:
 								"How long does it take for my loan to be processed and approved?",
 							content:
-								"Within 24 -48 hours provided all documents are valid and presented on the application"
+								"Within 24 - 48 hours provided all documents are valid and presented on the application"
 						}
 					]
 				},

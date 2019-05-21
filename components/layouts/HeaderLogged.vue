@@ -20,7 +20,7 @@
 						<!-- <b-link to="/login">
 							<b-button variant="primary">Manage Loans</b-button>
 						</b-link> -->
-						<b-link to="/login">
+						<b-link to="/account/login">
 							<b-button variant="secondary">Logout</b-button>
 						</b-link>
 						<!-- <b-button variant="secondary">Login</b-button> -->
